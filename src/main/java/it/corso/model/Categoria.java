@@ -32,6 +32,4 @@ public class Categoria {
 		this.nome_categoria = nome_categoria;
 	}
 	
-	
-
 }
