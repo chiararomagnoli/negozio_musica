@@ -1,0 +1,58 @@
+
+.navbar { 
+    background-color: rgb(121, 40, 83);
+    width: 100%;
+    margin: 0px auto;
+    padding: 5px;
+    
+}
+
+.navbar-toggler-icon {
+    background-color: rgb(121, 40, 83);
+    padding: 10px;
+}
+
+.navbar-brand {
+    border-right: 2px solid #fff;
+}
+
+a.nav-link, a.navbar-brand {
+    color: white;          
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+a.nav-link {
+    padding-right: 10%;
+}
+
+button.navbar-toggler {
+    color:white;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+  }
+
+  .piede {
+    margin-bottom: 20px;
+  }
+
+  .piede h5 {
+    color: #007bff;
+  }
+
+  .piede ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .piede ul li {
+    margin-bottom: 10px;
+  }
+
+  .social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+  }

@@ -1,82 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css" />
+  <title>Homepage</title>
+  <!-- Script Bootstrap (assicurati di includerlo) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+  <!-- Logo e pulsanti -->
+  <div class="container-fluid bg-light p-2">
     <div class="container">
-        <header class="container">
-            <!--logo + carrello (icona) + login e ricerca-->
-        </header>
-            <nav class="navbar navbar-expand-lg fixed-top container">
-                <a class="navbar-brand" href="index.html"><!--navbar-brnd: classe di bootstrap dedicata alle immagini dei loghi per la navbar--> 
-                    Home Page
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mianav">
-                        
-                    <span class="navbar-toggler-icon"></span><!--disegno il tipico pulsante-->
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="mianav">
-                    
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="#">Chitarre</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Tastiere</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Archi</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Percussioni</a></li>  
-                        <li class="nav-item"><a class="nav-link" href="#">Flauti</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Usato</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Sconti</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <!--immagini dinamiche-->
-            <div class="immagini"> <!--tutte le immagini-->
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <img src="https://www.itineraridiluce.com/wp-content/uploads/2018/01/cropped-logo-rettangolare.png" alt="Logo" height="100">
+        </div>
+        <div class="col-md-4">
+          <!-- Pulsanti -->
+          <button class="btn btn-outline-secondary mr-2">Accedi</button>
+          <button class="btn btn-outline-secondary mr-2">Ricerca</button>
+          <button class="btn btn-outline-secondary">Carrello</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-            </div>
-        
-        <footer class="container">
-            <div class="piede">
-                <h5>INFORMAZIONI</h5>
-                <ul>
-                    <li><a href="#">Chi siamo</a></li>
-                    <li><a href="#">Contatti</a></li>
-                    <li><a href="#">Marche</a></li>
-                    <li><a href="#">Dove siamo</a></li>
-                    <li>Orari</li>
-                </ul>
-            </div> <!--informazioni-->
-            <div>
-                <h5>NAVIGAZIONE</h5>
-                <ul>
-                    <li><a href="#">Home Page</a></li>
-                    <li><a href="#">Ricerca</a></li>
-                    <li><a href="#">Novità</a></li>
-                    <li><a href="#">Mercatino dell'usato</a></li>
-                    <li><a href="#">Promozioni</a></li>
-                </ul>
-            </div> <!--navigazione-->
-            <div>
-                <h5>ACQUISTI</h5>
-                <ul>
-                    <li><a href="#">Resi</a></li>
-                    <li><a href="#">Rimborsi</a></li>
-                    <li><a href="#">Assistenza</a></li>
-                    <li><a href="#">Spedizioni</a></li>
-                    <li><a href="#">Account</a></li>
-                </ul>
-            </div> <!--acquisti-->
-            <div>
-                <h5>SOCIAL</h5>
-                <a href="#"><img src=""/></a>
-                <a href="#"><img src=""/></a>
-                <a href="#"><img src=""/></a>
-                <a href="#"><img src=""/></a> <!--fb, instagram, youtube, tiktok-->
-            </div> <!--social + icone-->
-        </footer>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+    <!-- Pulsante per mobile -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    </div> <!--chiudo container-->
+    <!-- Elementi della navbar -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Chitarre</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tastiere</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Archi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Percussioni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Fiati</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Usato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Novità</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenuto principale -->
+  <div class="container mt-3">
+    <!-- Aggiungi qui il tuo contenuto principale -->
+    <!-- SEZIONE IMMAGINI DINAMICHE -->
+      <div class="immagini"> <!-- tutte le immagini -->
+        <div> <!-- immagini dinamiche -->
+          
+        </div>
+        <div> <!-- immagini statiche -->
+          <a>
+            <img /><br/>
+            <img /></a>
+        </div>
+      </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="container">
+    <div class="row">
+      <div class="col-md-3 piede">
+        <h5>INFORMAZIONI</h5>
+        <ul>
+          <li><a href="#">Chi siamo</a></li>
+          <li><a href="#">Dove siamo</a></li>                   
+          <li><a href="#">Orari</a></li>
+          <li><a href="#">Contatti</a></li>
+          <li><a href="#">Marche</a></li>                   
+        </ul>
+      </div>
+      <div class="col-md-3 piede">
+        <h5>NAVIGAZIONE</h5>
+        <ul>
+          <li><a href="index.html">Home Page</a></li>
+          <li><a href="#">Ricerca</a></li>
+          <li><a href="#">Novità</a></li>
+          <li><a href="#">Mercatino dell'usato</a></li>
+          <li><a href="#">Promozioni</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 piede">
+        <h5>ACQUISTI</h5>
+        <ul>
+          <li><a href="#">Resi</a></li>
+          <li><a href="#">Rimborsi</a></li>
+          <li><a href="#">Assistenza</a></li>
+          <li><a href="#">Spedizioni</a></li>
+          <li><a href="#">Account</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 piede social-icons">
+        <h5>SOCIAL</h5>
+        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+        <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+        <a href="#"><img src="tiktok-icon.png" alt="TikTok"></a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
