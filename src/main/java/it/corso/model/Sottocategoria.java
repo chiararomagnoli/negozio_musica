@@ -21,7 +21,7 @@ public class Sottocategoria {
 	@Column(name = "nome_sottocategoria")
 	private String nome_sottocategoria;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "fk_id_categoria", referencedColumnName = "id_categoria")
 	private Categoria categoria;
 	
