@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html mlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Lista e Form di prova</title>
+</head>
+
+<body>
+
+<div th:each="art: ${prodotti}">
+	<h3 th:text="${art.nome}"></h3>
+	<p th:text="${art.descrizione}"></p>
+</div>
+
+</body>
+
+</html>

@@ -16,7 +16,7 @@ public class Sottocategoria {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private  int id;
+	private  int id_sottocategoria;
 	
 	@Column(name = "nome_sottocategoria")
 	private String nome_sottocategoria;
@@ -34,11 +34,11 @@ public class Sottocategoria {
 	}
 
 	public int getId() {
-		return id;
+		return id_sottocategoria;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int id_sottocategoria) {
+		this.id_sottocategoria = id_sottocategoria;
 	}
 
 	public String getNome_sottocategoria() {
