@@ -1,5 +1,6 @@
 package it.corso.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,14 @@ public class ProdottoServiceImpl implements ProdottoService {
 		prodottoDao.delete(prodotto);
 
 	}
+
+	@Override
+	public List<Prodotto> trovamiProdottiPerCondizione(String condizione) {
+		List<Prodotto> prodotti=new ArrayList<>();
+		return prodotti=prodottoDao.findAllByCondizione(condizione);
+ 		
+	}
+	
+	
 
 }

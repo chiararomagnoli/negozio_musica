@@ -10,5 +10,7 @@ public interface ProdottoService {
 	Prodotto getProdottoById(int id);
 	List<Prodotto> getProdotti();
 	void cancellaProdotto(Prodotto prodotto);
+	
+	List<Prodotto> trovamiProdottiPerCondizione(String condizione);
 
 }
