@@ -43,6 +43,12 @@ public class ProdottoServiceImpl implements ProdottoService {
 		return prodotti=prodottoDao.findAllByCondizione(condizione);
  		
 	}
+
+	@Override
+	public List<Prodotto> trovamiProdottiPerSconto(double sconto) {
+		List<Prodotto> prodotti = new ArrayList<>();
+		return prodotti= prodottoDao.findAllbySconto(sconto);
+	}
 	
 	
 

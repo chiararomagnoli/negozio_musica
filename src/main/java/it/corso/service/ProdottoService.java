@@ -12,5 +12,6 @@ public interface ProdottoService {
 	void cancellaProdotto(Prodotto prodotto);
 	
 	List<Prodotto> trovamiProdottiPerCondizione(String condizione);
+	List<Prodotto> trovamiProdottiPerSconto (double sconto);
 
 }
