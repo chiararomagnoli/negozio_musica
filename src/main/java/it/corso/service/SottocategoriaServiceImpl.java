@@ -3,10 +3,12 @@ package it.corso.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import it.corso.dao.SottocategoriaDao;
 import it.corso.model.Sottocategoria;
 
+@Service
 public class SottocategoriaServiceImpl implements SottocategoriaService
 {
 	@Autowired
