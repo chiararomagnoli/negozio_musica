@@ -20,10 +20,15 @@ public class IndexController {
 	
 	@GetMapping
 	public String getPage(Model model) {
+		
 		model.addAttribute("prodotti", prodottoService.getProdotti());
 		model.addAttribute("prodotto", new Prodotto());
 		List<Prodotto> prodottiUsati = prodottoService.trovamiProdottiPerCondizione("Usato");
 		model.addAttribute("prodottiUsati", prodottiUsati);
+		
+		//capire se aggiungere un model per l'id_prodotto o se usare direttamente la lista
+		//dentro th:each possiamo mettere un counter per dirgli di prendere gli ultimi elementi (quelli che ci servono)
+		
 		return "index";
 	}
 
