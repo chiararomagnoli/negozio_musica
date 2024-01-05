@@ -1,4 +1,4 @@
-
+/* PARTE DI HEADER E FOOTER IN COMUNE */
 .navbar { 
     background-color: rgb(121, 40, 83);
     width: 100%;
@@ -56,3 +56,5 @@ footer {
     display: inline-block;
     margin-right: 10px;
   }
+
+  /* FINE PARTE DI HEADER E FOOTER */
