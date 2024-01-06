@@ -13,5 +13,8 @@ public interface ProdottoService {
 	
 	List<Prodotto> trovamiProdottiPerCondizione(String condizione);
 	List<Prodotto> trovamiProdottiPerSconto (double sconto);
+	
+	//metodi utili per il form di ricerca
+	List<Prodotto> cercaProdottiPerNome(String nome);
 
 }

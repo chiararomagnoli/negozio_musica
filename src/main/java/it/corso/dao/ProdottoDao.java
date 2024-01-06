@@ -15,6 +15,7 @@ public interface ProdottoDao extends CrudRepository<Prodotto, Integer> {
 	
 	List<Prodotto> findAllBySconto(double sconto);
 	
+	//metodi utili per il form di ricerca
 	List<Prodotto> findByNomeProdottoContaining(String nome);
 
 }
