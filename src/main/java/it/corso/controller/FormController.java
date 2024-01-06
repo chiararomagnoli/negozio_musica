@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.corso.model.Prodotto;
 import it.corso.service.ProdottoService;
@@ -23,6 +24,13 @@ public class FormController {
 		List<Prodotto> prodotti = prodottoService.getProdotti();
 		model.addAttribute("prodotti", prodotti);
 		return "formprova";
-	}
-
+	}	
+	
+	@GetMapping("/cercaProdotti")
+    public String cercaProdottiPerNome(@RequestParam("nome") String nome, Model model) {
+        List<Prodotto> risultati = prodottoService.cercaProdottiPerNome(nome);
+        model.addAttribute("risultati", risultati);
+        return "formprova";
+    }
+	
 }
