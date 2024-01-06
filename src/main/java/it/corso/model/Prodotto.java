@@ -13,13 +13,51 @@ import jakarta.persistence.Table;
 @Entity // la classe rappresenta un'entità persistente, ovvero un oggetto che può essere memorizzato in un database
 @Table(name = "prodotti") // specifica il nome della tabella associata
 public class Prodotto {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id_prodotto;
+	
+	@Column(name = "nome_prodotto")
+	private String nome_prodotto;
+	
+	@Column(name = "descrizione")
+	private String descrizione;
+	
+	@Column(name = "prezzo")
+	private double prezzo;
+	
+	@Column(name = "disponibilita")
+	private int disponibilita;
+	
+	@Column(name = "sconto")
+	private double sconto;
+	
+	@ManyToOne(cascade = CascadeType.REFRESH)
+	@JoinColumn(name = "fk_categoria", referencedColumnName = "id_categoria")
+	private Categoria categoria;
+	
+	@ManyToOne(cascade = CascadeType.REFRESH)
+	@JoinColumn(name = "fk_sottocategoria", referencedColumnName = "id_sottocategoria")
+	private Sottocategoria sottocategoria;
+	
+	@ManyToOne(cascade = CascadeType.REFRESH)
+	@JoinColumn(name = "fk_marca", referencedColumnName = "id_marca")
+	private Marca marca;
+	
+	
+	@Column(name = "condizione")
+	private String condizione;
+	
+	
+	
 	public int getId() {
-		return id;
+		return id_prodotto;
 	}
 
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int id_prodotto) {
+		this.id_prodotto = id_prodotto;
 	}
 
 
@@ -111,40 +149,4 @@ public class Prodotto {
 	public void setCondizione(String condizione) {
 		this.condizione = condizione;
 	}
-
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	
-	@Column(name = "nome_prodotto")
-	private String nome_prodotto;
-	
-	@Column(name = "descrizione")
-	private String descrizione;
-	
-	@Column(name = "prezzo")
-	private double prezzo;
-	
-	@Column(name = "disponibilita")
-	private int disponibilita;
-	
-	@Column(name = "sconto")
-	private double sconto;
-	
-	@ManyToOne(cascade = CascadeType.REFRESH)
-	@JoinColumn(name = "fk_categoria", referencedColumnName = "id_categoria")
-	private Categoria categoria;
-	
-	@ManyToOne(cascade = CascadeType.REFRESH)
-	@JoinColumn(name = "fk_sottocategoria", referencedColumnName = "id_sottocategoria")
-	private Sottocategoria sottocategoria;
-	
-	@ManyToOne(cascade = CascadeType.REFRESH)
-	@JoinColumn(name = "fk_marca", referencedColumnName = "id_marca")
-	private Marca marca;
-	
-	
-	@Column(name = "condizione")
-	private String condizione;
 }
