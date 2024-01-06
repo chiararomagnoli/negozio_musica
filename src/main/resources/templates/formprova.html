@@ -9,18 +9,41 @@
 <body>
 	
 	<div>
-	<h2>Ricerca Prodotti per Nome</h2>
-    <form action="/formprova" method="get">
-        <label for="nomeProdotto">Nome Prodotto:</label>
-        <input type="text" id="nomeProdotto" name="nomeProdotto" />
+	<h2>Ricerca Prodotti</h2>
+
+    <form th:action="@{/cercaProdotti}" method="get">
+        <label for="nome">Nome Prodotto:</label>
+        <input type="text" id="nome" name="nome" required>
         <button type="submit">Cerca</button>
     </form>
-</div>
+    
+     <h3>Risultati della Ricerca</h3>
 
-<div th:each="art: ${prodotti}">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome Prodotto</th>
+                <th>Descrizione</th>
+                <th>Prezzo</th>
+                <th>Disponibilità</th>
+                <!-- Aggiungi altre colonne se necessario -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="prodotto : ${risultati}">
+                <td th:text="${prodotto.nome_prodotto}"></td>
+                <td th:text="${prodotto.descrizione}"></td>
+                <td th:text="${prodotto.prezzo}"></td>
+                <td th:text="${prodotto.disponibilita}"></td>
+                <!-- Aggiungi altre colonne se necessario -->
+            </tr>
+        </tbody>
+    </table>
+
+<!--<div th:each="art: ${prodotti}">
 	<h3 th:text="${art.nome_prodotto}"></h3>
 	<p th:text="${art.descrizione}"></p>
-</div>
+</div>-->
 
 </body>
 
