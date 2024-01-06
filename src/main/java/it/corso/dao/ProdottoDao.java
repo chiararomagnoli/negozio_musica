@@ -9,7 +9,7 @@ import it.corso.model.Prodotto;
 public interface ProdottoDao extends CrudRepository<Prodotto, Integer> {
 	
 	//query di order by per la seconda pagina html
-	List<Prodotto> findAllByOrderByNomeProdottoAsc();
+	//List<Prodotto> findAllByOrderByNome_ProdottoAsc();
 	
 	List<Prodotto> findAllByCondizione(String condizione);
 	
