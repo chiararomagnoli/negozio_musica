@@ -13,23 +13,23 @@ public class Categoria {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_categoria;
+	private int idCategoria;
 	
 	@Column(name="nome_categoria")
-	private String nome_categoria;
+	private String nomeCategoria;
 	
 	
-	public int getId_categoria() {
-		return id_categoria;
+	public int getIdCategoria() {
+		return idCategoria;
 	}
-	public void setId_categoria(int id_categoria) {
-		this.id_categoria = id_categoria;
+	public void setIdCategoria(int idCategoria) {
+		this.idCategoria = idCategoria;
 	}
-	public String getNome_categoria() {
-		return nome_categoria;
+	public String getNomeCategoria() {
+		return nomeCategoria;
 	}
-	public void setNome_categoria(String nome_categoria) {
-		this.nome_categoria = nome_categoria;
+	public void setNomeCategoria(String nomeCategoria) {
+		this.nomeCategoria = nomeCategoria;
 	}
 	
 }

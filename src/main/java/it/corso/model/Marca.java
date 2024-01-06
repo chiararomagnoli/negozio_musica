@@ -13,22 +13,22 @@ public class Marca {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_marca;
+	private int idMarca;
 	
 	@Column(name="nome_marca")
-	private String nome_marca;
+	private String nomeMarca;
 	
-	public int getId_marca() {
-		return id_marca;
+	public int getIdMarca() {
+		return idMarca;
 	}
-	public void setId_marca(int id_marca) {
-		this.id_marca = id_marca;
+	public void setIdMarca(int idMarca) {
+		this.idMarca = idMarca;
 	}
-	public String getNome_marca() {
-		return nome_marca;
+	public String getNomeMarca() {
+		return nomeMarca;
 	}
-	public void setNome_marca(String nome_marca) {
-		this.nome_marca = nome_marca;
+	public void setNomeMarca(String nomeMarca) {
+		this.nomeMarca = nomeMarca;
 	}
 
 }
