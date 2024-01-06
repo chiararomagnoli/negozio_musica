@@ -11,10 +11,10 @@
 	<div>
 	<h2>Ricerca Prodotti</h2>
 
-    <form th:action="@{/cercaProdotti}" method="get">
+    <form action="form/cerca" method="get">
         <label for="nome">Nome Prodotto:</label>
-        <input type="text" id="nome" name="nome" required>
-        <button type="submit">Cerca</button>
+        <input type="text" id="nome" name="nome">
+        <input type="submit" value="Cerca">	
     </form>
     
      <h3>Risultati della Ricerca</h3>

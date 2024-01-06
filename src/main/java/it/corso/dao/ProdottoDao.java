@@ -18,7 +18,7 @@ public interface ProdottoDao extends CrudRepository<Prodotto, Integer> {
 	List<Prodotto> findAllBySconto(double sconto);
 	
 	//metodi utili per il form di ricerca
-	@Query (value="SELECT * FROM prodotti WHERE nome_prodotto LIKE '%nome%';", nativeQuery = true)
+	@Query(value="SELECT * FROM prodotti WHERE nome_prodotto LIKE %:nome%", nativeQuery = true)
 	List<Prodotto> findByNomeProdottoContaining(@Param("nome") String nome);
 
 }
