@@ -7,6 +7,15 @@
 </head>
 
 <body>
+	
+	<div>
+	<h2>Ricerca Prodotti per Nome</h2>
+    <form action="/formprova" method="get">
+        <label for="nomeProdotto">Nome Prodotto:</label>
+        <input type="text" id="nomeProdotto" name="nomeProdotto" />
+        <button type="submit">Cerca</button>
+    </form>
+</div>
 
 <div th:each="art: ${prodotti}">
 	<h3 th:text="${art.nome_prodotto}"></h3>
