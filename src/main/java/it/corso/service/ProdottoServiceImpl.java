@@ -50,6 +50,13 @@ public class ProdottoServiceImpl implements ProdottoService {
 		return prodotti= prodottoDao.findAllBySconto(sconto);
 	}
 	
+	//metodi utili per il form di ricerca
+	//ricerca prodotto per nome
+	@Override
+    public List<Prodotto> cercaProdottiPerNome(String nome) {
+        return prodottoDao.findByNomeProdottoContaining(nome);
+    }
+	
 	
 
 }
