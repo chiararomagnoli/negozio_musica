@@ -57,6 +57,11 @@ public class ProdottoServiceImpl implements ProdottoService {
         return prodottoDao.findByNomeProdottoContaining(nome);
     }
 	
+	@Override
+	public List<Prodotto> cercaProdottiPerNomeCategoria(String nomeCategoria) {
+	    return prodottoDao.findByCategoriaNomeCategoria(nomeCategoria);
+	}
+	
 	
 
 }

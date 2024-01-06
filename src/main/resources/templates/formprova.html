@@ -12,9 +12,22 @@
 	<h2>Ricerca Prodotti</h2>
 
     <form th:action="@{/form/cerca}" method="get">
-        <label for="nome">Nome Prodotto:</label>
+        
+        
+       	<label for="nome">Nome Prodotto:</label>
         <input type="text" id="nome" name="nome">
-        <input type="submit" value="Cerca">	
+        
+        
+        <label for="categoria">Categoria:</label>
+            <select id="categoria" name="categoria">
+                <option value="">Tutte le categorie</option>
+                <!-- Aggiungi opzioni per tutte le categorie dalla tua lista -->
+                <th:block th:each="categoria : ${categorie}">
+                    <option th:value="${categoria.nomeCategoria}" th:text="${categoria.nomeCategoria}"></option>
+                </th:block>
+            </select>
+            
+    <input type="submit" value="Cerca">	
     </form>
     
      <h3>Risultati della Ricerca</h3>
