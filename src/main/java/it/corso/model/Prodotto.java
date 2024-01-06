@@ -16,10 +16,10 @@ public class Prodotto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_prodotto;
+	private int idProdotto;
 	
 	@Column(name = "nome_prodotto")
-	private String nome_prodotto;
+	private String nomeProdotto;
 	
 	@Column(name = "descrizione")
 	private String descrizione;
@@ -52,22 +52,22 @@ public class Prodotto {
 	
 	
 	public int getId() {
-		return id_prodotto;
+		return idProdotto;
 	}
 
 
-	public void setId(int id_prodotto) {
-		this.id_prodotto = id_prodotto;
+	public void setId(int idProdotto) {
+		this.idProdotto = idProdotto;
 	}
 
 
-	public String getNome_prodotto() {
-		return nome_prodotto;
+	public String getNomeProdotto() {
+		return nomeProdotto;
 	}
 
 
-	public void setNome_prodotto(String nome_prodotto) {
-		this.nome_prodotto = nome_prodotto;
+	public void setNomeProdotto(String nomeProdotto) {
+		this.nomeProdotto = nomeProdotto;
 	}
 
 

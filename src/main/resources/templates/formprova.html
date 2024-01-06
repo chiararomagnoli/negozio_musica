@@ -11,7 +11,7 @@
 	<div>
 	<h2>Ricerca Prodotti</h2>
 
-    <form action="form/cerca" method="get">
+    <form th:action="@{/form/cerca}" method="get">
         <label for="nome">Nome Prodotto:</label>
         <input type="text" id="nome" name="nome">
         <input type="submit" value="Cerca">	
