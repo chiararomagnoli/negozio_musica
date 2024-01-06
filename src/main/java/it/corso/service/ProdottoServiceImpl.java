@@ -47,7 +47,7 @@ public class ProdottoServiceImpl implements ProdottoService {
 	@Override
 	public List<Prodotto> trovamiProdottiPerSconto(double sconto) {
 		List<Prodotto> prodotti = new ArrayList<>();
-		return prodotti= prodottoDao.findAllbySconto(sconto);
+		return prodotti= prodottoDao.findAllBySconto(sconto);
 	}
 	
 	
