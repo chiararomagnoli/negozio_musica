@@ -1,60 +1,150 @@
 /* PARTE DI HEADER E FOOTER IN COMUNE */
+
+  /* logo */
+.logo img {
+  height: 60px; 
+  margin-left: 35px;
+}
+
 .navbar { 
-    background-color: rgb(121, 40, 83);
-    width: 100%;
-    margin: 0px auto;
-    padding: 5px;
-    
+  width: 100%;
+  margin: 0px auto;
+  padding: 2px;  
 }
 
 .navbar-toggler-icon {
-    background-color: rgb(121, 40, 83);
+    background-color: rgb(0, 0, 0);
     padding: 10px;
 }
 
 .navbar-brand {
-    border-right: 2px solid #fff;
+    border-right: 2px solid #2D2727;
 }
 
 a.nav-link, a.navbar-brand {
-    color: white;          
-    padding-left: 10px;
-    padding-right: 20px;
+    font-family: 'RocknRoll One', sans-serif;
+    color: #F0EB8D;          
+    padding: 10px 5px;
+    margin-right: 60px;
 }
 
-a.nav-link {
-    padding-right: 10%;
+.navbar-brand img {
+  margin-right: 15px; 
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-nav .nav-item {
+  flex: 1;
+  text-align: center;
 }
 
 button.navbar-toggler {
-    color:white;
+    color:#F0EB8D;
 }
 
 footer {
-    background-color: #f8f9fa;
-    padding: 30px 0;
-  }
+  padding: 30px 0;
+}
 
-  .piede {
-    margin-bottom: 20px;
-  }
+.piede {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 0 0 0px;
+}
 
-  .piede h5 {
-    color: #007bff;
-  }
+.piede_item {
+  margin-bottom: 20px;
+  align-items: left;
+}
 
-  .piede ul {
-    list-style: none;
-    padding: 0;
-  }
+.piede_item h5, .social-icons h5 {
+  color: #F0EB8D;
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 14px;
+}
 
-  .piede ul li {
-    margin-bottom: 10px;
-  }
+.piede_item ul {
+  list-style: none;
+  padding: 0;
+}
 
-  .social-icons a {
-    display: inline-block;
-    margin-right: 10px;
-  }
+.piede_item a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.piede_item li {
+  font-size: 13px;
+}
+
+.social-icons {
+  display: flex;
+  margin-bottom:20px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  color: #ddd;
+}
+
+.social-icons img {
+  margin-left: 10px;
+  width: 20px;
+  height: auto;
+}
 
   /* FINE PARTE DI HEADER E FOOTER */
+  
+  body {
+    background: #EEEEEE;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  /* SEZIONE IMMAGINI */
+  .immagini {
+    float:left;
+  }
+
+    /* Carousel */
+  #demo {
+    max-width: 100%;
+  }
+
+  .carousel-item {
+    height: 350px;
+  }
+
+  .carousel-caption a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .carousel-caption {
+    background-color: rgba(29, 29, 29, 0.4);
+  }
+
+    /* Statica */
+  /* #img_static {
+    float:left;
+  } */
+
+  .img_nuovi, .img_usato {
+    width: 240px;
+    height: auto;
+  }
+
+  /* EVIDENZA */
+
+  /* NOVITA' */
+
+  /* USATO */
+
+  
+
