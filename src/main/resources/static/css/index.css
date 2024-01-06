@@ -54,12 +54,13 @@ footer {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 0 0 0 0px;
+  padding: 0 10px 0 60px; /* modificare i 50 px per la distanza della lista */
 }
 
 .piede_item {
   margin-bottom: 20px;
   align-items: left;
+  padding-right: 140px; /* modificare i 100 px per la distanza della lista */
 }
 
 .piede_item h5, .social-icons h5 {
@@ -93,8 +94,8 @@ footer {
 }
 
 .social-icons img {
-  margin-left: 10px;
-  width: 20px;
+  padding-right: 10px;
+  width: 35px;
   height: auto;
 }
 
