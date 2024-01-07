@@ -47,6 +47,11 @@ public class ProdottoServiceImpl implements ProdottoService {
 		return prodottoDao.findAllBySconto(sconto);
 	}
 	
+	//metodo per ordinare i prodotti per nome
+	public List<Prodotto> ordinaProdottiPerNome(){
+		return prodottoDao.findAllByOrderByNomeProdottoAsc();
+	}
+	
 	//metodi utili per il form di ricerca
 	//ricerca prodotto per nome
 	@Override

@@ -7,56 +7,56 @@
 </head>
 
 <body>
-	
+
 	<div>
-	<h2>Ricerca Prodotti</h2>
+		<h2>Ricerca Prodotti</h2>
 
-    <form th:action="@{/form/cerca}" method="get">
-        
-        
-       	<label for="nome">Nome Prodotto:</label>
-        <input type="text" id="nome" name="nome">
-        
-        
-        <label for="categoria">Categoria:</label>
-            <select id="categoria" name="categoria">
-                <option value="">Tutte le categorie</option>
-                <!-- Aggiungi opzioni per tutte le categorie dalla tua lista -->
-                <th:block th:each="categoria : ${categorie}">
-                    <option th:value="${categoria.nomeCategoria}" th:text="${categoria.nomeCategoria}"></option>
-                </th:block>
-            </select>
-            
-    <input type="submit" value="Cerca">	
-    </form>
-    
-     <h3>Risultati della Ricerca</h3>
+		<form th:action="@{/form/cerca}" method="get">
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Nome Prodotto</th>
-                <th>Descrizione</th>
-                <th>Prezzo</th>
-                <th>Disponibilità</th>
-                <!-- Aggiungi altre colonne se necessario -->
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="prodotto : ${risultati}">
-                <td th:text="${prodotto.nomeProdotto}"></td>
-                <td th:text="${prodotto.descrizione}"></td>
-                <td th:text="${prodotto.prezzo}"></td>
-                <td th:text="${prodotto.disponibilita}"></td>
-                <!-- Aggiungi altre colonne se necessario -->
-            </tr>
-        </tbody>
-    </table>
 
-<!--<div th:each="art: ${prodotti}">
-	<h3 th:text="${art.nome_prodotto}"></h3>
-	<p th:text="${art.descrizione}"></p>
-</div>-->
+			<label for="nome">Nome Prodotto:</label>
+			<input type="text" id="nome" name="nome">
+
+
+			<label for="categoria">Categoria:</label>
+			<select id="categoria" name="categoria">
+				<option value="">Tutte le categorie</option>
+				<!-- Aggiungi opzioni per tutte le categorie dalla tua lista -->
+				<th:block th:each="categoria : ${categorie}">
+					<option th:value="${categoria.nomeCategoria}" th:text="${categoria.nomeCategoria}"></option>
+				</th:block>
+			</select>
+
+			<input type="submit" value="Cerca">
+		</form>
+
+		<h3>Risultati della Ricerca</h3>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Nome Prodotto</th>
+					<th>Descrizione</th>
+					<th>Prezzo</th>
+					<th>Disponibilità</th>
+					<!-- Aggiungi altre colonne se necessario -->
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="prodotto : ${risultati}">
+					<td th:text="${prodotto.nomeProdotto}"></td>
+					<td th:text="${prodotto.descrizione}"></td>
+					<td th:text="${prodotto.prezzo}"></td>
+					<td th:text="${prodotto.disponibilita}"></td>
+					<!-- Aggiungi altre colonne se necessario -->
+				</tr>
+			</tbody>
+		</table>
+
+		<div th:each="art: ${prodotti}">
+			<h3 th:text="${art.nomeProdotto}"></h3>
+			<p th:text="${art.descrizione}"></p>
+		</div>
 
 </body>
 

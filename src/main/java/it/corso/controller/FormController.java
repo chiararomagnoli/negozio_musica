@@ -31,12 +31,8 @@ public class FormController {
 	
 	@GetMapping
 	public String getPage(Model model) {
-		List<Prodotto> prodotti = prodottoService.getProdotti();
+		List<Prodotto> prodotti = prodottoService.ordinaProdottiPerNome();
 		model.addAttribute("prodotti", prodotti);
-		List<Categoria> categorie = categoriaService.getCategorie();
-		model.addAttribute("categorie", categorie);
-		List<Sottocategoria> sottocategorie = sottocategoriaService.getSottocategoria();
-		model.addAttribute("sottocategorie", sottocategorie);
 		return "formprova";
 	}	
 	
