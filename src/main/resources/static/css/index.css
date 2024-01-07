@@ -8,7 +8,7 @@
 }
 
 /* pulsanti in alto */
-.btn-outline-secondary {
+.btn-group-toggle {
   /* padding-left: 30px; */
   border: none;
 }
@@ -208,22 +208,32 @@ footer {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 /* .card img {
 
 } */
 
-.container {
-  padding: 0 16px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+.dimensione {
+  transition-duration: 1s;
+  -ms-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-property: transform;
+  -ms-transition-property: -ms-transform;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  overflow:hidden;
+  }
+  .dimensione:hover {
+  -ms-transform: scale(1.1,1.1);
+  -webkit-transform:scale(1.1,1.1);
+  -moz-transform: scale(1.1,1.1);
+  -o-transform: scale(1.1,1.1);
+  }
 
 .title {
   color: grey;
