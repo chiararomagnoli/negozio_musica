@@ -4,6 +4,17 @@
 .logo img {
   height: 60px; 
   margin-left: 35px;
+  margin-top: 20px;
+}
+
+/* pulsanti in alto */
+.btn-outline-secondary {
+  /* padding-left: 30px; */
+  border: none;
+}
+
+.btn-group-toggle .btn {
+  color: #EEEEEE;
 }
 
 .navbar { 
@@ -120,7 +131,7 @@ footer {
     max-width: 100%;
   } */
 
-  .carousel-item {
+  #demo .carousel-item {
     height: 375px;
   }
 
@@ -146,13 +157,14 @@ footer {
 
   /* REGOLE GENERALI */
   .divisore {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-left: 80px;
     height:10px;
     width:80%;
   }
 
-  /* EVIDENZA */
+  /* ----- ANIMAZIONE CARD ------ */
+
   /*testo*/
   .line {
     text-align: center;
@@ -165,12 +177,11 @@ footer {
   color: #797979;
 }
 
-  .slider-container {
-    width: 90%;
-    margin: 1px 1px 1px 30px;
-    overflow: hidden;
-    background-color: #8F43EE;
-    padding: 20px;
+.slider-container {
+  width: 90%;
+  margin: 1px 1px 1px 30px;
+  overflow: hidden;
+  padding: 10px;
 }
 
 .slider {
@@ -183,7 +194,7 @@ footer {
 /* Three columns side by side */
 .column {
   float: left;
-  width: 33.3%;
+  width: 25%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
@@ -224,24 +235,24 @@ footer {
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: #000;
+  background-color: #413543;
   text-align: center;
   cursor: pointer;
   width: 40%;
 }
 
 .button:hover {
-  background-color: #555;
+  background-color: #8F43EE;
 }
 
 .bottoni {
-  margin-top:20px;
+  margin-top:10px;
   text-align: center;
 }
 
 .prev, .next {
   transform: translateY(-50%);
-  background-color: #8F43EE;
+  background-color: #413543;
   color: white;
   border: none;
   padding: 1px 10px;
@@ -253,6 +264,8 @@ footer {
   /* USATO */
 
 /* ---- RESPONSIVE ---- */
+
+
 
   
 
