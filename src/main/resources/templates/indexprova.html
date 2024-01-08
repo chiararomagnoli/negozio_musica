@@ -22,7 +22,7 @@
                     <span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span> <!-- sconto -->
                 </span>
                 <span th:unless="${prodotto.sconto ne 0}" th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></span>
-                <span><a th:href="@{/dettaglioprova/{id}(id=${prodotto.idProdotto})}" class="btn btn-primary">Dettagli</a></span>
+                <span><a th:href="@{/dettaglio(id=${prodotto.idProdotto})}" class="btn btn-primary">Dettagli</a></span>
             </li>
         </ul>
 	</div>
@@ -43,7 +43,7 @@
                     <span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span> <!-- sconto -->
                 </span>
                 <span th:unless="${prodotto.sconto ne 0}" th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></span>
-                <span><a th:href="@{/dettaglioprova/{id}(id=${prodotto.idProdotto})}" class="btn btn-primary">Dettagli</a></span>
+                <span><a th:href="@{/dettaglio(id=${prodotto.idProdotto})}" class="btn btn-primary">Dettagli</a></span>
             </li>
         </ul>
 	</div>
@@ -64,7 +64,7 @@
                     	<span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span> <!-- sconto -->
                     </span>
                 <span th:unless="${prodotto.sconto ne 0}" th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></span>
-                <span><a th:href="@{/dettaglioprova/{id}(id=${prodotto.idProdotto})}" class="btn btn-primary">Dettagli</a></span>
+                <span><a th:href="@{/dettaglio(id=${prodotto.idProdotto})}" class="btn btn-primary">Dettagli</a></span>
             </li>
         </ul>
 	</div>
