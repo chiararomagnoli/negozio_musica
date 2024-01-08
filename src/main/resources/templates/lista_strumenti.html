@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css" />
+    <title>Music.toString() - Lista Strumenti</title>
+    <link rel="icon" type="image/x-icon" href="icona-browser.png"> <!-- icona browser -->
+    <!-- Script Bootstrap (assicurati di includerlo) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+   <!-- Logo e pulsanti -->
+  <div class="container-fluid bg-dark p-2 mx-auto">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-8 logo">
+          <img src="logo.png" alt="Logo">
+        </div>
+        <div class="col-md-4 mx-auto">
+          <!-- Pulsanti -->
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <button class="btn btn-outline-secondary mr-2">Accedi</button>
+            <button class="btn btn-outline-secondary mr-2">Ricerca</button>
+            <!-- <button class="btn btn-outline-secondary">Carrello</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div id="titolo">Strumenti Disponibili</div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark container-fluid">
+    <!-- Pulsante per mobile -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Elementi della navbar -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="../templates/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Chitarre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tastiere</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Archi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Percussioni</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Fiati</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Usato</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Novità</a>
+          </li>
+
+        </ul>
+    </div>
+  </nav>
+    
+
+
+    <!-- Contenuto principale -->
+    <div class="container mt-4">
+        <!-- Form di ricerca -->
+        <form class="mb-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Ricerca per tipologia">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Ricerca per marca">
+                </div>
+                <div class="col-md-2">
+                    <select class="form-control">
+                        <option>Nuovo</option>
+                        <option>Usato</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary btn-block btn-dark">Cerca</button>
+                </div>
+            </div>
+        </form>
+
+        <!--CARD UNO-->
+        <div class="row">
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                   <img src="8.png" alt="" class="card-img card-img ml-4"> 
+                    
+                </div>
+                <div class="text-center">
+                    <h2 class="name">'Bontempi 4480 Mini Keyboard'</h2>
+                    <p class="description">198,00 €</p>
+                    <button class="button" class="btn btn-primary ">Dettagli</button>
+                </div>
+            </div>
+        
+
+
+
+            <!--CARD DUE-->
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <img src="14.png" alt="" class="card-img card-img ml-4"> 
+                    
+                </div>
+                <div class="text-center">
+                    <h2 class="name">'Bruck Cello 3/4 HDC01 Laminato completo di arco e borsa</h2>
+                    <p class="description">235,00 €</p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+            </div>
+
+            <!--CARD TRE-->
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                     <img src="10.png" alt="" class="card-img card-img ml-4"> 
+                    
+                </div>
+                <div class="text-center">
+                    <h2 class="name">'Carry-On 88 tastiera pieghevole'</h2>
+                    <p class="description">498,00 €</p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+                </div>
+            
+        </div>
+        <!--CARD QUATTRO-->
+        <div class="row">
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <img src="7.png" alt="" class="card-img card-img ml-4">
+                    
+                </div>
+                <div class="text-center">
+                    <h2 class="name">'Carry-On BC2301 E11 Clarinetto Piccolo in Mib Ebano'</h2>
+                    <p class="description">370,00 €</p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+            </div>
+
+
+            <!--CARD 5-->
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <img src="1.png" alt="" class="card-img ml-4">
+                    
+                </div>
+                <div class="text-center">
+                    <h2 class="name">'Eko CS-10 Chitarra Classica Ambra Natural'</h2>
+                    <p class="description">499,00 €</p>
+
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+            </div>
+
+            <!--CARD 6-->
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <img src="16.png" alt="" class="card-img ml-4">
+                    
+                </div>
+                <div class="text-center">
+                    <h2 class="name">'Eko Drums ED-200 Drum kit Metallic Blue - 5 pezzi'</h2>
+                    <p class="description">549,00 €</p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+            </div>
+        </div>
+    
+
+        <!--CARD 7-->
+        <div class="row">
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <img src="2.png" alt="" class="card-img ml-4">
+                    
+                </div>
+                <div class="text-center">
+                    <h2 class="name">'Eko Guitars NXT D Blue Sunburst'</h2>
+                    <p class="description">442,00 € </p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+            </div>
+
+
+            <!--CARD 8-->
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    
+                        <img src="5.png" alt="" class="card-img ml-4">
+                    
+                </div>
+                <div class="text-center">
+                    <h2 class="name">' Huadong Kit Batteria Elettronica 7 Pad con Modulo Sonoro e Pelli Mesh'</h2>
+                    <p class="description">785,00 €</p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+
+                </div>
+            </div>
+
+            <!--CARD 9-->
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    
+                        <img src="18.png" alt="" class="card-img card-img ml-4">
+                    </div>
+
+                    <div class="text-center">
+                        <h2 class="name">'Proel CCR3882-GSS-Bb-L Cornetta in Sib Laccata'</h2>
+                        <p class="description">271,00 €</p>
+                        <button class="button" class="btn btn-primary">Dettagli</button>
+                    </div>
+                </div>
+            </div>
+        
+        <!--CARD 10-->
+        <div class="row">
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <img src="4.png" alt="" class="card-img card-img ml-4">
+                    </div>
+                
+                <div class="text-center">
+                    <h2 class="name">'Proel CS-10 Chitarra classica finitura Blue'</h2>
+                    <p class="description">885,00 €</p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+            </div>
+
+
+            <!--CARD 11-->
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    
+                        <img src="11.png" alt="" class="card-img card-img ml-4">
+                    </div>
+                    <div class="text-center">
+                        <h2 class="name">'Sauter Accento Pianoforte verticale by Peter Maly'</h2>
+                        <p class="description">2.780,00 €</p>
+                        <button class="button" class="btn btn-primary">Dettagli</button>
+                    
+                </div>
+            </div>
+            <!--CARD 12-->
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <img src="17.png" alt="" class="card-img ml-4">
+                    
+                </div>
+                <div class="text-center">
+                    <h2 class="name">'Stentor JDK516 MR Batteria Junior 5 pezzi Completa'</h2>
+                    <p class="description">902,18 €</p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+            </div>
+        </div>
+        <!--CARD 13-->
+        <div class="row">
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <img src="13.png" alt="" class="card-img card-img ml-4">
+                    </div>
+                
+                <div class="text-center">
+                    <h2 class="name">'STENTOR Violino Student 1 3/4 Settato'</h2>
+                    <p class="description">123,00 €</p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+            </div>
+
+
+            <!--CARD 14-->
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <img src="15.png" alt="" class="card-img card-img ml-4">
+                    </div>
+                
+                <div class="text-center">
+                    <h2 class="name">'VHIENNA MEISTER VH CES12'</h2>
+                    <p class="description">535,00 €</p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+            </div>
+
+            <!--CARD 15-->
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    
+                        <img src="12.png" alt="" class="card-img card-img ml-4">
+                    </div>
+                
+                <div class="text-center">
+                    <h2 class="name">'VHIENNA MEISTER VH VOB 4/4 Violino' </h2>
+                    <p class="description">195,00 €</p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+            </div>
+        </div>
+        <!--CARD 16-->
+        <div class="row">
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <img src="9.png" alt="" class="card-img card-img ml-4">
+                    </div>
+                
+                <div class="text-center">
+                    <h2 class="name">'Yamaha PSRF52 Tastiera Portatile 61 Tasti'</h2>
+                    <p class="description">390,00 €</p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+            </div>
+
+
+            <!--CARD 17-->
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <img src="3.png" alt="" class="card-img ml-4">
+                    </div>
+                
+                <div class="text-center">
+                    <h2 class="name">'Yamaha SG1820A CHITARRA ELETTRICA CON CASE BLACK'</h2>
+                    <p class="description">790,00 €</p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+            </div>
+
+            <!--CARD 18-->
+            <div class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <img src="6.png" alt="" class="card-img card-img ml-4">
+                    </div>
+                
+                <div class="text-center">
+                    <h2 class="name">'Yamaha YBS480 Sax Baritono Discendente al La Laccato'</h2>
+                    <p class="description">1.679,00 €</p>
+                    <button class="button" class="btn btn-primary">Dettagli</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- footer -->
+    <footer class="container-fluid mt-2 d-flex text-white">
+        <div class="row piede mx-auto">
+            <div class="col-md-3 piede_item">
+                <h5>INFORMAZIONI</h5>
+                <ul>
+                    <li><a href="#">Chi siamo</a></li>
+                    <li><a href="#">Dove siamo</a></li>
+                    <li><a href="#">Orari</a></li>
+                    <li><a href="#">Contatti</a></li>
+                    <li><a href="#">Marche</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 piede_item">
+                <h5>NAVIGAZIONE</h5>
+                <ul>
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="#">Ricerca</a></li>
+                    <li><a href="#">Novità</a></li>
+                    <li><a href="#">Mercatino dell'usato</a></li>
+                    <li><a href="#">Promozioni</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 piede_item">
+                <h5>ACQUISTI</h5>
+                <ul>
+                    <li><a href="#">Resi</a></li>
+                    <li><a href="#">Rimborsi</a></li>
+                    <li><a href="#">Assistenza</a></li>
+                    <li><a href="#">Spedizioni</a></li>
+                    <li><a href="#">Account</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 piede_item">
+                <h5>SOCIAL</h5>
+                <div class="row">
+                    <div class="col-md-12 social-icons">
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook" /></a>
+                        <a href="#"><img src="instagram-icon.png" alt="Instagram" /></a>
+                        <a href="#"><img src="youtube-icon.png" alt="YouTube" /></a>
+                        <a href="#"><img src="tiktok-icon.png" alt="TikTok" /></a>
+                    </div>
+                </div>
+            </div>
+
+    </footer>
+</body>
+
+</html>
