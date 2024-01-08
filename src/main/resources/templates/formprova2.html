@@ -26,6 +26,7 @@
 								<th th:text="'Immagine'"></th>
 								<th th:text="'Prezzo'"></th>
 								<th th:text="'Disponibilità'"></th>
+								<th th:text="'Dettaglio'"></th>
 								<th></th>
 							</tr>
 						</thead>
@@ -35,6 +36,7 @@
 								<td ><img th:src="@{'/images/'+${p.idProdotto}+'.png'}" height="100px"></td>
 								<td th:text="'Euro ' + ${#numbers.formatDecimal(p.prezzo,0,'POINT',2,'COMMA')}"></td>
 								<td th:text="${p.disponibilita}"></td>
+								<td><a th:href="@{/dettaglio(id=${p.idProdotto})}">Link</a></td>
 							</tr>
 						</tbody>
 					</table>
