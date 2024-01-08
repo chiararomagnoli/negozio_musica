@@ -36,7 +36,7 @@
                     <td th:text="${prodotto.marca.nomeMarca}"></td>
                    <td th:if="${prodotto != null}" th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></td> 
                    <td th:text="${prodotto.sconto}"></td>
-                    <td th:text="${prodotto.descrizione}"></td>
+                    <td th:utext="${#strings.replace(prodotto.descrizione, '\n', '<br>')}"></td>
                    
                 </tr>
             </tbody>
