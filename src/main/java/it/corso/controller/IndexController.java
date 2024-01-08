@@ -36,7 +36,7 @@ public class IndexController {
 		
 		List<Prodotto> prodottiScontati = new ArrayList<>();
 		for(Prodotto p:prodotti) {
-			if(p.getSconto()!=0) {
+			if(p.getSconto()!=0 && !prodottiScontati.contains(p)) {
 				prodottiScontati.addAll(prodottoService.trovamiProdottiPerSconto(p.getSconto()));
 				}
 		}

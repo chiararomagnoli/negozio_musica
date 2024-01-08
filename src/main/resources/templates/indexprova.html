@@ -6,24 +6,69 @@
 </head>
 <body>
 
-	<div th:if="${not #lists.isEmpty(prodotti)}">
-		<h2>Ultimi prodotti inseriti</h2>
+	<div>
+		<h2>Nuovi arrivi</h2>
 		<ul>
-			<li th:each="prodotto : ${prodotti}" th:if="${prodotto.id gt #lists.size(prodotti) - 5}">
+			<li th:each="prodotto : ${prodotti}" th:if="${prodotto.idProdotto gt #lists.size(prodotti) - 5}"> <!-- limite a 5 -->
+				<img th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" height="100px">
 				<p th:text="${prodotto.nomeProdotto}"></p>
 				<p th:text="${prodotto.descrizione}"></p>
-				<p th:text="'Disponibilità ' + ${prodotto.disponibilita}"></p>
+				<p th:text="'Disponibilità: ' + ${prodotto.disponibilita}"></p>
 				
 				<!-- solo se sconto è diverso da 0, allora mi scrive barrato il prezzo e poi non barrato il prezzo con lo sconto applicato, e la percentuale di sconto; altrimenti mi scrive il prezzo e basta -->
 				<span th:if="${prodotto.sconto ne 0}">
-                    <del th:text="${prodotto.prezzo + '€'}"></del>
-                    <span th:text="${prodotto.prezzo - (prodotto.prezzo * prodotto.sconto)} + '€'"></span>
-                    <span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span>
-                    
+                    <del th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></del> <!-- prezzo barrato -->
+                   	<span th:text="${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')} + '€'"></span>  <!-- prezzo aggiornato -->
+                    <span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span> <!-- sconto -->
                 </span>
-                <span th:unless="${prodotto.sconto ne 0}" th:text="${prodotto.prezzo + '€'}"></span>
+                <span th:unless="${prodotto.sconto ne 0}" th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></span>
+                <span><a th:href="@{/dettaglioprova/{id}(id=${prodotto.idProdotto})}" class="btn btn-primary">Dettagli</a></span>
             </li>
         </ul>
 	</div>
+	
+	
+	<div th:if="${not #lists.isEmpty(prodotti)}"> <!-- se non ci sono prodotti scontati, il div non comparirà del tutto -->
+		<h2>In evidenza (prodotti scontati)</h2>
+		<ul>
+			<li th:each="prodotto : ${prodottiScontati}">
+				<img th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" height="100px">
+				<p th:text="${prodotto.nomeProdotto}"></p>
+				<p th:text="${prodotto.descrizione}"></p>
+				<p th:text="'Disponibilità: ' + ${prodotto.disponibilita}"></p>
+				
+				<span th:if="${prodotto.sconto ne 0}">
+                	<del th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></del> <!-- prezzo barrato -->
+                   	<span th:text="${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')} + '€'"></span>  <!-- prezzo aggiornato -->
+                    <span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span> <!-- sconto -->
+                </span>
+                <span th:unless="${prodotto.sconto ne 0}" th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></span>
+                <span><a th:href="@{/dettaglioprova/{id}(id=${prodotto.idProdotto})}" class="btn btn-primary">Dettagli</a></span>
+            </li>
+        </ul>
+	</div>
+	
+	
+	<div th:if="${not #lists.isEmpty(prodotti)}"> <!-- se non ci sono prodotti scontati, il div non comparirà del tutto -->
+		<h2>Mercatino dell'usato</h2>
+		<ul>
+			<li th:each="prodotto : ${prodottiUsati}">
+				<img th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" height="100px">
+				<p th:text="${prodotto.nomeProdotto}"></p>
+				<p th:text="${prodotto.descrizione}"></p>
+				<p th:text="'Disponibilità: ' + ${prodotto.disponibilita}"></p>
+				<!-- gestione sconto -->
+					<span th:if="${prodotto.sconto ne 0}">
+                    	<del th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></del> <!-- prezzo barrato -->
+                   		<span th:text="${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')} + '€'"></span>  <!-- prezzo aggiornato -->
+                    	<span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span> <!-- sconto -->
+                    </span>
+                <span th:unless="${prodotto.sconto ne 0}" th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></span>
+                <span><a th:href="@{/dettaglioprova/{id}(id=${prodotto.idProdotto})}" class="btn btn-primary">Dettagli</a></span>
+            </li>
+        </ul>
+	</div>
+	
+	
 </body>
 </html>
