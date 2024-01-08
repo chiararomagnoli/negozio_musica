@@ -35,17 +35,20 @@ public interface ProdottoDao extends CrudRepository<Prodotto, Integer> {
 	List<Prodotto> findAllByFkMarcaAndFkCategoria(int idMarca, int idCategoria);
 
 	@Query(value = "SELECT * FROM prodotti p WHERE "
+			+ "(:fkMarca=0 OR :fkMarca = p.fk_marca) "
+	        + "AND "
 	        + "(:fkCategoria=0 OR :fkCategoria = p.fk_categoria) "
 	        + "AND "
-	        + "(:fkMarca=0 OR :fkMarca = p.fk_marca) "
+	        + "(:fkSottocategoria=0 OR :fkSottocategoria = p.fk_sottocategoria) "
 	        + "AND "
 	        + "(:condizione IS NULL OR  :condizione = p.condizione) "
 	        + "OR "
-	        + "(:fkCategoria=0 AND :fkMarca=0 AND :condizione IS NULL)",
+	        + "(:fkCategoria=0 AND :fkMarca=0 AND :fkSottocategoria=0 AND :condizione IS NULL)",
 	        nativeQuery = true)
 	List<Prodotto> find(
 			@Param("fkMarca") int fkMarca,
 	        @Param("fkCategoria") int fkCategoria,
+	        @Param("fkSottocategoria") int fkSottocategoria,
 	        @Param("condizione") String condizione
 	);
 

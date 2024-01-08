@@ -34,11 +34,11 @@ public class Sottocategoria {
 		this.categoria = categoria;
 	}
 
-	public int getId() {
+	public int getIdSottocategoria() {
 		return idSottocategoria;
 	}
 
-	public void setId(int idSottocategoria) {
+	public void setIdSottocategoria(int idSottocategoria) {
 		this.idSottocategoria = idSottocategoria;
 	}
 

@@ -66,7 +66,7 @@ public class ProdottoServiceImpl implements ProdottoService {
 	}
 
 	@Override
-	public List<Prodotto> getProdotti(int idMarca, int idCategoria, String condizione) {
+	public List<Prodotto> getProdotti(int idMarca, int idCategoria, int idSottocategoria, String condizione) {
 		List<Prodotto> risultati=new ArrayList<>();
 		/*if(idMarca==0 && idCategoria!=0 && condizione!=null && !condizione.isEmpty()) {
 			risultati=prodottoDao.findAllByCondizioneAndFkCategoria(condizione, idCategoria);
@@ -85,7 +85,7 @@ public class ProdottoServiceImpl implements ProdottoService {
 		}else if(idMarca==0 && idCategoria==0 && condizione==null) {
 			risultati=(List<Prodotto>) prodottoDao.findAll();
 		}*/
-		risultati=prodottoDao.find(idMarca, idCategoria, condizione);
+		risultati=prodottoDao.find(idMarca, idCategoria, idSottocategoria, condizione);
 		
 
 		return risultati;

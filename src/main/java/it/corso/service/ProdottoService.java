@@ -22,7 +22,7 @@ public interface ProdottoService {
 	List<Prodotto> cercaProdottiPerNomeCategoria(String nomeCategoria);
 	
 	//Prova
-	List<Prodotto> getProdotti(int idMarca, int idCategoria, String condizione);
+	List<Prodotto> getProdotti(int idMarca, int idCategoria, int idSottocategoria, String condizione);
 
 
 }
