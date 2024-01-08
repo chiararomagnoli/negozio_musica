@@ -16,6 +16,7 @@ public class Prodotto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id_prodotto")
 	private int idProdotto;
 	
 	@Column(name = "nome_prodotto")
@@ -34,20 +35,62 @@ public class Prodotto {
 	private double sconto;
 	
 	@ManyToOne(cascade = CascadeType.REFRESH)
-	@JoinColumn(name = "fk_categoria", referencedColumnName = "idCategoria")
+	@JoinColumn(name = "fk_categoria", referencedColumnName = "id_categoria")
 	private Categoria categoria;
 	
+	@Column(name="fk_categoria", insertable=false, updatable=false)
+	private int fkCategoria;
+	
 	@ManyToOne(cascade = CascadeType.REFRESH)
-	@JoinColumn(name = "fk_sottocategoria", referencedColumnName = "idSottocategoria")
+	@JoinColumn(name = "fk_sottocategoria", referencedColumnName = "id_sottocategoria")
 	private Sottocategoria sottocategoria;
 	
+	@Column(name="fk_sottocategoria", insertable=false, updatable=false)
+	private int fkSottocategoria;
+	
 	@ManyToOne(cascade = CascadeType.REFRESH)
-	@JoinColumn(name = "fk_marca", referencedColumnName = "idMarca")
+	@JoinColumn(name = "fk_marca", referencedColumnName = "id_marca")
 	private Marca marca;
 	
+	@Column(name="fk_marca", insertable=false, updatable=false)
+	private int fkMarca;
 	
 	@Column(name = "condizione")
 	private String condizione;
+	
+	
+	
+	public int getFkSottocategoria() {
+		return fkSottocategoria;
+	}
+
+
+	public void setFkSottocategoria(int fkSottocategoria) {
+		this.fkSottocategoria = fkSottocategoria;
+	}
+
+
+	public int getFkCategoria() {
+		return fkCategoria;
+	}
+
+
+	public void setFkCategoria(int fkCategoria) {
+		this.fkCategoria = fkCategoria;
+	}
+
+
+	public int getFkMarca() {
+		return fkMarca;
+	}
+
+
+	public void setFkMarca(int fkMarca) {
+		this.fkMarca = fkMarca;
+	}
+
+
+	
 	
 	
 	

@@ -16,13 +16,14 @@ public class Sottocategoria {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id_sottocategoria")
 	private  int idSottocategoria;
 	
 	@Column(name = "nome_sottocategoria")
 	private String nomeSottocategoria;
 	
 	@ManyToOne(cascade = CascadeType.REFRESH)
-	@JoinColumn(name = "fk_id_categoria", referencedColumnName = "idCategoria")
+	@JoinColumn(name = "fk_id_categoria", referencedColumnName = "id_categoria")
 	private Categoria categoria;
 	
 	public Categoria getCategoria() {

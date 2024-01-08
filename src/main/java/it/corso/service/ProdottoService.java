@@ -20,5 +20,9 @@ public interface ProdottoService {
 	//metodi utili per il form di ricerca
 	List<Prodotto> cercaProdottiPerNome(String nome);
 	List<Prodotto> cercaProdottiPerNomeCategoria(String nomeCategoria);
+	
+	//Prova
+	List<Prodotto> getProdotti(int idMarca, int idCategoria, String condizione);
+
 
 }

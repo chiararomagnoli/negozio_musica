@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.corso.model.Categoria;
+import it.corso.model.Marca;
 import it.corso.model.Prodotto;
 import it.corso.model.Sottocategoria;
 import it.corso.service.CategoriaService;
+import it.corso.service.MarcaService;
 import it.corso.service.ProdottoService;
 import it.corso.service.SottocategoriaService;
 
@@ -29,38 +31,39 @@ public class FormController {
 	@Autowired
 	private SottocategoriaService sottocategoriaService;
 	
+	@Autowired
+	private MarcaService marcaService;
+
+	
 	@GetMapping
 	public String getPage(Model model) {
 		List<Prodotto> prodotti = prodottoService.ordinaProdottiPerNome();
 		model.addAttribute("prodotti", prodotti);
-		return "formprova";
-	}	
-	
-	@GetMapping("/cerca")
-    public String cercaProdottiPerNome(@RequestParam("nome") String nome, 
-    		@RequestParam(name = "nomeCategoria", required = false) String nomeCategoria, 
-    		Model model) {
-        List<Prodotto> risultati;
-        
-        if ((nome != null && !nome.isEmpty()) || (nomeCategoria != null && !nomeCategoria.isEmpty())) {
-            // Se è stato specificato un nome, ottieni i prodotti per quel nome
-            risultati = prodottoService.cercaProdottiPerNome(nome);
-            // Se è stato specificato un nome di categoria, ottieni i prodotti per quel nome di categoria
-            if (nomeCategoria != null && !nomeCategoria.isEmpty()) {
-                List<Prodotto> risultatiCategoria = prodottoService.cercaProdottiPerNomeCategoria(nomeCategoria);
-                risultati.addAll(risultatiCategoria); // Aggiungi i risultati della ricerca per categoria
-            }
-        } else {
-            // Se non è stato specificato un nome di categoria, ottieni tutti i prodotti
-            risultati = prodottoService.getProdotti();
-        }
-        model.addAttribute("risultati", risultati);
-        	    
-	    List<Categoria> categorie = categoriaService.getCategorie();
+		List<Categoria> categorie = categoriaService.getCategorie();
 	    model.addAttribute("categorie", categorie);
 	    List<Sottocategoria> sottocategorie = sottocategoriaService.getSottocategoria();
 	    model.addAttribute("sottocategorie", sottocategorie);
-        return "formprova";
-    }
+	    List<Marca> marche = marcaService.getMarche();
+	    model.addAttribute("marche", marche);
+		return "formprova2";
+	}	
+	
+	@GetMapping("/cerca")
+    public String formManager(
+    		@RequestParam(name="marca", required=false) Integer idMarca, 
+    		@RequestParam(name = "categoria", required = false) Integer idCategoria,
+    		@RequestParam(name="condizione", required=false) String condizione,
+    		Model model) {
+        List<Prodotto> risultati=prodottoService.getProdotti(
+        		idMarca==null? 0: idMarca.intValue(), idCategoria==null? 0:idCategoria.intValue(), condizione);
+        model.addAttribute("prodotti", risultati);
+        List<Categoria> categorie = categoriaService.getCategorie();
+	    model.addAttribute("categorie", categorie);
+	    List<Sottocategoria> sottocategorie = sottocategoriaService.getSottocategoria();
+	    model.addAttribute("sottocategorie", sottocategorie);
+	    List<Marca> marche = marcaService.getMarche();
+	    model.addAttribute("marche", marche);
+        return "formprova2";
+	}
 	
 }
