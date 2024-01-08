@@ -2,7 +2,6 @@ package it.corso.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,7 +68,7 @@ public class ProdottoServiceImpl implements ProdottoService {
 	@Override
 	public List<Prodotto> getProdotti(int idMarca, int idCategoria, String condizione) {
 		List<Prodotto> risultati=new ArrayList<>();
-		if(idMarca==0 && idCategoria!=0 && condizione!=null && !condizione.isEmpty()) {
+		/*if(idMarca==0 && idCategoria!=0 && condizione!=null && !condizione.isEmpty()) {
 			risultati=prodottoDao.findAllByCondizioneAndFkCategoria(condizione, idCategoria);
 		}else if(idMarca==0 && idCategoria==0 && condizione!=null && !condizione.isEmpty()) {
 			risultati=prodottoDao.findAllByCondizione(condizione);
@@ -85,8 +84,8 @@ public class ProdottoServiceImpl implements ProdottoService {
 			risultati=prodottoDao.findAllByFkMarcaAndFkCategoria(idMarca, idCategoria);
 		}else if(idMarca==0 && idCategoria==0 && condizione==null) {
 			risultati=(List<Prodotto>) prodottoDao.findAll();
-		}
-		//risultati=prodottoDao.find(idMarca, idCategoria, condizione);
+		}*/
+		risultati=prodottoDao.find(idMarca, idCategoria, condizione);
 		
 
 		return risultati;
