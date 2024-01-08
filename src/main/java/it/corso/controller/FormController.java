@@ -52,10 +52,14 @@ public class FormController {
     public String formManager(
     		@RequestParam(name="marca", required=false) Integer idMarca, 
     		@RequestParam(name = "categoria", required = false) Integer idCategoria,
+    		@RequestParam(name="sottocategoria", required=false) Integer idSottocategoria,
     		@RequestParam(name="condizione", required=false) String condizione,
     		Model model) {
         List<Prodotto> risultati=prodottoService.getProdotti(
-        		idMarca==null? 0: idMarca.intValue(), idCategoria==null? 0:idCategoria.intValue(), condizione);
+        		idMarca==null? 0: idMarca.intValue(), 
+        		idCategoria==null? 0:idCategoria.intValue(), 
+        		idSottocategoria==null? 0:idSottocategoria.intValue(), 
+        		condizione);
         model.addAttribute("prodotti", risultati);
         List<Categoria> categorie = categoriaService.getCategorie();
 	    model.addAttribute("categorie", categorie);

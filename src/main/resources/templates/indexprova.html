@@ -6,5 +6,24 @@
 </head>
 <body>
 
+	<div th:if="${not #lists.isEmpty(prodotti)}">
+		<h2>Ultimi prodotti inseriti</h2>
+		<ul>
+			<li th:each="prodotto : ${prodotti}" th:if="${prodotto.id gt #lists.size(prodotti) - 5}">
+				<p th:text="${prodotto.nomeProdotto}"></p>
+				<p th:text="${prodotto.descrizione}"></p>
+				<p th:text="'Disponibilità ' + ${prodotto.disponibilita}"></p>
+				
+				<!-- solo se sconto è diverso da 0, allora mi scrive barrato il prezzo e poi non barrato il prezzo con lo sconto applicato, e la percentuale di sconto; altrimenti mi scrive il prezzo e basta -->
+				<span th:if="${prodotto.sconto ne 0}">
+                    <del th:text="${prodotto.prezzo + '€'}"></del>
+                    <span th:text="${prodotto.prezzo - (prodotto.prezzo * prodotto.sconto)} + '€'"></span>
+                    <span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span>
+                    
+                </span>
+                <span th:unless="${prodotto.sconto ne 0}" th:text="${prodotto.prezzo + '€'}"></span>
+            </li>
+        </ul>
+	</div>
 </body>
 </html>

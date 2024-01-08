@@ -19,6 +19,7 @@ public class DettaglioController {
 	@Autowired
 	private ProdottoService prodottoService;
 	
+	
 	@GetMapping
 	public String getPage(@RequestParam(name="id", required=true) int id, Model model) {
 		List<Prodotto> prodotti = prodottoService.getProdotti();

@@ -94,12 +94,12 @@ public class Prodotto {
 	
 	
 	
-	public int getId() {
+	public int getIdProdotto() {
 		return idProdotto;
 	}
 
 
-	public void setId(int idProdotto) {
+	public void setIdProdotto(int idProdotto) {
 		this.idProdotto = idProdotto;
 	}
 
