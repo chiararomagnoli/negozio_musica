@@ -39,7 +39,7 @@ public interface ProdottoDao extends CrudRepository<Prodotto, Integer> {
 	        + "AND "
 	        + "(:fkMarca=0 OR :fkMarca = p.fk_marca) "
 	        + "AND "
-	        + "(:condizione IS NULL OR :condizione = p.condizione) "
+	        + "(:condizione IS NULL OR  :condizione = p.condizione) "
 	        + "OR "
 	        + "(:fkCategoria=0 AND :fkMarca=0 AND :condizione IS NULL)",
 	        nativeQuery = true)
