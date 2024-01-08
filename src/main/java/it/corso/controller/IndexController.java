@@ -24,10 +24,8 @@ public class IndexController {
 	public String getPage(Model model) {
 		
         List<Prodotto> prodotti = prodottoService.getProdotti();
-
-        // Ordino i prodotti per ID in ordine decrescente (va bene qui o lo metto in prodottoService?)
-        prodotti.sort(Comparator.comparingLong(Prodotto::getId).reversed());
-        
+        // Ordino i prodotti per ID in ordine decrescente
+        prodotti.sort(Comparator.comparingLong(Prodotto::getIdProdotto).reversed());
         // aggiungo alla model i prodotti già ordinati
         model.addAttribute("prodotti", prodotti);
 		
@@ -39,7 +37,7 @@ public class IndexController {
 		List<Prodotto> prodottiScontati = new ArrayList<>();
 		for(Prodotto p:prodotti) {
 			if(p.getSconto()!=0) {
-				prodottiScontati = prodottoService.trovamiProdottiPerSconto(p.getSconto());
+				prodottiScontati.addAll(prodottoService.trovamiProdottiPerSconto(p.getSconto()));
 				}
 		}
 		model.addAttribute("prodottiScontati", prodottiScontati);
