@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Dettagli Prodotto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link th:href="@{css/style.css}" rel="stylesheet">
 </head>
 <body>
-
+    <div class="container mt-5">
+        <h2>Dettagli Prodotto</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Prodotto</th>
+                    <th>Disponibilità</th>
+                    <th>Marca</th>
+                    <th>Prezzo</th>
+                    <th>Sconto</th>
+                    <th>Descrizione</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                    <td th:text="${prodotto.idProdotto}"></td>
+                    <td th:text="${prodotto.nomeProdotto}"></td> 
+                    <td th:text="${prodotto.disponibilita}"></td>
+                    <td th:text="${prodotto.marca.nomeMarca}"></td>
+                    <td th:text="${prodotto.prezzo}"></td>
+                    <td th:text="${prodotto.sconto}"></td>
+                    <td th:text="${prodotto.descrizione}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/}" class="btn btn-primary">Torna alla Homepage</a>
+    </div>
 </body>
 </html>
