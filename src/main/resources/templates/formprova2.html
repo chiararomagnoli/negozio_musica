@@ -23,7 +23,7 @@
 						<thead>
 							<tr>
 								<th th:text="'Nome'"></th>
-								<th th:text="'Descrizione'"></th>
+								<th th:text="'Immagine'"></th>
 								<th th:text="'Prezzo'"></th>
 								<th th:text="'Disponibilità'"></th>
 								<th></th>
@@ -32,7 +32,7 @@
 						<tbody>
 							<tr th:each="p : ${prodotti}">
 								<td th:text="${p.nomeProdotto}"></td>
-								<td th:text="${p.descrizione}"></td>
+								<td ><img th:src="@{'/images/'+${p.idProdotto}+'.png'}" height="100px"></td>
 								<td th:text="'Euro ' + ${#numbers.formatDecimal(p.prezzo,0,'POINT',2,'COMMA')}"></td>
 								<td th:text="${p.disponibilita}"></td>
 							</tr>

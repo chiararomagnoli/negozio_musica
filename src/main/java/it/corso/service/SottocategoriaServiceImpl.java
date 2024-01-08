@@ -39,4 +39,9 @@ public class SottocategoriaServiceImpl implements SottocategoriaService
 		
 	}
 
+	@Override
+	public List<Sottocategoria> getSottocategoriaByIdCategoria(int idCategoria) {
+		return (List<Sottocategoria>) sottocategoriaDao.findAllByCategoriaIdCategoria(idCategoria);
+	}
+
 }

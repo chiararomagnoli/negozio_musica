@@ -11,4 +11,7 @@ public interface SottocategoriaService {
 	List<Sottocategoria> getSottocategoria();
 	void cancellaCliente(Sottocategoria sottocategoria);
 	
+	//trovami le sottocategorie per idCategoria
+	List<Sottocategoria> getSottocategoriaByIdCategoria(int idCategoria);
+	
 }

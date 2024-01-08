@@ -63,7 +63,8 @@ public class FormController {
         model.addAttribute("prodotti", risultati);
         List<Categoria> categorie = categoriaService.getCategorie();
 	    model.addAttribute("categorie", categorie);
-	    List<Sottocategoria> sottocategorie = sottocategoriaService.getSottocategoria();
+	    
+	    List<Sottocategoria> sottocategorie = sottocategoriaService.getSottocategoriaByIdCategoria(idCategoria==null? 0:idCategoria.intValue());
 	    model.addAttribute("sottocategorie", sottocategorie);
 	    List<Marca> marche = marcaService.getMarche();
 	    model.addAttribute("marche", marche);
