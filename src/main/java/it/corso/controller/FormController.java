@@ -45,7 +45,7 @@ public class FormController {
 	    model.addAttribute("sottocategorie", sottocategorie);
 	    List<Marca> marche = marcaService.getMarche();
 	    model.addAttribute("marche", marche);
-		return "formprova2";
+		return "lista_strumenti";
 	}	
 	
 	@GetMapping("/cerca")
@@ -68,7 +68,7 @@ public class FormController {
 	    model.addAttribute("sottocategorie", sottocategorie);
 	    List<Marca> marche = marcaService.getMarche();
 	    model.addAttribute("marche", marche);
-        return "formprova2";
+        return "lista_strumenti";
 	}
 	
 }
