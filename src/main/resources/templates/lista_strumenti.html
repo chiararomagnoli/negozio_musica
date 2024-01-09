@@ -106,23 +106,23 @@
 
         <!--CARD UNO-->
         <div class="row">
-            <div class="card swiper-slide">
+            <div th:each="p : ${prodotti}" class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                   <img th:src="@{/images/8.png}" alt="" class="card-img card-img ml-4"> 
+                   <img th:src="@{'/images/'+${p.idProdotto}+'.png'}" alt="${p.nomeProdotto}" class="card-img card-img ml-4"> 
                     
                 </div>
                 <div class="text-center">
-                    <h2 class="name">'Bontempi 4480 Mini Keyboard'</h2>
-                    <p class="description">198,00 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
+                    <h2 th:text="${p.nomeProdotto}" class="name"></h2>
+                    <p class="description" th:text="'€ ' + ${#numbers.formatDecimal(p.prezzo,0,'POINT',2,'COMMA')}"></p>
+                    <a th:href="@{/dettaglio(id=${p.idProdotto})}"><button class="btn btn-outline-secondary mr-2 button ">Dettagli</button></a>
                 </div>
             </div>
         
 
 
 
-            <!--CARD DUE-->
+ <!--           CARD DUE
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -136,7 +136,7 @@
                 </div>
             </div>
 
-            <!--CARD TRE-->
+            CARD TRE
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -151,7 +151,7 @@
                 </div>
             
         </div>
-        <!--CARD QUATTRO-->
+        CARD QUATTRO
         <div class="row">
             <div class="card swiper-slide">
                 <div class="image-content">
@@ -167,7 +167,7 @@
             </div>
 
 
-            <!--CARD 5-->
+            CARD 5
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -182,7 +182,7 @@
                 </div>
             </div>
 
-            <!--CARD 6-->
+            CARD 6
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -198,7 +198,7 @@
         </div>
     
 
-        <!--CARD 7-->
+        CARD 7
         <div class="row">
             <div class="card swiper-slide">
                 <div class="image-content">
@@ -214,7 +214,7 @@
             </div>
 
 
-            <!--CARD 8-->
+            CARD 8
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -230,7 +230,7 @@
                 </div>
             </div>
 
-            <!--CARD 9-->
+            CARD 9
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -246,7 +246,7 @@
                 </div>
             </div>
         
-        <!--CARD 10-->
+        CARD 10
         <div class="row">
             <div class="card swiper-slide">
                 <div class="image-content">
@@ -262,7 +262,7 @@
             </div>
 
 
-            <!--CARD 11-->
+            CARD 11
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -276,7 +276,7 @@
                     
                 </div>
             </div>
-            <!--CARD 12-->
+            CARD 12
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -290,7 +290,7 @@
                 </div>
             </div>
         </div>
-        <!--CARD 13-->
+        CARD 13
         <div class="row">
             <div class="card swiper-slide">
                 <div class="image-content">
@@ -306,7 +306,7 @@
             </div>
 
 
-            <!--CARD 14-->
+            CARD 14
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -320,7 +320,7 @@
                 </div>
             </div>
 
-            <!--CARD 15-->
+            CARD 15
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -335,7 +335,7 @@
                 </div>
             </div>
         </div>
-        <!--CARD 16-->
+        CARD 16
         <div class="row">
             <div class="card swiper-slide">
                 <div class="image-content">
@@ -351,7 +351,7 @@
             </div>
 
 
-            <!--CARD 17-->
+            CARD 17
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -365,7 +365,7 @@
                 </div>
             </div>
 
-            <!--CARD 18-->
+            CARD 18
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -377,7 +377,7 @@
                     <p class="description">1.679,00 €</p>
                     <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
