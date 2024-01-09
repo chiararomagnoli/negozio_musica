@@ -101,30 +101,28 @@
     <div class="row">
         <div class="col-5">
         <!-- <img class="card-img-top" src="../static/images/1.png" alt="Chitarra classica Eko Ambra Natural"/> -->
-           <img th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" height="100px">  
+        <img class="card-img-top" th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" >  
         </div>
         <div class="col-7">
             <div class="card-body">
 				
-				<table>
+				
 					<!--<td><img th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" height="100px"></td> -->
-					 <td th:text="${prodotto.idProdotto}"></td>
-                    <td th:text="${prodotto.nomeProdotto}"></td> 
-                    <td th:text="${prodotto.disponibilita}"></td>
-                    <td th:text="${prodotto.marca.nomeMarca}"></td>
+					 <!--<td th:text="${prodotto.idProdotto}"></td> -->
+                   
                  <!--  <td th:if="${prodotto != null}" th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></td> -->
-                   <td th:text="${prodotto.sconto}"></td>
-                    <td th:utext="${#strings.replace(prodotto.descrizione, '\n', '<br>')}"></td>
-				</table>
-                <!--<h4 class="card-title">Eko CS-10 Chitarra Classica Ambra Natural</h4>
-                <h4>In sconto: 15%</h4>
-                <h5>Chitarra classica | Marca: Eko</h5>
-                <h5>Condizioni: Nuovo | Disponibilità: 12</h5> -->
+                   <!-- <td th:utext="${#strings.replace(prodotto.descrizione, '\n', '<br>')}"></td> -->
+				
+                <!--<h4 class="card-title">Eko CS-10 Chitarra Classica Ambra Natural</h4> -->
+                <h4 class="card-title" th:text="${prodotto.nomeProdotto}"></h4> 
+              <!--<p th:text="${prodotto.sconto}"></p> -->
+                <h5>Chitarra classica |  Marca: </h5><h5 th:text="${prodotto.marca.nomeMarca}"></h5>
+                <h5>Condizioni: Nuovo | Disponibilità: <h5 th:text="${prodotto.disponibilita}"></h5></h5> 
                 
-               <!-- <p>CS-10 Natural, tavola, fasce e fondo in Tiglio, Manico e tastiera in Betulla e finitura lucida. Chitarra classica di Eko Guitars della serie Studio dedicata a tutti coloro che intendono avvicinarsi per la prima volta a questo strumento.</p>-->
+                <p th:utext="${#strings.replace(prodotto.descrizione, '\n', '<br>')}"></p>
              
             </div>   
-            <div class="card-footer"><hr class="hr" /><div class="card-title lead"><th:if="${prodotto != null}" th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></div><a href="#" class="btn btn-lg btn-dark mt-3">Prenota</a></div>
+            <div class="card-footer"><hr class="hr" /><div class="card-title lead"><th:if="${prodotto != null}" th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></div><button class="btn btn-lg mt-3 button" >Prenota</a></div>
         </div>
       
     </div>
