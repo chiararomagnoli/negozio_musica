@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -8,13 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/lista.css" />
-    <title>Music.toString() - Lista Strumenti</title>
+    <link rel="stylesheet" href="css/lista.css" />
+    <title>Music.toString() | Lista Strumenti</title>
     <link rel="icon" type="image/x-icon" href="../static/images/icona-browser.png"> <!-- icona browser -->
     <!-- Script Bootstrap (assicurati di includerlo) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--<script src="js/index.js"></script>-->
 </head>
 
 <body>
@@ -23,7 +24,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-8 logo">
-          <img src="../static/images/logo.png" alt="Logo">
+          <img th:src="@{images/logo.png}" alt="Logo">
         </div>
         <div class="col-md-4 mx-auto">
           <!-- Pulsanti -->
@@ -108,7 +109,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                   <img src="../static/images/8.png" alt="" class="card-img card-img ml-4"> 
+                   <img th:src="@{/images/8.png}" alt="" class="card-img card-img ml-4"> 
                     
                 </div>
                 <div class="text-center">
