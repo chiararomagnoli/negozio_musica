@@ -120,7 +120,8 @@
             <div th:each="p : ${prodotti}" class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                   <img th:src="@{'/images/'+${p.idProdotto}+'.png'}" alt="${p.nomeProdotto}" class="card-img card-img ml-4"> 
+                   <a th:href="@{/dettaglio(id=${p.idProdotto})}"><img th:src="@{'/images/'+${p.idProdotto}+'.png'}" alt="${p.nomeProdotto}" class="card-img card-img ml-4"> 
+                    </a> 
                     
                 </div>
                 <div class="text-center">
