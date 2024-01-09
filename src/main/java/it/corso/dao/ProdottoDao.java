@@ -43,7 +43,8 @@ public interface ProdottoDao extends CrudRepository<Prodotto, Integer> {
 	        + "AND "
 	        + "(:condizione IS NULL OR  :condizione = p.condizione) "
 	        + "OR "
-	        + "(:fkCategoria=0 AND :fkMarca=0 AND :fkSottocategoria=0 AND :condizione IS NULL)",
+	        + "(:fkCategoria=0 AND :fkMarca=0 AND :fkSottocategoria=0 AND :condizione IS NULL)"
+	        + "ORDER BY p.nome_prodotto ASC",
 	        nativeQuery = true)
 	List<Prodotto> find(
 			@Param("fkMarca") int fkMarca,
