@@ -1,0 +1,224 @@
+/* PARTE DI HEADER E FOOTER IN COMUNE */
+
+  /* logo */
+  .logo img {
+    height: 60px; 
+    margin-left: 35px;
+    margin-top: 20px;
+  }
+  
+  /* pulsanti in alto */
+  .btn-group-toggle {
+    /* padding-left: 30px; */
+    border: none;
+  }
+  
+  .btn-group-toggle .btn {
+    color: #EEEEEE;
+  }
+  
+  .navbar { 
+    width: 100%;
+    margin: 0px auto;
+    padding: 2px;  
+  }
+  
+  .navbar-toggler-icon {
+      background-color: rgb(0, 0, 0);
+      padding: 10px;
+  }
+  
+  .navbar-brand {
+      border-right: 2px solid #2D2727;
+  }
+  
+  a.nav-link, a.navbar-brand {
+      font-family: 'RocknRoll One', sans-serif;
+      color: #F0EB8D;          
+      padding: 10px 5px;
+      margin-right: 60px;
+  }
+  
+  .navbar-brand img {
+    margin-right: 15px; 
+  }
+  
+  .navbar-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navbar-nav .nav-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+  button.navbar-toggler {
+      color:#F0EB8D;
+  }
+  
+  footer {
+    padding: 30px 0;
+    background-color: #413543;
+  }
+  
+  .piede {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 10px 0 60px; /* modificare i 50 px per la distanza della lista */
+  }
+  
+  .piede_item {
+    margin-bottom: 20px;
+    align-items: left;
+    padding-right: 140px; /* modificare i 100 px per la distanza della lista */
+  }
+  
+  .piede_item h5, .social-icons h5 {
+    color: #F0EB8D;
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 14px;
+  }
+  
+  .piede_item ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .piede_item a {
+    color: #ddd;
+    text-decoration: none;
+  }
+  
+  .piede_item li {
+    font-size: 13px;
+  }
+  
+  .social-icons {
+    display: flex;
+    margin-bottom:20px;
+  }
+  
+  .social-icons a {
+    font-size: 20px;
+    color: #ddd;
+  }
+  
+  .social-icons img {
+    padding-right: 10px;
+    width: 35px;
+    height: auto;
+  }
+  
+    /* FINE PARTE DI HEADER E FOOTER */
+
+
+    /* PAGINA LISTA STRUMENTI */
+    body{
+        background: #EEEEEE;  
+    }
+
+
+#titolo {
+    color: #F0EB8D;
+    padding-top: 60px;
+    text-align: center;
+    background-color: rgba(33, 37, 41, 255);
+    position: relative;
+    font-size: 50px;
+    font-family: RocknRoll One;
+  
+  
+  }
+  
+  
+  .btn-block {
+    background-color: rgba(33, 37, 41, 255);
+    border-color: rgba(33, 37, 41, 255);
+    color: #EEEEEE
+  }
+  
+  
+ .button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #413543;
+  text-align: center;
+  cursor: pointer;
+  width: 40%;
+}
+
+.button:hover {
+  background-color: #8F43EE;
+}
+  
+  
+  .card {
+    border-radius: 25px;
+    background-color: #FFF;
+    float: left;
+    border-color: white;
+  }
+  
+  
+  .swiper-slide:hover {
+    width: 30%;
+    height: 30%;
+    transition: width 2s, height 4s;
+  
+  }
+  
+  .swiper-slide {
+  
+    width: 27%;
+    height: 27%;
+    margin: 20px;
+  
+  }
+  
+  
+  .card-img {
+    display: block;
+    backface-visibility: hidden;
+    position: relative;
+    background: #FFF;
+    padding: 3px;
+    text-align: center;
+    margin-right: auto;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  
+  .image-content {
+    background-size: cover;
+  }
+  
+  .description {
+    font-size: 20px;
+    color: #707070;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  
+  .name {
+    text-align: center;
+    border-radius: 25px;
+    background-color: #413543;
+    color: white;
+    padding: 10px;
+  
+  }
+  
+  .text-center {
+  
+    padding: 5px;
+    margin-top: 5px;
+  
+  }
+  /* FINE PAGINA LISTA STRUMENTI */
