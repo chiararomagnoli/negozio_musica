@@ -1,31 +1,35 @@
 /* PARTE DI HEADER E FOOTER IN COMUNE */
 
   /* logo */
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .logo img {
   height: 60px; 
-  margin-left: 35px;
+  margin-left: 100px;
   margin-top: 20px;
 }
 
 /* pulsanti in alto */
-.btn-group-toggle {
+.btn-group {
   /* padding-left: 30px; */
   border: none;
 }
 
-.btn-group-toggle .btn {
+.btn {
   color: #EEEEEE;
 }
 
 .navbar { 
   width: 100%;
-  margin: 0px auto;
-  padding: 2px;  
+  margin: auto; 
+  font-size: 19px;
 }
 
 .navbar-toggler-icon {
     background-color: rgb(0, 0, 0);
-    padding: 10px;
 }
 
 .navbar-brand {
@@ -35,8 +39,8 @@
 a.nav-link, a.navbar-brand {
     font-family: 'RocknRoll One', sans-serif;
     color: #F0EB8D;          
-    padding: 10px 5px;
-    margin-right: 60px;
+    padding: 0px 0px;
+    margin-right: 65px;
 }
 
 .navbar-brand img {
@@ -46,6 +50,7 @@ a.nav-link, a.navbar-brand {
 .navbar-nav {
   display: flex;
   justify-content: space-between;
+  padding-left: 70px;
 }
 
 .navbar-nav .nav-item {
@@ -55,6 +60,45 @@ a.nav-link, a.navbar-brand {
 
 button.navbar-toggler {
     color:#F0EB8D;
+}
+
+.navbar-nav .nav-item {
+  flex: 1;
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 15px;
+}
+
+.sottomenu1 {
+  color: #EEEEEE;
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 13px;
+  list-style: none;
+  display: none;
+  position: absolute;
+  top: 64px; /* finestra popup della tendina */
+  background-color: #2D2727;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 99999;
+}
+
+.sottomenu1 li {
+  padding: 12px 30px 15px 0px;
+  text-align: left;
+}
+
+.sottomenu1 li a {
+  color: #EEEEEE;
+}
+
+
+.sottomenu1 li a:hover {
+  cursor:pointer;
+  color: #F0EB8D;
+}
+
+.navbar-nav .nav-item:hover .sottomenu1 {
+  display: block;
 }
 
 footer {
@@ -72,7 +116,7 @@ footer {
 .piede_item {
   margin-bottom: 20px;
   align-items: left;
-  padding-right: 140px; /* modificare i 100 px per la distanza della lista */
+  padding-right: 100px; /* modificare i 100 px per la distanza della lista */
 }
 
 .piede_item h5, .social-icons h5 {
@@ -84,6 +128,7 @@ footer {
 .piede_item ul {
   list-style: none;
   padding: 0;
+  width:200px;
 }
 
 .piede_item a {
@@ -115,32 +160,39 @@ footer {
   
   body {
     background: #EEEEEE;
+    font-family: sans-serif;
   }
 
   a {
     text-decoration: none;
   }
+
   /* SEZIONE IMMAGINI */
   .immagini {
-    float:left;
     margin-bottom: 20px;
+    padding-left: 60px;    
+    margin-top: 30px;
   }
 
     /* Carousel */
-/*   #demo {
+  #demo {
     max-width: 100%;
-  } */
-
-  #demo .carousel-item {
-    height: 375px;
   }
 
-  .carousel-caption a {
+  #demo .carousel-item {
+    height: 390px;
+  }
+
+  #demo .d-block {
+    height: 650px;
+  }
+
+  #demo .carousel-caption a {
     color: white;
     text-decoration: none;
   }
 
-  .carousel-caption {
+  #demo .carousel-caption {
     background-color: rgba(29, 29, 29, 0.4);
   }
 
@@ -148,38 +200,49 @@ footer {
   #img_static {
     width: 300px;
   }
-
-  .img_nuovi, .img_usato {
-    width: 350px;
-    height: auto;
-    margin-left: -100px;
+  
+  .img_nuovi {
+    width: 310px; /* dve essere uguale a .img nuovi */
+    height: 260px;
+    margin-left: -120px; /* dve essere uguale a .img nuovi */
+    margin-bottom: 14px;
   }
+
+  .img_usato {  /* dve essere uguale a .img nuovi */
+    width: 310px;
+    height: 260px;
+    margin-left: -120px; /* dve essere uguale a .img nuovi */
+  }
+
+  
 
   /* REGOLE GENERALI */
-  .divisore {
-    margin-top: 20px;
-    margin-left: 80px;
-    height:10px;
-    width:80%;
+  .divisore { /* sarebbe hr */
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width:84%;
   }
 
-  /* ----- ANIMAZIONE CARD ------ */
+  /* ----- SEZIONE ------ */
 
-  /*testo*/
-  .line {
+  /* titolo sezione testo*/
+.line {
     text-align: center;
 }
 
 .line h2 {
   font-family:'RocknRoll One', sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   color: #797979;
+  padding-top: 10px;
 }
 
+/* contenitore card */
 .slider-container {
-  width: 90%;
-  margin: 1px 1px 1px 30px;
+  width: 87%;
+  margin: 1px 1px 1px 85px;
   overflow: hidden;
   padding: 10px;
 }
@@ -191,52 +254,102 @@ footer {
   transition: transform 0.5s ease-in-out;
 }
 
-/* Three columns side by side */
-.column {
+/* CARD */
+
+.homepage { /* la colonna div dove sta la card */
   float: left;
   width: 25%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
 
-/* Display the columns below each other instead of side by side on small screens */
+/* Display the homepages below each other instead of side by side on small screens */
 @media screen and (max-width: 650px) {
-  .column {
+  .homepage {
     width: 100%;
     display: block;
   }
 }
 
-.card {
-
+.homepage .card { 
+  margin-top: 12px; /* mi serve per non tagliare la card con lo zoom*/
+  /* border:none; */
+  border-radius: 0;
 }
 
-/* .card img {
+.homepage .card img {
+  width:80%;
+  margin: 10px auto;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
 
-} */
-
-.dimensione {
-  transition-duration: 1s;
-  -ms-transition-duration: 1s;
-  -webkit-transition-duration: 1s;
-  -moz-transition-duration: 1s;
-  -o-transition-duration: 1s;
-  transition-property: transform;
-  -ms-transition-property: -ms-transform;
-  -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -moz-transform;
-  -o-transition-property: -o-transform;
-  overflow:hidden;
+  /* animazione card zoom */
+  .dimensione {     
+    transition-duration: 1s;
+    -ms-transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-property: transform;
+    -ms-transition-property: -ms-transform;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    overflow:hidden;
   }
-  .dimensione:hover {
-  -ms-transform: scale(1.1,1.1);
-  -webkit-transform:scale(1.1,1.1);
-  -moz-transform: scale(1.1,1.1);
-  -o-transform: scale(1.1,1.1);
-  }
+    .dimensione:hover {
+    -ms-transform: scale(1.1,1.1);
+    -webkit-transform:scale(1.1,1.1);
+    -moz-transform: scale(1.1,1.1);
+    -o-transform: scale(1.1,1.1);
+  } /* fine animazione zoom */
 
-.title {
-  color: grey;
+.card hr {
+  border-style: dotted;
+  color:#413543;
+}
+
+.homepage .card-title {
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 18x;
+}
+
+.homepage .card .container {
+  background-color: #f1eea8;
+  padding-top:10px;
+  margin-top: -10px;
+  border-top: dotted 1px #413543;
+  padding: 20px;
+}
+
+.homepage .card .title {
+  color: #413543;
+  font-size: 15px;
+}
+
+.homepage .card .disponibile {
+  font-size: 13px;
+  color:#797979;
+  font-family:sans-serif;
+  margin: 0px;
+}
+
+.homepage .card .prezzo {
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 14px;
+  color:#413543;
+  padding: 10px auto 0 0;
+  margin-top: 10px;
+}
+
+.homepage .prezzo button { /* da risolvere */
+  font-size: 12px;
+  padding: 5px 5px; /* Imposta i padding del pulsante per controllare le dimensioni */
+  margin-left: auto; /* Sposta il pulsante a destra */
+  position: absolute; /* Posizionamento assoluto rispetto al contenitore .card */
+  right: 20px; /* Distanza dal bordo destro */
+  bottom: 16px;
 }
 
 .button {
@@ -248,7 +361,7 @@ footer {
   background-color: #413543;
   text-align: center;
   cursor: pointer;
-  width: 40%;
+  width: 30%;
 }
 
 .button:hover {
@@ -269,25 +382,13 @@ footer {
   cursor: pointer;
   border-radius: 5px;
 }
-  /* NOVITA' */
 
-  /* USATO */
-
-/* ---- RESPONSIVE ---- */
+  /* ----- FINE HOMEPAGE ----- */
 
 
-.swiper-slide:hover {
-  width: auto;
-  height: auto;
-  transition: width 2s, height 4s;
 
-}
 
-.swiper-slide {
 
-  width: 80%;
-  height: 80%;
-  margin: 20px;
 
-}
+  
 
