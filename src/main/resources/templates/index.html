@@ -7,9 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../static/css/index.css" />
+  <link rel="stylesheet" href="../static/css/indexmio.css" />
   <title>Music.toString() - HomePage</title>
   <link rel="icon" type="image/x-icon" href="../static/images/icona-browser.png"> <!-- icona browser -->
+
+  <!-- script file -->
+  <script src="../static/js/index.js"></script>
 
   <!-- JS per imm dinamiche -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -44,9 +47,9 @@
           <!-- Pulsanti -->
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <button class="btn btn-outline-secondary mr-2">Accedi</button>
-            <button class="btn btn-outline-secondary mr-2">Ricerca</button>
-            <!-- <button class="btn btn-outline-secondary">Carrello</button> -->
+            <button class="btn btn-outline-secondary mr-2">Registrati</button>
           </div>
+            <button class="btn btn-outline-secondary">Ricerca</button>
         </div>
       </div>
     </div>
@@ -67,18 +70,40 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Chitarre</a>
+            <ul class="sottomenu1">
+              <li><a href="#">Prova chitarre</a></li>
+              <li><a href="#">Prova chitarre</a></li>
+              <li><a href="#">Prova chitarre</a></li>
+            </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Tastiere</a>
+          <ul class="sottomenu1">
+            <li><a href="#">Prova tastiere</a></li>
+            <li><a href="#">Prova tastiere</a></li>
+            <li><a href="#">Prova tastiere</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Archi</a>
+          <ul class="sottomenu1">
+            <li><a href="#">Prova archi</a></li>
+            <li><a href="#">Prova archi</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Percussioni</a>
+          <ul class="sottomenu1">
+            <li><a href="#">Prova Percussioni</a></li>
+            <li><a href="#">Prova Percussioni</a></li>
+            <li><a href="#">Prova Percussioni</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Fiati</a>
+          <ul class="sottomenu1">
+            <li><a href="#">Prova Fiati</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Usato</a>
@@ -144,7 +169,7 @@
           <div class="row">
             <div class="col-md-12">
               <a href="#">
-                <img class="col-md-12 col-sm-12 img_nuovi img-fluid pb-2" src="../static/images/nuovi.jpg" style="height: auto;"/>
+                <img class="col-md-12 col-sm-12 img_nuovi img-fluid pb-2" src="../static/images/dinamica1.jpg" style="height: auto;"/>
               </a>
             </div>
           </div>
@@ -162,131 +187,134 @@
     <div class="row">
         <hr class="divisore" />
         <div class="col-md-12 line">
-            <h2>IN EVIDENZA</h2></div>
+            <h2><span>IN EVIDENZA</span></h2></div>
+            <hr class="divisore">
         <div class="col-md-12 slider-container">
             <div class="slider">
-              <div class="column">
+              <div class="homepage">
                 <div class="card dimensione">
-                  <img src="../static/images/1.png" alt="Mike" style="width:100%">
-                  <hr>
+                  <img src="../static/images/1.png" alt="Mike">
                   <div class="container">
                     <div class="card-title">Nome </div>
-                    <p class="title">Descrizione</p>
-                    <p>Disponibilità</p>
-                    <p> - Prezzo <button class="btn btn-outline-secondary mr-2 button">Dettagli</button></p>
+                    <div class="title">Marca</div>
+                    <!-- descrizione ?? -->
+                    <div class="disponibile">Disponibile:<span> Sì</span></div>
+                    <div class="prezzo"> € 21.500,00 <button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
                   </div>
                 </div>
               </div>
             
-              <div class="column">
+              <div class="homepage">
                 <div class="card dimensione">
-                  <img src="../static/images/2.png" alt="Mike" style="width:100%">
-                  <hr>
+                  <img src="../static/images/2.png" alt="Mike" />
                   <div class="container">
                     <div class="card-title">Nome </div>
-                    <p class="title">Descrizione</p>
-                    <p>Disponibilità</p>
-                    <p> - Prezzo <button class="btn btn-outline-secondary mr-2 button">Dettagli</button></p>
+                    <div class="title">Marca</div>
+                    <!-- descrizione ?? -->
+                    <div class="disponibile">Disponibile:<span> Sì</span></div>
+                    <div class="prezzo"> € 21.500,00 <button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
                   </div>
                 </div>
               </div>
             
-              <div class="column">
+              <div class="homepage">
                 <div class="card dimensione">
-                  <img src="../static/images/3.png" alt="John" style="width:100%">
-                  <hr>
+                  <img src="../static/images/3.png" alt="John" />
                   <div class="container">
                     <div class="card-title">Nome </div>
-                    <p class="title">Descrizione</p>
-                    <p>Disponibilità</p>
-                    <p> - Prezzo <button class="btn btn-outline-secondary mr-2 button">Dettagli</button></p>
+                    <div class="title">Marca</div>
+                    <!-- descrizione ?? -->
+                    <div class="disponibile">Disponibile:<span> Sì</span></div>
+                    <div class="prezzo"> € 21.500,00 <button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
                   </div>
                 </div>
               </div>
 
-              <div class="column">
+              <div class="homepage">
                 <div class="card dimensione">
-                  <img src="../static/images/4.png" alt="John" style="width:100%">
-                  <hr>
+                  <img src="../static/images/4.png" alt="John" />
                   <div class="container">
                     <div class="card-title">Nome </div>
-                    <p class="title">Descrizione</p>
-                    <p>Disponibilità</p>
-                    <p> - Prezzo <button class="btn btn-outline-secondary mr-2 button">Dettagli</button></p>
+                    <div class="title">Marca</div>
+                    <!-- descrizione ?? -->
+                    <div class="disponibile">Disponibile:<span> Sì</span></div>
+                    <div class="prezzo"> € 21.500,00 <button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
                   </div>
                 </div>
             </div>
             </div>
-            <div class="bottoni">
+            <!-- <div class="bottoni">
                 <button type="button" class="prev"><</button>
                 <button type="button" class="next">></button>
-            </div>
+            </div> -->
         </div>
     </div><!-- chiude row evidenza -->
+
+    
     <!-- SEZIONE NUOVI ARRIVI -->
 
     <div class="row">
         <hr class="divisore" />
         <div class="col-md-12 line">
             <h2>NUOVI ARRIVI</h2></div>
+            <hr class="divisore">
         <div class="col-md-12 slider-container">
             <div class="slider">
-              <div class="column">
+              <div class="homepage">
                 <div class="card dimensione">
-                  <img src="../static/images/1.png" alt="Mike" style="width:100%">
-                  <hr>
+                  <img src="../static/images/1.png" alt="Mike" />
                   <div class="container">
                     <div class="card-title">Nome </div>
-                    <p class="title">Descrizione</p>
-                    <p>Disponibilità</p>
-                    <p> - Prezzo <button class="btn btn-outline-secondary mr-2 button">Dettagli</button></p>
+                    <div class="title">Marca</div>
+                    <!-- descrizione ?? -->
+                    <div class="disponibile">Disponibile:<span> Sì</span></div>
+                    <div class="prezzo"> € 21.500,00 <button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
                   </div>
                 </div>
               </div>
             
-              <div class="column">
+              <div class="homepage">
                 <div class="card dimensione">
-                  <img src="../static/images/2.png" alt="Mike" style="width:100%">
-                  <hr>
+                  <img src="../static/images/2.png" alt="Mike" />
                   <div class="container">
                     <div class="card-title">Nome </div>
-                    <p class="title">Descrizione</p>
-                    <p>Disponibilità</p>
-                    <p> - Prezzo <button class="btn btn-outline-secondary mr-2 button">Dettagli</button></p>
+                    <div class="title">Marca</div>
+                    <!-- descrizione ?? -->
+                    <div class="disponibile">Disponibile:<span> Sì</span></div>
+                    <div class="prezzo"> € 21.500,00 <button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
                   </div>
                 </div>
               </div>
             
-              <div class="column">
+              <div class="homepage">
                 <div class="card dimensione">
-                  <img src="../static/images/3.png" alt="John" style="width:100%">
-                  <hr>
+                  <img src="../static/images/3.png" alt="John" />
                   <div class="container">
                     <div class="card-title">Nome </div>
-                    <p class="title">Descrizione</p>
-                    <p>Disponibilità</p>
-                    <p> - Prezzo <button class="btn btn-outline-secondary mr-2 button">Dettagli</button></p>
-                  </div>
+                    <div class="title">Marca</div>
+                    <!-- descrizione ?? -->
+                    <div class="disponibile">Disponibile:<span> Sì</span></div>
+                    <div class="prezzo"> € 21.500,00 <button class="btn btn-outline-secondary mr-2 button">Scopri</button></div></div>
                 </div>
               </div>
 
-              <div class="column">
+              <div class="homepage">
                 <div class="card dimensione">
-                  <img src="../static/images/4.png" alt="John" style="width:100%">
-                  <hr>
+                  <img src="../static/images/4.png" alt="John" />
                   <div class="container">
                     <div class="card-title">Nome </div>
-                    <p class="title">Descrizione</p>
-                    <p>Disponibilità</p>
-                    <p> - Prezzo <button class="btn btn-outline-secondary mr-2 button">Dettagli</button></p>
+                    <div class="title">Marca</div>
+                    <!-- descrizione ?? -->
+                    <div class="disponibile">Disponibile:<span> Sì</span></div>
+                    <div class="prezzo"> € 21.500,00 <button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="bottoni">
+            <!-- <div class="bottoni">
                 <button type="button" class="prev"><</button>
                 <button type="button" class="next">></button>
-            </div>
+            </div> -->
         </div>
     </div><!-- chiude row nuovi -->
 
@@ -296,64 +324,71 @@
         <hr class="divisore" />
         <div class="col-md-12 line">
             <h2>MERCATINO DELL'USATO</h2></div>
+            <hr class="divisore">
               <div class="col-md-12 slider-container">
                 <div class="slider">
-                  <div class="column">
+                  <div class="homepage">
                     <div class="card dimensione">
-                      <img src="../static/images/1.png" alt="Mike" style="width:100%">
-                      <hr>
+                      <img src="../static/images/1.png" alt="Mike" />
+  
                       <div class="container">
                         <div class="card-title">Nome </div>
-                        <p class="title">Descrizione</p>
-                        <p>Disponibilità</p>
-                        <p> - Prezzo <button class="btn btn-outline-secondary mr-2 button">Dettagli</button></p>
+                        <div class="title">Marca</div>
+                        <!-- descrizione ?? -->
+                        <div class="disponibile">Disponibile:<span> Sì</span></div>
+                        <div class="prezzo"> € 21.500,00 <button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
                       </div>
                     </div>
                   </div>
                 
-                  <div class="column">
+                  <div class="homepage">
                     <div class="card dimensione">
-                      <img src="../static/images/2.png" alt="Mike" style="width:100%">
-                      <hr>
+                      <img src="../static/images/2.png" alt="Mike" />
+  
                       <div class="container">
                         <div class="card-title">Nome </div>
-                        <p class="title">Descrizione</p>
-                        <p>Disponibilità</p>
-                        <p> - Prezzo <button class="btn btn-outline-secondary mr-2 button">Dettagli</button></p>
+                        <div class="title">Marca</div>
+                        <!-- descrizione ?? -->
+                        <div class="disponibile">Disponibile:<span> Sì</span></div>
+                        <div class="prezzo"> € 21.500,00 <button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
                       </div>
                     </div>
                   </div>
                 
-                  <div class="column">
+                  <div class="homepage">
                     <div class="card dimensione">
-                      <img src="../static/images/3.png" alt="John" style="width:100%">
-                      <hr>
+                      <img src="../static/images/3.png" alt="John" />
+  
                       <div class="container">
                         <div class="card-title">Nome </div>
-                        <p class="title">Descrizione</p>
-                        <p>Disponibilità</p>
-                        <p> - Prezzo <button class="btn btn-outline-secondary mr-2 button">Dettagli</button></p>
+                    <div class="title">Marca</div>
+                    <!-- descrizione ?? -->
+                    <div class="disponibile">Disponibile:<span> Sì</span></div>
+                    <div class="prezzo"> € 21.500,00 <button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
                       </div>
                     </div>
                   </div>
 
-                  <div class="column">
+                  <div class="homepage">
                     <div class="card dimensione">
-                      <img src="../static/images/4.png" alt="John" style="width:100%">
-                      <hr>
+                      <img src="../static/images/4.png" alt="John" />
+  
                       <div class="container">
                         <div class="card-title">Nome </div>
-                        <p class="title">Descrizione</p>
-                        <p>Disponibilità</p>
-                        <p> - Prezzo <button class="btn btn-outline-secondary mr-2 button">Dettagli</button></p>
+                    <div class="title">Marca</div>
+                    <!-- descrizione ?? -->
+                    <div class="disponibile">Disponibile:<span> Sì</span></div>
+                      <div class="prezzo"> € 21.500,00 
+                        <button class="btn btn-outline-secondary mr-2 button">Scopri</button>
+                      </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              <div class="bottoni">
+              <!-- <div class="bottoni">
                 <button type="button" class="prev"><</button>
                 <button type="button" class="next">></button>
-            </div>
+              </div> -->
               </div>
               
     </div> <!-- chiude row usato -->
