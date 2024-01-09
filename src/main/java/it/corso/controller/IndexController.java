@@ -16,7 +16,6 @@ import it.corso.model.Sottocategoria;
 import it.corso.service.CategoriaService;
 import it.corso.service.ProdottoService;
 import it.corso.service.SottocategoriaService;
-import it.corso.service.SottocategoriaServiceImpl;
 
 @Controller
 @RequestMapping("/")
@@ -24,8 +23,13 @@ public class IndexController {
 	
 	@Autowired
 	private ProdottoService prodottoService;
+	
+	@Autowired
 	private CategoriaService categoriaService;
+	
+	@Autowired
 	private SottocategoriaService sottocategoriaService;
+
 	
 	@GetMapping
 	public String getPage(Model model) {
@@ -50,8 +54,23 @@ public class IndexController {
 		
 		model.addAttribute("prodottiScontati", prodottiScontati);
 		
-
+		List<Categoria> categorie = categoriaService.getCategorie();
+		model.addAttribute("categorie", categorie);
 		
+		
+        List<Sottocategoria> sottocategorieChitarre = sottocategoriaService.getSottocategoriaByIdCategoria(1);
+        model.addAttribute("sottocategorieChitarre", sottocategorieChitarre);
+        List<Sottocategoria> sottocategorieTastiere = sottocategoriaService.getSottocategoriaByIdCategoria(2);
+        model.addAttribute("sottocategorieTastiere", sottocategorieTastiere);
+        List<Sottocategoria> sottocategorieArchi = sottocategoriaService.getSottocategoriaByIdCategoria(3);
+        model.addAttribute("sottocategorieArchi", sottocategorieArchi);
+        List<Sottocategoria> sottocategoriePercussioni = sottocategoriaService.getSottocategoriaByIdCategoria(4);
+        model.addAttribute("sottocategoriePercussioni", sottocategoriePercussioni);
+        List<Sottocategoria> sottocategorieFiati = sottocategoriaService.getSottocategoriaByIdCategoria(5);
+        model.addAttribute("sottocategorieFiati", sottocategorieFiati);
+           
+        
+
 		return "index";
 	}
 
