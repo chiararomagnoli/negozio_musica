@@ -24,7 +24,7 @@ public class DettaglioController {
 	public String getPage(@RequestParam(name="id", required=true) int id, Model model) {
 		List<Prodotto> prodotti = prodottoService.getProdotti();
 		model.addAttribute("prodotto", prodotti.get(id-1));
-		return "dettaglioprova";
+		return "dettaglio";
 	}
 
 }
