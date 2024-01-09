@@ -2,10 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
-    <!--<link th:href="@{css/style.css}" rel="stylesheet"> -->
-  
-  
+    
   
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -100,29 +97,55 @@
   <div class="container text-center mt-5 mb-5">
     <div class="row">
         <div class="col-5">
-        <!-- <img class="card-img-top" src="../static/images/1.png" alt="Chitarra classica Eko Ambra Natural"/> -->
+       
         <img class="card-img-top" th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" >  
         </div>
         <div class="col-7">
             <div class="card-body">
 				
 				
-					<!--<td><img th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" height="100px"></td> -->
-					 <!--<td th:text="${prodotto.idProdotto}"></td> -->
-                   
-                 <!--  <td th:if="${prodotto != null}" th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></td> -->
-                   <!-- <td th:utext="${#strings.replace(prodotto.descrizione, '\n', '<br>')}"></td> -->
-				
-                <!--<h4 class="card-title">Eko CS-10 Chitarra Classica Ambra Natural</h4> -->
+					
                 <h4 class="card-title" th:text="${prodotto.nomeProdotto}"></h4> 
               <!--<p th:text="${prodotto.sconto}"></p> -->
-                <h5>Chitarra classica |  Marca: </h5><h5 th:text="${prodotto.marca.nomeMarca}"></h5>
-                <h5>Condizioni: Nuovo | Disponibilità: <h5 th:text="${prodotto.disponibilita}"></h5></h5> 
+             
+<h5  th:utext="${prodotto.sottocategoria.nomeSottocategoria}"></h5> 
+
+<div style="display: flex; flex-wrap: nowrap; flex-direction: column; align-items: center;">
+    
+    <div style="display: flex; flex-direction: row; margin-bottom: 10px;">
+        <h5 style="margin-right:5px ; margin-bottom: 0px;">  Marca:</h5>
+        <div th:text="${prodotto.marca.nomeMarca}"></div>
+    </div>
+    <div style="display: flex; flex-direction: row;">
+        <h5 style="margin-right: 5px;">   Condizioni:</h5>
+        <div th:text="${prodotto.condizione}"></div>
+    </div>
+   <div style="display: flex; flex-direction: row;">
+	    <h5 style="margin-right:5px;">Disponibilità:</h5>
+	    <div th:text="${prodotto.disponibilita}"></div>
+	   
+</div>
+
+
                 
-                <p th:utext="${#strings.replace(prodotto.descrizione, '\n', '<br>')}"></p>
+                <p th:utext="${#strings.replace(prodotto.descrizione, '\n', '<br>')}"></p> 
              
             </div>   
-            <div class="card-footer"><hr class="hr" /><div class="card-title lead"><th:if="${prodotto != null}" th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></div><button class="btn btn-lg mt-3 button" >Prenota</a></div>
+            <div class="card-footer">
+    <hr class="hr" />
+    <div class="card-title lead" th:if="${prodotto != null}">
+        <th:block th:if="${prodotto.sconto != 0}">
+            <del th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></del> 
+            <span th:text="${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')} + '€'"></span>  <!-- prezzo aggiornato -->
+            <span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span>
+        </th:block>
+        <th:block th:unless="${prodotto.sconto != 0}">
+            <span th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></span>
+        </th:block>
+    </div>
+    <button class="btn btn-lg mt-3 button">Prenota</button>
+</div>
+            
         </div>
       
     </div>
