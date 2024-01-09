@@ -8,14 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/lista.css" />
+    <link rel="stylesheet" th:href="@{css/lista.css}" />
     <title>Music.toString() | Lista Strumenti</title>
     <link rel="icon" type="image/x-icon" href="../static/images/icona-browser.png"> <!-- icona browser -->
     <!-- Script Bootstrap (assicurati di includerlo) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!--<script src="js/index.js"></script>-->
+    <!--<script th:src="@{js/index.js}"></script>-->
 </head>
 
 <body>
@@ -126,7 +126,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                    <img src="../static/images/14.png" alt="" class="card-img card-img ml-4"> 
+                    <img th:src="@{/images/14.png}" alt="" class="card-img card-img ml-4"> 
                     
                 </div>
                 <div class="text-center">
@@ -140,7 +140,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                     <img src="../static/images/10.png" alt="" class="card-img card-img ml-4"> 
+                     <img th:src="@{images/10.png}" alt="" class="card-img card-img ml-4"> 
                     
                 </div>
                 <div class="text-center">
@@ -156,7 +156,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                    <img src="../static/images/7.png" alt="" class="card-img card-img ml-4">
+                    <img th:src="@{/images/7.png}" alt="" class="card-img card-img ml-4">
                     
                 </div>
                 <div class="text-center">
@@ -171,7 +171,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                    <img src="../static/images/1.png" alt="" class="card-img ml-4">
+                    <img th:src="@{/images/1.png}" alt="" class="card-img ml-4">
                     
                 </div>
                 <div class="text-center">
@@ -186,7 +186,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                    <img src="../static/images/16.png" alt="" class="card-img ml-4">
+                    <img th:src="@{/images/16.png}" alt="" class="card-img ml-4">
                     
                 </div>
                 <div class="text-center">
@@ -203,7 +203,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                    <img src="../static/images/2.png" alt="" class="card-img ml-4">
+                    <img th:src="@{/images/2.png}" alt="" class="card-img ml-4">
                     
                 </div>
                 <div class="text-center">
@@ -219,7 +219,7 @@
                 <div class="image-content">
                     <span class="overlay"></span>
                     
-                        <img src="../static/images/5.png" alt="" class="card-img ml-4">
+                        <img th:src="@{/images/5.png}" alt="" class="card-img ml-4">
                     
                 </div>
                 <div class="text-center">
@@ -235,7 +235,7 @@
                 <div class="image-content">
                     <span class="overlay"></span>
                     
-                        <img src="../static/images/18.png" alt="" class="card-img card-img ml-4">
+                        <img th:src="@{/images/18.png}" alt="" class="card-img card-img ml-4">
                     </div>
 
                     <div class="text-center">
@@ -251,7 +251,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                    <img src="../static/images/4.png" alt="" class="card-img card-img ml-4">
+                    <img th:src="@{/images/4.png}" alt="" class="card-img card-img ml-4">
                     </div>
                 
                 <div class="text-center">
@@ -267,7 +267,7 @@
                 <div class="image-content">
                     <span class="overlay"></span>
                     
-                        <img src="../static/images/11.png" alt="" class="card-img card-img ml-4">
+                        <img th:src="@{/images/11.png}" alt="" class="card-img card-img ml-4">
                     </div>
                     <div class="text-center">
                         <h2 class="name">'Sauter Accento Pianoforte verticale by Peter Maly'</h2>
@@ -280,7 +280,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                    <img src="../static/images/17.png" alt="" class="card-img ml-4">
+                    <img th:src="@{/images/17.png}" alt="" class="card-img ml-4">
                     
                 </div>
                 <div class="text-center">
@@ -295,7 +295,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                    <img src="../static/images/13.png" alt="" class="card-img card-img ml-4">
+                    <img th:src="@{/images/13.png}" alt="" class="card-img card-img ml-4">
                     </div>
                 
                 <div class="text-center">
@@ -310,7 +310,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                    <img src="../static/images/15.png" alt="" class="card-img card-img ml-4">
+                    <img th:src="@{/images/15.png}" alt="" class="card-img card-img ml-4">
                     </div>
                 
                 <div class="text-center">
@@ -325,7 +325,7 @@
                 <div class="image-content">
                     <span class="overlay"></span>
                     
-                        <img src="../static/images/12.png" alt="" class="card-img card-img ml-4">
+                        <img th:src="@{/images/12.png}" alt="" class="card-img card-img ml-4">
                     </div>
                 
                 <div class="text-center">
@@ -340,7 +340,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                    <img src="../static/images/9.png" alt="" class="card-img card-img ml-4">
+                    <img th:src="@{/images/9.png}" alt="" class="card-img card-img ml-4">
                     </div>
                 
                 <div class="text-center">
@@ -355,7 +355,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                    <img src="../static/images/3.png" alt="" class="card-img ml-4">
+                    <img th:src="@{/images/3.png}" alt="" class="card-img ml-4">
                     </div>
                 
                 <div class="text-center">
@@ -369,7 +369,7 @@
             <div class="card swiper-slide">
                 <div class="image-content">
                     <span class="overlay"></span>
-                    <img src="../static/images/6.png" alt="" class="card-img card-img ml-4">
+                    <img th:src="@{/images/6.png}" alt="" class="card-img card-img ml-4">
                     </div>
                 
                 <div class="text-center">
@@ -421,10 +421,10 @@
                 <h5>SOCIAL</h5>
                 <div class="row">
                     <div class="col-md-12 social-icons">
-                        <a href="#"><img src="../static/images/facebook-icon.png" alt="Facebook" /></a>
-                        <a href="#"><img src="../static/images/instagram-icon.png" alt="Instagram" /></a>
-                        <a href="#"><img src="../static/images/youtube-icon.png" alt="YouTube" /></a>
-                        <a href="#"><img src="../static/images/tiktok-icon.png" alt="TikTok" /></a>
+                        <a href="#"><img th:src="@{/images/facebook-icon.png}" alt="Facebook" /></a>
+                        <a href="#"><img th:src="@{/images/instagram-icon.png}" alt="Instagram" /></a>
+                        <a href="#"><img th:src="@{/images/youtube-icon.png}" alt="YouTube" /></a>
+                        <a href="#"><img th:src="@{/images/tiktok-icon.png}" alt="TikTok" /></a>
                     </div>
                 </div>
             </div>
