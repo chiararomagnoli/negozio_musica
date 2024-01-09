@@ -276,5 +276,18 @@ footer {
 /* ---- RESPONSIVE ---- */
 
 
-  
+.swiper-slide:hover {
+  width: auto;
+  height: auto;
+  transition: width 2s, height 4s;
+
+}
+
+.swiper-slide {
+
+  width: 80%;
+  height: 80%;
+  margin: 20px;
+
+}
 
