@@ -10,8 +10,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import it.corso.model.Categoria;
 import it.corso.model.Prodotto;
+import it.corso.model.Sottocategoria;
+import it.corso.service.CategoriaService;
 import it.corso.service.ProdottoService;
+import it.corso.service.SottocategoriaService;
+import it.corso.service.SottocategoriaServiceImpl;
 
 @Controller
 @RequestMapping("/")
@@ -19,6 +24,8 @@ public class IndexController {
 	
 	@Autowired
 	private ProdottoService prodottoService;
+	private CategoriaService categoriaService;
+	private SottocategoriaService sottocategoriaService;
 	
 	@GetMapping
 	public String getPage(Model model) {
@@ -40,9 +47,12 @@ public class IndexController {
 				prodottiScontati.addAll(prodottoService.trovamiProdottiPerSconto(p.getSconto()));
 				}
 		}
+		
 		model.addAttribute("prodottiScontati", prodottiScontati);
 		
-		return "indexprova";
+
+		
+		return "index";
 	}
 
 }
