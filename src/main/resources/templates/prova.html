@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../static/css/index.css" />
+  <link rel="stylesheet" href="../static/css/prova.css" />
   <title>Music.toString() - HomePage</title>
   <link rel="icon" type="image/x-icon" href="../static/images/icona-browser.png"> <!-- icona browser -->
 
@@ -90,16 +90,18 @@
     </div>
   </nav>
 
-  <div class="container bg-light">
-    
-  <h1 class="display-4 text-center mt-3">Music.toString() - Strumenti Musicali</h1>
+  <div class="container">
+    <div class="col-md-12 line">
+      <h1 class="text-center mt-3">Music.toString() - Strumenti Musicali</h1>
+    </div>
   <blockquote class="blockquote text-center">
-    <p class="mb-3"><em>“Dove le parole non arrivano... la musica parla.”</em></p>
-    <footer class="blockquote-footer bg-light">Ludwig van Beethoven</footer>
+    <p class="mb-2"><em>“Dove le parole non arrivano... la musica parla.”</em></p>
+    <footer class="blockquote-footer" style="background-color: #EEEEEE">Ludwig van Beethoven</footer>
+    <hr class="divisore" />
   <p class="text-body-secondary"><em>La storia di Music.toString() inizia con una visione condivisa da un gruppo di appassionati che desideravano creare un luogo dove l'amore per la musica potesse essere condivisa con la comunità. Fondato nel cuore della città, il nostro negozio ha aperto le sue porte con l'obiettivo di offrire un rifugio per musicisti di tutte le età e livelli di esperienza. La nostra storia è intrecciata con le storie di coloro che hanno scelto Music.toString() per iniziare il loro viaggio musicale. Oggi, continuiamo a prosperare come una destinazione di fiducia, con la stessa dedizione e passione che ci hanno ispirato fin dall'inizio. Unisciti a noi in questo viaggio, dove troverai professionalità, cura del dettaglio e soddisfazione del cliente.</em></p>
   </div>
   <!--DOVE SIAMO-->
-  <div class="container mt-5 mb-5 bg-light" id="localita">
+  <div class="container mt-5 mb-5" id="localita">
 
     <div class="card container-fluid text-center">
       <div class="card-body">
@@ -123,26 +125,30 @@
   </div>
 
   <!--STAFF-->
-  <h1 class="display-4 text-center">Il nostro Staff</h1>
-  <blockquote class="blockquote text-center">
-    <p class="mb-3"><em>“Non è un elevato grado di intelligenza, e nemmeno l'immaginazione, e nemmeno le due cose assieme che creano un genio.<br/>
+  <div class="col-md-12 line">
+    <h3 class="text-center">Il nostro Staff</h3>
+  </div>
+    <blockquote class="blockquote text-center">
+    <p class="mb-2"><em>“Non è un elevato grado di intelligenza, e nemmeno l'immaginazione, e nemmeno le due cose assieme che creano un genio.<br/>
       Amore, amore, amore, quella è l'anima del genio.”</em></p>
-    <footer class="blockquote-footer bg-light">Wolfgang Amadeus Mozart</footer>
+    <footer class="blockquote-footer" style="background-color: #EEEEEE">Wolfgang Amadeus Mozart</footer>
+    <hr class="divisore" />
   </blockquote>
-  <div class="container mt-5 mb-5 bg-light">
+  <div class="container mt-5 mb-5">
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img src="../src/main/resources/static/images/2.png" class="img-fluid rounded-start" alt="...">
+                    <img src="../src/main/resources/static/images/2.png" class="img-fluid rounded-circle" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">Simona Conte</h5>
-                      <p class="card-text">Back End</p>
-                      <p class="card-text"><em>Astrofisica e appassionata di informatica, ha guidato il team di Back End durante lo sviluppo del sito Web.</em></p>
-                      <p class="card-text"><small class="text-body-secondary">Junior Java Developer</small></p>
+                      <p class="card-text mt-2">Back End</p>
+                      <p class="card-text descrizione"><em>Astrofisica e appassionata di informatica, ha guidato il team di Back End durante lo sviluppo del sito Web.</em></p>
+                      <p class="card-text"><small class="text-body-secondary">Junior Java Developer</small><button class="btn btn-outline-secondary btn-sm float-right mr-2">Linkedin</button> </p>
+                      
                     </div>
                     <hr class="hr" />
                   </div>
@@ -153,13 +159,13 @@
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img src="../src/main/resources/static/images/2.png" class="img-fluid rounded-start" alt="...">
+                    <img src="../src/main/resources/static/images/2.png" class="img-fluid rounded-circle" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">Giulia La Rosa</h5>
-                      <p class="card-text">Front End</p>
-                      <p class="card-text"><em>Il suo lavoro ha riguardato la progettazione e lo sviluppo di grafica e Homepage del sito Web.</em></p>
+                      <p class="card-text mt-2">Front End</p>
+                      <p class="card-text descrizione"><em>Il suo lavoro ha riguardato la progettazione e lo sviluppo di grafica e Homepage del sito Web.</em></p>
                       <p class="card-text"><small class="text-body-secondary">Junior Java Developer</small></p>
                     </div>
                     <hr class="hr" />
@@ -171,13 +177,13 @@
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img src="../src/main/resources/static/images/2.png" class="img-fluid rounded-start" alt="...">
+                    <img src="../src/main/resources/static/images/2.png" class="img-fluid rounded-circle" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">Chiara Romagnoli</h5>
-                      <p class="card-text">Back End</p>
-                      <p class="card-text"><em>Inserisci una descrizione</em></p>
+                      <p class="card-text mt-2">Back End</p>
+                      <p class="card-text descrizione"><em>Inserisci una descrizione</em></p>
                       <p class="card-text"><small class="text-body-secondary">Junior Java Developer</small></p>
                     </div>
                     <hr class="hr" />
@@ -189,13 +195,13 @@
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img src="../src/main/resources/static/images/2.png" class="img-fluid rounded-start" alt="...">
+                    <img src="../src/main/resources/static/images/2.png" class="img-fluid rounded-circle" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">Eugenia Simeone</h5>
-                      <p class="card-text">Front End</p>
-                      <p class="card-text"><em>Inserisci una descrizione</em></p>
+                      <p class="card-text mt-2">Front End</p>
+                      <p class="card-text descrizione"><em>Inserisci una descrizione</em></p>
                       <p class="card-text"><small class="text-body-secondary">Junior Java Developer</small></p>
                     </div>
                     <hr class="hr" />
@@ -207,13 +213,13 @@
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img src="../src/main/resources/static/images/2.png" class="img-fluid rounded-start" alt="...">
+                    <img src="../src/main/resources/static/images/2.png" class="img-fluid rounded-circle" alt="...">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">Flavia Serino</h5>
-                      <p class="card-text">Back End</p>
-                      <p class="card-text"><em>Inserisci una descrizione</em></p>
+                      <p class="card-text mt-2">Back End</p>
+                      <p class="card-text descrizione"><em>Inserisci una descrizione</em></p>
                       <p class="card-text"><small class="text-body-secondary">Junior Java Developer</small></p>
                     </div>
                     <hr class="hr" />
@@ -230,8 +236,8 @@
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">Khadija Essaid</h5>
-                      <p class="card-text">Front End</p>
-                      <p class="card-text"><em>Inserisci una descrizione</em></p>
+                      <p class="card-text mt-2">Front End</p>
+                      <p class="card-text descrizione"><em>Inserisci una descrizione</em></p>
                       <p class="card-text"><small class="text-body-secondary">Junior Java Developer</small></p>
                     </div>
                     <hr class="hr" />

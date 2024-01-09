@@ -1,0 +1,202 @@
+/* PARTE DI HEADER E FOOTER IN COMUNE */
+
+  /* logo */
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .logo img {
+    height: 60px; 
+    margin-left: 100px;
+    margin-top: 20px;
+  }
+  
+  /* pulsanti in alto */
+  .btn-group {
+    /* padding-left: 30px; */
+    border: none;
+  }
+  
+  .btn {
+    color: #EEEEEE;
+  }
+  
+  .navbar { 
+    width: 100%;
+    margin: auto; 
+    font-size: 19px;
+  }
+  
+  .navbar-toggler-icon {
+      background-color: rgb(0, 0, 0);
+  }
+  
+  .navbar-brand {
+      border-right: 2px solid #2D2727;
+  }
+  
+  a.nav-link, a.navbar-brand {
+      font-family: 'RocknRoll One', sans-serif;
+      color: #F0EB8D;          
+      padding: 0px 0px;
+      margin-right: 65px;
+  }
+  
+  .navbar-brand img {
+    margin-right: 15px; 
+  }
+  
+  .navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 70px;
+  }
+  
+  .navbar-nav .nav-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+  button.navbar-toggler {
+      color:#F0EB8D;
+  }
+  
+  .navbar-nav .nav-item {
+    flex: 1;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 15px;
+  }
+  
+  .sottomenu1 {
+    color: #EEEEEE;
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 13px;
+    list-style: none;
+    display: none;
+    position: absolute;
+    top: 64px; /* finestra popup della tendina */
+    background-color: #2D2727;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 99999;
+  }
+  
+  .sottomenu1 li {
+    padding: 12px 30px 15px 0px;
+    text-align: left;
+  }
+  
+  .sottomenu1 li a {
+    color: #EEEEEE;
+  }
+  
+  
+  .sottomenu1 li a:hover {
+    cursor:pointer;
+    color: #F0EB8D;
+  }
+  
+  .navbar-nav .nav-item:hover .sottomenu1 {
+    display: block;
+  }
+  
+  footer {
+    padding: 30px 0;
+    background-color: #413543;
+  }
+  
+  .piede {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 10px 0 60px; /* modificare i 50 px per la distanza della lista */
+  }
+  
+  .piede_item {
+    margin-bottom: 20px;
+    align-items: left;
+    padding-right: 100px; /* modificare i 100 px per la distanza della lista */
+  }
+  
+  .piede_item h5, .social-icons h5 {
+    color: #F0EB8D;
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 14px;
+  }
+  
+  .piede_item ul {
+    list-style: none;
+    padding: 0;
+    width:200px;
+  }
+  
+  .piede_item a {
+    color: #ddd;
+    text-decoration: none;
+  }
+  
+  .piede_item li {
+    font-size: 13px;
+  }
+  
+  .social-icons {
+    display: flex;
+    margin-bottom:20px;
+  }
+  
+  .social-icons a {
+    font-size: 20px;
+    color: #ddd;
+  }
+  
+  .social-icons img {
+    padding-right: 10px;
+    width: 35px;
+    height: auto;
+  }
+  
+    /* FINE PARTE DI HEADER E FOOTER */
+
+    body {
+        background: #EEEEEE;
+        font-family: sans-serif;
+      }
+    
+      a {
+        text-decoration: none;
+      }
+    
+      .line {
+        font-family:'RocknRoll One', sans-serif;
+        text-align: center;
+        color: #797979;
+        padding-top: 10px;
+      }
+
+      .button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #413543;
+        text-align: center;
+        cursor: pointer;
+        width: 30%;
+      }
+      
+      .button:hover {
+        background-color: #8F43EE;
+      }
+
+      .card-title {
+        font-family: 'RocknRoll One', sans-serif;
+        font-size: 15px;
+      }
+
+      .descrizione {
+        font-size: 14px;
+      }
+
+     
