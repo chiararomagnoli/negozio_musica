@@ -115,6 +115,11 @@
 
 
     /* PAGINA LISTA STRUMENTI */
+    body{
+        background: #EEEEEE;  
+    }
+
+
 #titolo {
     color: #F0EB8D;
     padding-top: 60px;
@@ -135,22 +140,21 @@
   }
   
   
-  /* .button {
-    border: none;
-    font-size: 16px;
-    color: #EEEEEE;
-    padding: 8px 16px;
-    background-color: #413543;
-    border-radius: 6px;
-    margin: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  
-  }
-  
-  .button:hover {
-    background-color: #8F43EE;
-  } */
+ .button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #413543;
+  text-align: center;
+  cursor: pointer;
+  width: 40%;
+}
+
+.button:hover {
+  background-color: #8F43EE;
+}
   
   
   .card {
