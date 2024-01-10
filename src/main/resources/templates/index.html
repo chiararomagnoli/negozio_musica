@@ -233,17 +233,17 @@
                     <!-- <div class="title" th:text="${prodotto.descrizione}"></div> -->
                     <div class="disponibile"  th:text="'Disponibilità: ' + ${prodotto.disponibilita}"></div>
                     <div th:if="${prodotto.sconto ne 0}" >
-                  		<del class="sconto" th:text="'€' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></del>
+                  		<del class="sconto" th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></del>
                   <!-- prezzo barrato -->
                   	<div class="prezzo"
-                    th:text="'€' + ${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')}">
+                    th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')}">
                   	</div> <!-- prezzo aggiornato -->
                   	<!-- SCONTO - DA INSERIRE NELL'ANGOLO?
                     <span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span>
                     -->
                     </div>
-                  	<div th:unless="${prodotto.sconto ne 0}"
-                  th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'" class="prezzo">
+                  	<div class="prezzo" th:unless="${prodotto.sconto ne 0}"
+                  th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}">
                 </div>
                 <a th:href="@{/dettaglio(id=${prodotto.idProdotto})}">
                   <button class="btn btn-outline-secondary mr-2 button">Scopri</button>
@@ -280,19 +280,19 @@
                     <!-- <div class="title" th:text="${prodotto.descrizione}"></div> -->
                     
                     <div class="disponibile" th:text="'Disponibilità: ' + ${prodotto.disponibilita}"></div>
-                    <div th:if="${prodotto.sconto ne 0}" class="prezzo">
-                  <del th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></del>
+                    <div th:if="${prodotto.sconto ne 0}">
+                  <del class="sconto" th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></del>
                   <!-- prezzo barrato -->
-                  <div
-                    th:text="${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')} + '€'" class="prezzo"></div>
+                  <div class="prezzo"
+                    th:text="'€ '+ ${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')}"></div>
                   <!-- prezzo aggiornato -->
 
                   <!-- SCONTO - DA INSERIRE NELL'ANGOLO?
                     <span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span>
                     -->
                </div>
-               <span th:unless="${prodotto.sconto ne 0}"
-                  th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'" class="prezzo"></span>
+               <div class="prezzo" th:unless="${prodotto.sconto ne 0}"
+                  th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}" ></div>
                 <a th:href="@{/dettaglio(id=${prodotto.idProdotto})}">
                   <button class="btn btn-outline-secondary mr-2 button">Scopri</button>
                 </a>
@@ -312,7 +312,7 @@
             <hr class="divisore">
               <div class="col-md-12 slider-container">
                 <div class="owl-carousel">
-                  <div class="item homepage" th:each="prodotto : ${prodottiUsati}"> <!-- controllare se va messo qui o sopra -->
+                  <div class="item homepage" th:each="prodotto : ${prodottiUsati}">
                     <div class="card dimensione">
                       <img th:src="@{'images/'+${prodotto.idProdotto}+'.png'}" alt="prodotto" />
   
@@ -321,11 +321,11 @@
                         <!-- descrizione ?? -->
                         <!-- <div class="title" th:text="${prodotto.descrizione}"></div> -->
                         <div class="disponibile" th:text="'Disponibilità: ' + ${prodotto.disponibilita}"></div>
-                        <div class="prezzo" th:if="${prodotto.sconto ne 0}">
-							<del th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'" class="prezzo"></del>
+                        <div th:if="${prodotto.sconto ne 0}">
+							<del th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + " class="prezzo"></del>
                   <!-- prezzo barrato -->
                   <div class="prezzo"
-                    th:text="${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')} + '€'"></div>
+                    th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')}"></div>
                   <!-- prezzo aggiornato -->
 
                   <!-- SCONTO - DA INSERIRE NELL'ANGOLO?
@@ -334,7 +334,7 @@
                         </div>
                         
                         <div th:unless="${prodotto.sconto ne 0}"
-                  th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'" class="prezzo"></div>
+                  th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}" class="prezzo"></div>
 							<a th:href="@{/dettaglio(id=${prodotto.idProdotto})}">
 							<button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
 							</a>
