@@ -22,7 +22,7 @@ public class PrenotazioneController {
 	UtenteService utenteService;
 
 	@GetMapping
-	public String getPage(Model model, @RequestParam(name="id") int idProdotto) {
+	public String getPage(Model model, @RequestParam(name="id", required=false) int idProdotto) {
 		Utente utente = new Utente();
 		model.addAttribute("utente", utente);
 		return "contattaci";
