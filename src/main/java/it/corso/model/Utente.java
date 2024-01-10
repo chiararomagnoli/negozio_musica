@@ -1,20 +1,21 @@
 package it.corso.model;
 
+import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.Pattern;
 
 public class Utente {
 
-	@Pattern(regexp = "[a-zA-Z\\s'] {1,50}", message= "Caratteri non ammessi")
+	@Pattern(regexp = "[a-zA-Z\\s']{1,50}", message = "Caratteri non ammessi")
 	private String nome;
 	
-	@Pattern(regexp = "[a-zA-Z\\s'] {1,50}", message= "Caratteri non ammessi")
+	@Pattern(regexp = "[a-zA-Z\\s']{1,50}", message = "Caratteri non ammessi")
 	private String cognome;
 	
-	@Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Indirizzo email non valido")
+	@Pattern(regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}$", message = "Indirizzo email non valido")
 	private String email;
 	 
-	@Pattern(regexp = "^\\+(?:[0-9] ?){6,14}[0-9]$", message = "Numero di telefono non valido")
-	 private String telefono;
+	@Digits(integer = 15, fraction = 0, message = "Numero di telefono non valido")
+	private long telefono;
 
 	public String getNome() {
 		return nome;
@@ -40,11 +41,11 @@ public class Utente {
 		this.email = email;
 	}
 
-	public String getTelefono() {
+	public long getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(String telefono) {
+	public void setTelefono(long telefono) {
 		this.telefono = telefono;
 	}
 	
