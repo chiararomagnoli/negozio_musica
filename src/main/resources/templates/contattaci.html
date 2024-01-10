@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+    
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css" />
+  <title>Music.toString() - HomePage</title>
+  <link rel="icon" type="image/x-icon" href="../static/images/icona-browser.png"> <!-- icona browser -->
+
+  <!-- JS per imm dinamiche -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS per scroll navbar top -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+          var navbar = $(".navbar");
+  
+          $(window).scroll(function () {
+              if ($(this).scrollTop() > 50) {
+                  navbar.addClass("fixed-top");
+              } else {
+                  navbar.removeClass("fixed-top");
+              }
+          });
+      });
+  </script>
+
+</head>
+
+<body>
+  <!-- Logo e pulsanti -->
+  <div class="container-fluid bg-dark p-2 mx-auto">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-8 logo">
+          <img th:src="@{/images/logo.png}" alt="Logo">
+         
+        </div>
+        <div class="col-md-4 mx-auto">
+          <!-- Pulsanti -->
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <button class="btn btn-outline-secondary mr-2">Accedi</button>
+            <button class="btn btn-outline-secondary mr-2">Ricerca</button>
+            <!-- <button class="btn btn-outline-secondary">Carrello</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark container-fluid">
+    <!-- Pulsante per mobile -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Elementi della navbar -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Chitarre</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tastiere</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Archi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Percussioni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Fiati</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Usato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Novità</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container text-center mt-5 mb-5">
+    <div class="row">
+        <div class="col-5">
+			<form id="form" name="modulo" method="post" th:action="@{/submit}" th:object="${form}">
+				<legend>Dati anagrafici</legend>
+				Nome: <input type="text" name="nome" class="" size="15" th:field="*{nome}"> <br>
+            	Cognome: <input type="text" name="cognome" class="" size="15" th:field="*{cognome}"> <br>
+            	Tel. <input type="tel" name="tel" class="" size="15" maxlength="15"> <br>
+            	Email <input type="email" name="email" class="" size="15"> <br>
+            	<input type="button" name="button" id="submit" value="Invia dati"> <br>
+			</form>
+       
+        </div>
+    </div>
+    
+    <div id="ricevuta" th:if="">
+		 <p th:text="'Grazie, ' + ${form.name} + '! Hai un appuntamento in negozio il ' + ${appointmentForm.date}"></p>
+	</div>
+  </div>
+        
+  
+  <!-- footer -->
+  <footer class="container-fluid mt-2 d-flex text-white">
+    <div class="row piede mx-auto">
+      <div class="col-md-3 piede_item">
+        <h5>INFORMAZIONI</h5>
+        <ul>
+          <li><a href="#">Chi siamo</a></li>
+          <li><a href="#">Dove siamo</a></li>                   
+          <li><a href="#">Orari</a></li>
+          <li><a href="#">Contatti</a></li>
+          <li><a href="#">Marche</a></li>                   
+        </ul>
+      </div>
+      <div class="col-md-3 piede_item">
+        <h5>NAVIGAZIONE</h5>
+        <ul>
+          <li><a href="index.html">Home Page</a></li>
+          <li><a href="#">Ricerca</a></li>
+          <li><a href="#">Novità</a></li>
+          <li><a href="#">Mercatino dell'usato</a></li>
+          <li><a href="#">Promozioni</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 piede_item">
+        <h5>ACQUISTI</h5>
+        <ul>
+          <li><a href="#">Resi</a></li>
+          <li><a href="#">Rimborsi</a></li>
+          <li><a href="#">Assistenza</a></li>
+          <li><a href="#">Spedizioni</a></li>
+          <li><a href="#">Account</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 piede_item">
+          <h5>SOCIAL</h5>
+          <div class="row">
+            <div class="col-md-12 social-icons">
+				
+			<a href="#"><img th:src="@{/images/facebook-icon.png}"  alt="Facebook"  height="100px"></a>
+            <a href="#"><img th:src="@{/images/instagram-icon.png}" alt="Instagram" height="100px" /></a>
+            <a href="#"><img th:src="@{/images/youtube-icon.png}" alt="Youtube" height="100px" /></a>
+            <a href="#"><img th:src="@{/images/tiktok-icon.png}" alt="Tik-Tok" height="100px" /></a>
+            
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
