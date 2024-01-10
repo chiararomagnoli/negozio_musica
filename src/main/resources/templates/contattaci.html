@@ -97,22 +97,22 @@
   <div class="container text-center mt-5 mb-5">
     <div class="row">
         <div class="col-5">
-			<form id="form" name="modulo" method="post" th:action="@{/submit}" th:object="${form}">
+			<form id="form" name="modulo" method="post" th:action="@{/submit}" th:object="${utente}">
 				<legend>Dati anagrafici</legend>
-				Nome: <input type="text" name="nome" class="" size="15" th:field="*{nome}"> <br>
-            	Cognome: <input type="text" name="cognome" class="" size="15" th:field="*{cognome}"> <br>
-            	Tel. <input type="tel" name="tel" class="" size="15" maxlength="15"> <br>
-            	Email <input type="email" name="email" class="" size="15"> <br>
+				Nome: <input type="text" name="nome" class="" size="15" th:field="*{nome}" required> <br>
+            	Cognome: <input type="text" name="cognome" class="" size="15" th:field="*{cognome}" required> <br>
+            	Tel. <input type="tel" name="tel" class="" size="15" maxlength="15" th:field="*{telefono}" required> <br>
+            	Email <input type="email" name="email" class="" size="15" th:field="*{email}" required> <br>
             	<input type="button" name="button" id="submit" value="Invia dati"> <br>
 			</form>
        
         </div>
     </div>
     
-    <div id="ricevuta" th:if="">
-		 <p th:text="'Grazie, ' + ${form.name} + '! Hai un appuntamento in negozio il ' + ${appointmentForm.date}"></p>
-	</div>
-  </div>
+<div id="ricevuta" th:if="${appointmentReceived}">
+    <p th:text="'Grazie, ' + ${utente.nome} + '! Hai un appuntamento in negozio il ' + ${#calendars.format(#calendars.createNow().plusDays(1), 'dd-MM-yy')}">
+	</p>
+</div>
         
   
   <!-- footer -->
