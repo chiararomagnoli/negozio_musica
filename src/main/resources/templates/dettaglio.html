@@ -34,29 +34,29 @@
 
 </head>
 
-<body>
-  <!-- Logo e pulsanti -->
+<body class="d-flex flex-column min-vh-100">
+	
+	<!-- Logo e pulsanti -->
   <div class="container-fluid bg-dark p-2 mx-auto">
-    <div class="container">
+    <div class="container mx-auto">
       <div class="row align-items-center">
         <div class="col-md-8 logo">
           <img th:src="@{/images/logo.png}" alt="Logo">
-         
         </div>
         <div class="col-md-4 mx-auto">
           <!-- Pulsanti -->
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <button class="btn btn-outline-secondary mr-2">Accedi</button>
-            <button class="btn btn-outline-secondary mr-2">Ricerca</button>
-            <!-- <button class="btn btn-outline-secondary">Carrello</button> -->
+            <!--<button class="btn btn-outline-secondary mr-2">Accedi</button>
+            <button class="btn btn-outline-secondary mr-2">Registrati</button>-->
           </div>
+            <a th:href="@{/form}"><button class="btn btn-outline-secondary">Ricerca</button></a>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark container-fluid">
     <!-- Pulsante per mobile -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -64,34 +64,74 @@
 
     <!-- Elementi della navbar -->
     <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" th:href="@{/}">Home</a>
+        </li>
+        
+        <!-- parte dinamica -->
+        <li class="nav-item" th:each="categoria : ${categorie}">
+          <a class="nav-link" th:text="${#strings.capitalize(categoria.nomeCategoria)}"
+            th:href="@{'/form/cerca?marca=&categoria='+${categoria.idCategoria}}"></a>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'chitarre'}">
+            <li th:each="sottocategoria : ${sottocategorieChitarre}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="'#'+${sottocategoria.idSottocategoria}"></a>
+            </li>
+          </ul>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'tastiere'}">
+            <li th:each="sottocategoria : ${sottocategorieTastiere}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="'#'+${sottocategoria.idSottocategoria}"></a>
+            </li>
+          </ul>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'archi'}">
+            <li th:each="sottocategoria : ${sottocategorieArchi}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="'#'+${sottocategoria.idSottocategoria}"></a>
+            </li>
+          </ul>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'percussioni'}">
+            <li th:each="sottocategoria : ${sottocategoriePercussioni}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="'#'+${sottocategoria.idSottocategoria}"></a>
+            </li>
+          </ul>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'fiati'}">
+            <li th:each="sottocategoria : ${sottocategorieFiati}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="'#'+${sottocategoria.idSottocategoria}"></a>
+            </li>
+          </ul>
+        </li>
+        
+        <!-- fine parte dinamica | continua il menu -->
+        
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/}">Usato</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Chitarre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Tastiere</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Archi</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Percussioni</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Fiati</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Usato</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Novità</a>
+          <a class="nav-link" th:href="@{/}">Novità</a>
         </li>
       </ul>
     </div>
   </nav>
+
+<!-- fascia superiore grigia -->
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 hidden-sm fascia-top text-center">
+        <span class="setup"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!--DIV CON IMMAGINE-->
 
@@ -113,7 +153,7 @@
 		<div style="display: flex; flex-wrap: nowrap; flex-direction: column; align-items: center;">
 			<!--MARCA-->
 			<div  style="display: flex; flex-direction: row; ">
-				<h5 class="marca" style="margin-right:5px;">  Marca:</h5>
+				<h5 class="marca" style="margin-right:5px">  Marca:</h5>
 				<div th:text="${prodotto.marca.nomeMarca}"></div>
 			</div>
 			<!--CONDIZIONI-->
@@ -127,7 +167,7 @@
 				<div th:text="${prodotto.disponibilita}"></div>
 			</div>
 			<!--DESCRIZIONE-->
-			<p class="descrizione mt-3" th:utext="${#strings.replace(prodotto.descrizione, '\n', '<br>')}"></p> 
+			<p class="descrizione" th:utext="${#strings.replace(prodotto.descrizione, '\n', '<br>')}"></p> 
 	</div> 
 </div>   
 
