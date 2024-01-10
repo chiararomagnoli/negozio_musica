@@ -14,18 +14,19 @@
 
 /* pulsanti in alto */
 .btn-group {
-  /* padding-left: 30px; */
+  padding-left: 200px;
   border: none;
 }
 
 .btn {
   color: #EEEEEE;
+
 }
 
 .navbar { 
   width: 100%;
   margin: auto; 
-  font-size: 19px;
+  font-size: 18px;
 }
 
 .navbar-toggler-icon {
@@ -40,7 +41,7 @@ a.nav-link, a.navbar-brand {
     font-family: 'RocknRoll One', sans-serif;
     color: #F0EB8D;          
     padding: 0px 0px;
-    margin-right: 65px;
+    margin-right: 68px;
 }
 
 .navbar-brand img {
@@ -76,7 +77,7 @@ button.navbar-toggler {
   list-style: none;
   display: none;
   position: absolute;
-  top: 64px; /* finestra popup della tendina */
+  top: 63px; /* finestra popup della tendina */
   background-color: #2D2727;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   z-index: 99999;
@@ -90,7 +91,6 @@ button.navbar-toggler {
 .sottomenu1 li a {
   color: #EEEEEE;
 }
-
 
 .sottomenu1 li a:hover {
   cursor:pointer;
