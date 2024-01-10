@@ -143,7 +143,7 @@
             <span th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></span>
         </th:block>
     </div>
-    <a th:href="@{/prenotazione}"><button class="btn btn-lg mt-3 button">Prenota</button></a>
+    <a th:href="@{/prenotazione(id=${prodotto.idProdotto})}"><button class="btn btn-lg mt-3 button">Prenota</button></a>
 </div>
             
         </div>

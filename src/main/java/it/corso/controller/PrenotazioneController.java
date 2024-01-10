@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.corso.model.Utente;
 import it.corso.service.UtenteService;
@@ -21,7 +22,7 @@ public class PrenotazioneController {
 	UtenteService utenteService;
 
 	@GetMapping
-	public String  visualizzaFormPrenotazione(Model model) {
+	public String getPage(Model model, @RequestParam(name="id") int idProdotto) {
 		Utente utente = new Utente();
 		model.addAttribute("utente", utente);
 		return "contattaci";

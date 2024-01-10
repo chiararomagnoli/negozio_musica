@@ -97,7 +97,7 @@
   <div class="container text-center mt-5 mb-5">
     <div class="row">
         <div class="col-5">
-			<form id="form" name="modulo" method="post" th:action="@{/submit}" th:object="${utente}">
+			<form id="form" name="modulo" method="post" th:action="@{/prenotazione}" th:object="${utente}">
 				<legend>Dati anagrafici</legend>
 				Nome: <input type="text" name="nome" class="" size="15" th:field="*{nome}" required><p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
         <br>
