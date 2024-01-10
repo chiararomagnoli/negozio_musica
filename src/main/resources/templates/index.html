@@ -280,7 +280,7 @@
                     <!-- <div class="title" th:text="${prodotto.descrizione}"></div> -->
                     
                     <div class="disponibile" th:text="'Disponibilità: ' + ${prodotto.disponibilita}"></div>
-                    <div th:if="${prodotto.sconto ne 0}">
+                    <div th:if="${prodotto.sconto ne 0}" class="prezzo">
                   <del th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></del>
                   <!-- prezzo barrato -->
                   <div
@@ -292,7 +292,7 @@
                     -->
                </div>
                <span th:unless="${prodotto.sconto ne 0}"
-                  th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></span>
+                  th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'" class="prezzo"></span>
                 <a th:href="@{/dettaglio(id=${prodotto.idProdotto})}">
                   <button class="btn btn-outline-secondary mr-2 button">Scopri</button>
                 </a>
@@ -322,7 +322,7 @@
                         <!-- <div class="title" th:text="${prodotto.descrizione}"></div> -->
                         <div class="disponibile" th:text="'Disponibilità: ' + ${prodotto.disponibilita}"></div>
                         <div class="prezzo" th:if="${prodotto.sconto ne 0}">
-							<del th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></del>
+							<del th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'" class="prezzo"></del>
                   <!-- prezzo barrato -->
                   <div class="prezzo"
                     th:text="${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')} + '€'"></div>
@@ -334,7 +334,7 @@
                         </div>
                         
                         <div th:unless="${prodotto.sconto ne 0}"
-                  th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></div>
+                  th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'" class="prezzo"></div>
 							<a th:href="@{/dettaglio(id=${prodotto.idProdotto})}">
 							<button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
 							</a>
