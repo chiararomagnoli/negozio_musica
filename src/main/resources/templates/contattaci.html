@@ -93,7 +93,6 @@
     </div>
   </nav>
 
-
   <div class="container text-center mt-5 mb-5">
     <div class="row">
         <div class="col-5">
@@ -111,16 +110,17 @@
             	Email <input type="email" name="email" class="" size="15" th:field="*{email}" required>
             	<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
         <br>
-        		<input type="hidden" name="id" th:value="${id}" />
+        		<input type="hidden" name="id" th:value="${id}">
+        		<input type="reset" name="button" value="Resetta campi">
             	<input type="submit" name="button" value="Prenota">
+            	
 			</form>
        
         </div>
     </div>
     
-<div id="ricevuta" th:if="${appointmentReceived}">
-    <p th:if="${appointmentReceived}" th:text="'Grazie, ' + ${utente.nome} + '! Hai un appuntamento in negozio il ' + ${#calendars.format(#calendars.createNow().plusDays(1), 'dd-MM-yy')}">
-	</p>
+<div th:if="${appointmentReceived}">
+	<p th:text="'Grazie, ' + ${utente.nome} + ' ' + ${utente.cognome} + '! Hai un appuntamento in negozio il ' + ${#dates.format(#dates.createNow(), 'dd-MM-yyyy')}"></p>
 </div>
         
   

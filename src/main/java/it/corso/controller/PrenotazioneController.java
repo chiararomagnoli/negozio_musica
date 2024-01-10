@@ -23,26 +23,41 @@ public class PrenotazioneController {
 	
 
 	@GetMapping
-	public String getPage(Model model, @RequestParam(name="id", required=false) Integer idProdotto) {
-		Utente utente = new Utente();
-		model.addAttribute("utente", utente);
-		model.addAttribute("id", idProdotto.intValue());
+	public String getPage(Model model, @RequestParam(name="id", required=false) Integer idProdotto, 
+			@RequestParam(name="nome", required=false) String nome, 
+			@RequestParam(name="cognome", required = false) String cognome) {
+		
+		if(nome==null&&cognome==null) {
+			model.addAttribute("appointmentReceived", false);
+			model.addAttribute("utente", new Utente());
+			
+		}else {
+			Utente utente=new Utente();
+			utente.setNome(nome);
+			utente.setCognome(cognome);
+			model.addAttribute("appointmentReceived", true);
+			model.addAttribute("utente", utente);
+		}
+
+		
+		model.addAttribute("id", idProdotto==null? 0:idProdotto.intValue());
+		
 		
 		return "contattaci";
 	}
-	
+	//@RequestParam(name="id", required=false) Integer idProdotto,?id="+idProdotto.intValue()
 	@PostMapping
 	public String formManager(@Valid @ModelAttribute("utente") Utente utente,
-			@RequestParam(name="id", required=false) Integer idProdotto,
+			
 			BindingResult result, Model model) {
 		
 		if(result.hasErrors()) {
 			return "contattaci";}else{	
 		utenteService.registraPrenotazioneUtente(utente);
 		model.addAttribute("appointmentReceived", true);
-		return "redirect:/prenotazione?id="+idProdotto.intValue();
+        System.out.println("Form compiled successfully. Setting appointmentReceived to true.");
+
+		return "redirect:/prenotazione?nome="+utente.getNome()+"&cognome="+utente.getCognome();
 			}
-		//
-		//idProdotto= idProdotto==null? 0 : ;
 	}
 }
