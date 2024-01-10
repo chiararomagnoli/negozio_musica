@@ -20,22 +20,29 @@ public class PrenotazioneController {
 	
 	@Autowired
 	UtenteService utenteService;
+	
 
 	@GetMapping
 	public String getPage(Model model, @RequestParam(name="id", required=false) Integer idProdotto) {
 		Utente utente = new Utente();
 		model.addAttribute("utente", utente);
+		model.addAttribute("id", idProdotto.intValue());
+		
 		return "contattaci";
 	}
 	
 	@PostMapping
 	public String formManager(@Valid @ModelAttribute("utente") Utente utente,
+			@RequestParam(name="id", required=false) Integer idProdotto,
 			BindingResult result, Model model) {
+		
 		if(result.hasErrors()) {
 			return "contattaci";}else{	
 		utenteService.registraPrenotazioneUtente(utente);
 		model.addAttribute("appointmentReceived", true);
-		return "redirect:/prenotazione";
-			}		
+		return "redirect:/prenotazione?id="+idProdotto.intValue();
+			}
+		//
+		//idProdotto= idProdotto==null? 0 : ;
 	}
 }
