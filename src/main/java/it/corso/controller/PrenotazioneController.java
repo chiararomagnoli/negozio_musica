@@ -35,7 +35,7 @@ public class PrenotazioneController {
 	public String getPage(Model model, @RequestParam(name="id", required=false) Integer idProdotto, 
 			@RequestParam(name="nome", required=false) String nome, 
 			@RequestParam(name="cognome", required = false) String cognome) {
-		
+		//model utili per la navbar
 		model.addAttribute("sottocategorie", sottocategoriaService.getSottocategoria());
 		model.addAttribute("categorie", categoriaService.getCategorie());
         model.addAttribute("sottocategorieChitarre", sottocategoriaService.getSottocategoriaByIdCategoria(1));
@@ -43,7 +43,7 @@ public class PrenotazioneController {
         model.addAttribute("sottocategorieArchi", sottocategoriaService.getSottocategoriaByIdCategoria(3));
         model.addAttribute("sottocategoriePercussioni", sottocategoriaService.getSottocategoriaByIdCategoria(4));
         model.addAttribute("sottocategorieFiati", sottocategoriaService.getSottocategoriaByIdCategoria(5));
-		
+		//parte logica
 		if(nome==null&&cognome==null) {
 			model.addAttribute("appointmentReceived", false);
 			model.addAttribute("utente", new Utente());
@@ -62,7 +62,7 @@ public class PrenotazioneController {
 		
 		return "contattaci";
 	}
-	//@RequestParam(name="id", required=false) Integer idProdotto,?id="+idProdotto.intValue()
+
 	@PostMapping
 	public String formManager(@Valid @ModelAttribute("utente") Utente utente,
 			
