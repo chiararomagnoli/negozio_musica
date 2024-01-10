@@ -10,7 +10,7 @@ public class Utente {
 	@Pattern(regexp = "[a-zA-Z\\s'] {1,50}", message= "Caratteri non ammessi")
 	private String cognome;
 	
-	 @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Indirizzo email non valido")
+	@Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "Indirizzo email non valido")
 	private String email;
 	 
 	@Pattern(regexp = "^\\+(?:[0-9] ?){6,14}[0-9]$", message = "Numero di telefono non valido")
