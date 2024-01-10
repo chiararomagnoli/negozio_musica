@@ -16,6 +16,129 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!--<script th:src="@{/js/index.js}"></script>-->
+    <script>
+        function selezionaCategoria() {
+            const categoriaSelect = document.getElementById('categoria');
+            const sottocategoriaSelect = document.getElementById('sottocategoria');
+
+            // Ottieni il valore selezionato nella select della categoria
+            const selectedCategoria = categoriaSelect.value;
+
+            // Abilita la select delle sottocategorie
+            sottocategoriaSelect.disabled = false;
+
+            // Rimuovi tutte le opzioni attuali nella select delle sottocategorie
+            sottocategoriaSelect.innerHTML = '';
+
+            // Aggiungi un'opzione vuota nella select delle sottocategorie
+            const emptyOption = document.createElement('option');
+            emptyOption.value = '';
+            emptyOption.text = '-- Seleziona una sottocategoria --';
+            sottocategoriaSelect.appendChild(emptyOption);
+
+            // Simuliamo l'aggiunta di opzioni in base alla categoria selezionata
+            // In una situazione reale, dovresti ottenere le opzioni dal server o da qualche altra fonte di dati
+            if (selectedCategoria == 1) {
+                // Aggiungi opzioni per Categoria 1
+                addOptionsForCategoria1();
+            } else if (selectedCategoria == 2) {
+                // Aggiungi opzioni per Categoria 2
+                addOptionsForCategoria2();
+            }else if (selectedCategoria == 3) {
+                // Aggiungi opzioni per Categoria 2
+                addOptionsForCategoria3();
+            }else if (selectedCategoria == 4) {
+                // Aggiungi opzioni per Categoria 2
+                addOptionsForCategoria4();
+            }else if (selectedCategoria == 5) {
+                // Aggiungi opzioni per Categoria 2
+                addOptionsForCategoria5();
+            }
+            // Aggiungi altre clausole 'else if' secondo le tue esigenze
+        }
+
+        function addOptionsForCategoria1() {
+            const sottocategoriaSelect = document.getElementById('sottocategoria');
+
+            // Simuliamo l'aggiunta di opzioni per Categoria 1
+            const option1 = document.createElement('option');
+            option1.value = 1;
+            option1.text = 'Chitarre classiche';
+            sottocategoriaSelect.appendChild(option1);
+
+            const option2 = document.createElement('option');
+            option2.value = 2;
+            option2.text = 'Chitarre acustiche';
+            sottocategoriaSelect.appendChild(option2);
+
+            const option3 = document.createElement('option');
+            option3.value = 3;
+            option3.text = 'Chitarre elettriche';
+            sottocategoriaSelect.appendChild(option3);
+        }
+
+        function addOptionsForCategoria2() {
+            const sottocategoriaSelect = document.getElementById('sottocategoria');
+
+            // Simuliamo l'aggiunta di opzioni per Categoria 2
+            const option4 = document.createElement('option');
+            option4.value = 4;
+            option4.text = 'Pianoforti';
+            sottocategoriaSelect.appendChild(option4);
+
+            const option5 = document.createElement('option');
+            option5.value = 5;
+            option5.text = 'Tastiere elettriche';
+            sottocategoriaSelect.appendChild(option5);
+        }
+        function addOptionsForCategoria3() {
+            const sottocategoriaSelect = document.getElementById('sottocategoria');
+
+            // Simuliamo l'aggiunta di opzioni per Categoria 3
+            const option6 = document.createElement('option');
+            option6.value = 6;
+            option6.text = 'Violini';
+            sottocategoriaSelect.appendChild(option6);
+
+            const option7 = document.createElement('option');
+            option7.value = 7;
+            option7.text = 'Violoncelli';
+            sottocategoriaSelect.appendChild(option7);
+        }
+        function addOptionsForCategoria4() {
+            const sottocategoriaSelect = document.getElementById('sottocategoria');
+
+            // Simuliamo l'aggiunta di opzioni per Categoria 4
+            const option8 = document.createElement('option');
+            option8.value = 8;
+            option8.text = 'Batterie acustiche';
+            sottocategoriaSelect.appendChild(option8);
+
+            const option9 = document.createElement('option');
+            option9.value = 9;
+            option9.text = 'Batterie elettriche';
+            sottocategoriaSelect.appendChild(option9);
+        }
+        function addOptionsForCategoria5() {
+            const sottocategoriaSelect = document.getElementById('sottocategoria');
+
+            // Simuliamo l'aggiunta di opzioni per Categoria 5
+            const option10 = document.createElement('option');
+            option10.value = 10;
+            option10.text = 'Sassofoni';
+            sottocategoriaSelect.appendChild(option10);
+
+            const option11 = document.createElement('option');
+            option11.value = 11;
+            optio11.text = 'Trombe';
+            sottocategoriaSelect.appendChild(optio11);
+
+            const option12 = document.createElement('option');
+            option12.value = 12;
+            option12.text = 'Clarinetti';
+            sottocategoriaSelect.appendChild(option12);
+        }
+    </script>
 </head>
 
 <body>
@@ -93,12 +216,18 @@
 					</select>
                 </div>
                 <div class="col-md-4">
-					<select id="categoria" name="categoria" class="form-control">
+					<select id="categoria" name="categoria" class="form-control" onchange="selezionaCategoria()">
 						<option value="">-- Seleziona una categoria --</option>
-						<option th:each="c : ${categorie}" th:value="${c.idCategoria}" th:text="${c.nomeCategoria}">
+						<option th:each="c : ${categorie}" th:value="${c.idCategoria}"  th:text="${#strings.capitalize(c.nomeCategoria)}">
 						</option>
 					</select>
                 </div>
+                <div class="col-md-4">
+        <select id="sottocategoria" name="sottocategoria" class="form-control" disabled>
+            <option value="">-- Seleziona una sottocategoria --</option>
+            <!-- Opzioni della sottocategoria verranno aggiunte dinamicamente -->
+        </select>
+    </div>
                 <div class="col-md-2">
 				<div class="form-check">
 					<input type="radio" name="condizione" th:value="nuovo" class="form-check-input">
@@ -137,271 +266,8 @@
                     <a th:href="@{/dettaglio(id=${p.idProdotto})}"><button class="btn btn-outline-secondary mr-2 button ">Dettagli</button></a>
                 </div>
             </div>
-        
-
-
-
- <!--           CARD DUE
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    <img th:src="@{/images/14.png}" alt="" class="card-img card-img ml-4"> 
-                    
-                </div>
-                <div class="text-center">
-                    <h2 class="name">'Bruck Cello 3/4 HDC01 Laminato completo di arco e borsa</h2>
-                    <p class="description">235,00 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-            </div>
-
-            CARD TRE
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                     <img th:src="@{images/10.png}" alt="" class="card-img card-img ml-4"> 
-                    
-                </div>
-                <div class="text-center">
-                    <h2 class="name">'Carry-On 88 tastiera pieghevole'</h2>
-                    <p class="description">498,00 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-                </div>
-            
-        </div>
-        CARD QUATTRO
-        <div class="row">
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    <img th:src="@{/images/7.png}" alt="" class="card-img card-img ml-4">
-                    
-                </div>
-                <div class="text-center">
-                    <h2 class="name">'Carry-On BC2301 E11 Clarinetto Piccolo in Mib Ebano'</h2>
-                    <p class="description">370,00 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-            </div>
-
-
-            CARD 5
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    <img th:src="@{/images/1.png}" alt="" class="card-img ml-4">
-                    
-                </div>
-                <div class="text-center">
-                    <h2 class="name">'Eko CS-10 Chitarra Classica Ambra Natural'</h2>
-                    <p class="description">499,00 €</p>
-
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-            </div>
-
-            CARD 6
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    <img th:src="@{/images/16.png}" alt="" class="card-img ml-4">
-                    
-                </div>
-                <div class="text-center">
-                    <h2 class="name">'Eko Drums ED-200 Drum kit Metallic Blue - 5 pezzi'</h2>
-                    <p class="description">549,00 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-            </div>
-        </div>
-    
-
-        CARD 7
-        <div class="row">
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    <img th:src="@{/images/2.png}" alt="" class="card-img ml-4">
-                    
-                </div>
-                <div class="text-center">
-                    <h2 class="name">'Eko Guitars NXT D Blue Sunburst'</h2>
-                    <p class="description">442,00 € </p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-            </div>
-
-
-            CARD 8
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    
-                        <img th:src="@{/images/5.png}" alt="" class="card-img ml-4">
-                    
-                </div>
-                <div class="text-center">
-                    <h2 class="name">' Huadong Kit Batteria Elettronica 7 Pad con Modulo Sonoro e Pelli Mesh'</h2>
-                    <p class="description">785,00 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-
-                </div>
-            </div>
-
-            CARD 9
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    
-                        <img th:src="@{/images/18.png}" alt="" class="card-img card-img ml-4">
-                    </div>
-
-                    <div class="text-center">
-                        <h2 class="name">'Proel CCR3882-GSS-Bb-L Cornetta in Sib Laccata'</h2>
-                        <p class="description">271,00 €</p>
-                        <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                    </div>
-                </div>
-            </div>
-        
-        CARD 10
-        <div class="row">
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    <img th:src="@{/images/4.png}" alt="" class="card-img card-img ml-4">
-                    </div>
-                
-                <div class="text-center">
-                    <h2 class="name">'Proel CS-10 Chitarra classica finitura Blue'</h2>
-                    <p class="description">885,00 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-            </div>
-
-
-            CARD 11
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    
-                        <img th:src="@{/images/11.png}" alt="" class="card-img card-img ml-4">
-                    </div>
-                    <div class="text-center">
-                        <h2 class="name">'Sauter Accento Pianoforte verticale by Peter Maly'</h2>
-                        <p class="description">2.780,00 €</p>
-                        <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                    
-                </div>
-            </div>
-            CARD 12
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    <img th:src="@{/images/17.png}" alt="" class="card-img ml-4">
-                    
-                </div>
-                <div class="text-center">
-                    <h2 class="name">'Stentor JDK516 MR Batteria Junior 5 pezzi Completa'</h2>
-                    <p class="description">902,18 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-            </div>
-        </div>
-        CARD 13
-        <div class="row">
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    <img th:src="@{/images/13.png}" alt="" class="card-img card-img ml-4">
-                    </div>
-                
-                <div class="text-center">
-                    <h2 class="name">'STENTOR Violino Student 1 3/4 Settato'</h2>
-                    <p class="description">123,00 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-            </div>
-
-
-            CARD 14
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    <img th:src="@{/images/15.png}" alt="" class="card-img card-img ml-4">
-                    </div>
-                
-                <div class="text-center">
-                    <h2 class="name">'VHIENNA MEISTER VH CES12'</h2>
-                    <p class="description">535,00 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-            </div>
-
-            CARD 15
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    
-                        <img th:src="@{/images/12.png}" alt="" class="card-img card-img ml-4">
-                    </div>
-                
-                <div class="text-center">
-                    <h2 class="name">'VHIENNA MEISTER VH VOB 4/4 Violino' </h2>
-                    <p class="description">195,00 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-            </div>
-        </div>
-        CARD 16
-        <div class="row">
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    <img th:src="@{/images/9.png}" alt="" class="card-img card-img ml-4">
-                    </div>
-                
-                <div class="text-center">
-                    <h2 class="name">'Yamaha PSRF52 Tastiera Portatile 61 Tasti'</h2>
-                    <p class="description">390,00 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-            </div>
-
-
-            CARD 17
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    <img th:src="@{/images/3.png}" alt="" class="card-img ml-4">
-                    </div>
-                
-                <div class="text-center">
-                    <h2 class="name">'Yamaha SG1820A CHITARRA ELETTRICA CON CASE BLACK'</h2>
-                    <p class="description">790,00 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-            </div>
-
-            CARD 18
-            <div class="card swiper-slide">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                    <img th:src="@{/images/6.png}" alt="" class="card-img card-img ml-4">
-                    </div>
-                
-                <div class="text-center">
-                    <h2 class="name">'Yamaha YBS480 Sax Baritono Discendente al La Laccato'</h2>
-                    <p class="description">1.679,00 €</p>
-                    <button class="btn btn-outline-secondary mr-2 button ">Dettagli</button>
-                </div>
-            </div> -->
         </div>
     </div>
-
-
-
 
     <!-- footer -->
     <footer class="container-fluid mt-2 d-flex text-white">
