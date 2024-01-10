@@ -126,6 +126,8 @@ button.navbar-toggler {
 
 .setup-icons {
   padding-right: 20px;
+  width: 25px;
+  height: auto;
 }
 
 footer {
@@ -182,6 +184,17 @@ footer {
   width: 35px;
   height: auto;
 }
+
+/* banner */
+
+  .setup {
+    margin: 5px 0;
+  }
+  
+  .setup-icons{
+	  width: 20px;
+	  height: auto;
+  }
 
   /* FINE PARTE DI HEADER E FOOTER */
   
@@ -501,10 +514,6 @@ footer {
     justify-content: center;
   }
 
-  .setup {
-    margin: 5px 0;
-  }
-
   #demo .carousel-inner img {
     height:250px;
     justify-content: center;
@@ -530,7 +539,6 @@ footer {
   .homepage .card img {
     width: 100%;
   }
-
 
   .dimensione:hover {
     -ms-transform: scale(1,1);
