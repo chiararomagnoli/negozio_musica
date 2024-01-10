@@ -228,7 +228,7 @@
                   <img th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" alt="immagine prodotto"> <!-- controllare se in alt bisogna usare il timeleafh -->
                   <div class="container">
                     <div class="card-title" th:text="${prodotto.nomeProdotto}"></div>
-                    <div class="title">Marca</div>
+                    <!--<div class="title">Marca</div>-->
                     <!-- descrizione ?? -->
                     <!-- <div class="title" th:text="${prodotto.descrizione}"></div> -->
                     <div class="disponibile"  th:text="'Disponibilità: ' + ${prodotto.disponibilita}"></div>
