@@ -15,7 +15,7 @@ public class Utente {
 	private String email;
 	 
 	@Digits(integer = 15, fraction = 0, message = "Numero di telefono non valido")
-	private long telefono;
+	private String telefono;
 
 	public String getNome() {
 		return nome;
@@ -41,11 +41,11 @@ public class Utente {
 		this.email = email;
 	}
 
-	public long getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(long telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 	

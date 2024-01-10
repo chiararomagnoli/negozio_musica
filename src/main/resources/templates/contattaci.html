@@ -32,7 +32,20 @@
               }
           });
       });
-  </script>
+ 
+ //Svuota i campi del form al ricarimento della pagina
+  window.onload = function() {
+    // Ottieni tutti gli elementi di input del form
+    var inputElements = document.getElementsByTagName('input');
+
+    // Svuota i campi di input
+    for (var i = 0; i < inputElements.length; i++) {
+      if (inputElements[i].type !== 'submit' && inputElements[i].type !== 'reset') {
+        inputElements[i].value = '';
+      }
+    }
+  };
+</script>
 
 </head>
 
@@ -139,13 +152,13 @@
         <div class="col-5">
 			<form id="form" name="modulo" method="post" th:action="@{/prenotazione}" th:object="${utente}">
 				<legend>Inserisci i tuoi dati</legend>
-				Nome: <input type="text" name="nome" class="" size="15" th:field="*{nome}" required>
+				Nome <input type="text" name="nome" class="" size="15" th:field="*{nome}" required>
 				<p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
         <br>
-            	Cognome: <input type="text" name="cognome" class="" size="15" th:field="*{cognome}" required>
+            	Cognome <input type="text" name="cognome" class="" size="15" th:field="*{cognome}" required>
             	<p th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></p>
         <br>
-            	Tel. <input type="tel" name="telefono" class="" size="15" maxlength="15" th:field="*{telefono}" pattern="\d+" required>
+            	Telefono <input type="tel" name="telefono" class="" size="15" maxlength="15" minlength="5" th:field="*{telefono}" pattern="[0-9]+" required>
             	<p th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></p>
         <br>
             	Email <input type="email" name="email" class="" size="15" th:field="*{email}" required>
