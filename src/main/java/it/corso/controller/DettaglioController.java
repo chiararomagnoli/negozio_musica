@@ -34,6 +34,13 @@ public class DettaglioController {
 		model.addAttribute("prodotto", prodotti.get(id-1));
 		model.addAttribute("categorie", categoriaService.getCategorie());
 		model.addAttribute("sottocategorie", sottocategoriaService.getSottocategoria());
+		model.addAttribute("sottocategorie", sottocategoriaService.getSottocategoria());
+		model.addAttribute("categorie", categoriaService.getCategorie());
+        model.addAttribute("sottocategorieChitarre", sottocategoriaService.getSottocategoriaByIdCategoria(1));
+        model.addAttribute("sottocategorieTastiere", sottocategoriaService.getSottocategoriaByIdCategoria(2));
+        model.addAttribute("sottocategorieArchi", sottocategoriaService.getSottocategoriaByIdCategoria(3));
+        model.addAttribute("sottocategoriePercussioni", sottocategoriaService.getSottocategoriaByIdCategoria(4));
+        model.addAttribute("sottocategorieFiati", sottocategoriaService.getSottocategoriaByIdCategoria(5));
 		return "dettaglio";
 	}
 

@@ -1,5 +1,6 @@
 package it.corso.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.corso.model.Utente;
+import it.corso.service.CategoriaService;
+import it.corso.service.SottocategoriaService;
 import it.corso.service.UtenteService;
 import jakarta.validation.Valid;
 
@@ -21,11 +24,25 @@ public class PrenotazioneController {
 	@Autowired
 	UtenteService utenteService;
 	
+	@Autowired
+	CategoriaService categoriaService;
+	
+	@Autowired
+	SottocategoriaService sottocategoriaService;
+	
 
 	@GetMapping
 	public String getPage(Model model, @RequestParam(name="id", required=false) Integer idProdotto, 
 			@RequestParam(name="nome", required=false) String nome, 
 			@RequestParam(name="cognome", required = false) String cognome) {
+		
+		model.addAttribute("sottocategorie", sottocategoriaService.getSottocategoria());
+		model.addAttribute("categorie", categoriaService.getCategorie());
+        model.addAttribute("sottocategorieChitarre", sottocategoriaService.getSottocategoriaByIdCategoria(1));
+        model.addAttribute("sottocategorieTastiere", sottocategoriaService.getSottocategoriaByIdCategoria(2));
+        model.addAttribute("sottocategorieArchi", sottocategoriaService.getSottocategoriaByIdCategoria(3));
+        model.addAttribute("sottocategoriePercussioni", sottocategoriaService.getSottocategoriaByIdCategoria(4));
+        model.addAttribute("sottocategorieFiati", sottocategoriaService.getSottocategoriaByIdCategoria(5));
 		
 		if(nome==null&&cognome==null) {
 			model.addAttribute("appointmentReceived", false);
