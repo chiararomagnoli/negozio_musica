@@ -232,7 +232,7 @@
                     <!-- descrizione ?? -->
                     <!-- <div class="title" th:text="${prodotto.descrizione}"></div> -->
                     <div class="disponibile"  th:text="'Disponibilità: ' + ${prodotto.disponibilita}"></div>
-                    <div th:if="${prodotto.sconto ne 0}" >
+                    <div th:if="${prodotto.sconto ne 0}" style="background-color: blueviolet;">
                   		<del class="sconto" th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></del>
                   <!-- prezzo barrato -->
                   	<div class="prezzo"

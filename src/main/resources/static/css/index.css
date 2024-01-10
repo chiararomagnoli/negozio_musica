@@ -395,10 +395,11 @@ footer {
   color:#413543;
   padding: 10px auto 0 0;
   margin-top: 10px;
+  background-color: rgb(255, 128, 128);
 }
 
 .homepage .card .sconto {
-  
+  background-color: chocolate;
   font-size: 14px;
   color:#413543;
   padding: 10px auto 0 0;
