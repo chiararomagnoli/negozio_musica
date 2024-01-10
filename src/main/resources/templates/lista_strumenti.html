@@ -229,27 +229,29 @@
             <!-- Opzioni della sottocategoria verranno aggiunte dinamicamente -->
         </select>
     </div>
-   			<div class="container radiobutton mb-3 mt-3">
-				   <div class="row">
-					   <div class="col-md-4"> </div>
-                <div class="col-md-2 mt-3">
-					<div class="form-check">
-						<input type="radio" name="condizione" th:value="nuovo" class="form-check-input">
-						<label class="form-check-label" th:text="Nuovo"></label>
+	   	<div class="container radiobutton mb-3 mt-3">
+	    	<div class="row">
+	    		<div class="col-md-4"> </div> <!--prima colonna da 4 vuota-->
+	    		
+		 			<div class="col-md-2 mt-3">	<!--seconda colonna da 2 con i radio-->
+		    			<div class="form-check">
+							<input type="radio" name="condizione" th:value="nuovo" class="form-check-input">
+							<label class="form-check-label" th:text="Nuovo"></label>
+		    			</div>
+						<div class="form-check">
+							<input type="radio" name="condizione" th:value="usato" class="form-check-input">
+							<label class="form-check-label" th:text="Usato"></label>
+						</div>
+		 			</div>
+		 			<div class="col-md-2 mt-3"> <!--terza colonna da 2 con il button-->
+						<button type="submit" class="btn btn-primary btn-block btn-dark button btn-large">Cerca</button>
 					</div>
-					<div class="form-check">
-						<input type="radio" name="condizione" th:value="usato" class="form-check-input">
-						<label class="form-check-label" th:text="Usato"></label>
-					</div>
-                </div>
-                <div class="col-md-2 mt-3">
-                    <button type="submit" class="btn btn-primary btn-block btn-dark button btn-large">Cerca</button>
-                </div>
-                </div>
-                <div class="col-md-4"> </div>
-             </div> 
-            </div>
-            </div>
+				</div>
+				
+			<div class="col-md-4"> </div><!--quarta colonna da 4 vuota-->
+			</div> 
+			</div>
+		</div>
         </form>
 
         <!--CARD UNICA-->

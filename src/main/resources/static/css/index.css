@@ -418,6 +418,8 @@ footer {
 
 .button:hover {
   background-color: #8F43EE;
+  color: white;
+  
 }
 
 .bottoni {
@@ -550,8 +552,39 @@ footer {
 
   /* ----- FINE HOMEPAGE ----- */
 
+	/*CSS DEL DETTAGLIO*/
 
+	.nomeprodotto {
+		font-size: 20px;
+		font-family: 'RocknRoll One';
+	}
 
+	.sottocategoria {
+		font-size: 18px;
+		font-family: 'RocknRoll One';
+	}
+	
+	.marca {
+		font-family: 'RocknRoll One';
+		font-size: 15px;
+	}
+	
+	.condizioni {
+		font-family: 'RocknRoll One';
+		font-size: 15px;
+	}
+	
+	.disponibilita {
+		font-family: 'RocknRoll One';
+		font-size: 15px;
+	}
+	
+	.descrizione {
+		font-family: sans-serif;
+		font-size: 15px;
+		text-align: justify;
+		
+	}
 
 
 

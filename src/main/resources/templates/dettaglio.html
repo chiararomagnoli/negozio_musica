@@ -93,6 +93,7 @@
     </div>
   </nav>
 
+<!--DIV CON IMMAGINE-->
 
   <div class="container text-center mt-5 mb-5">
     <div class="row">
@@ -100,38 +101,37 @@
        
         <img class="card-img-top" th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" >  
         </div>
-        <div class="col-7">
-            <div class="card-body">
-				
-				
-					
-                <h4 class="card-title" th:text="${prodotto.nomeProdotto}"></h4> 
+        
+        <!--INIZIO NOME E DESCRIZIONE PRODOTTO-->
+<div class="col-7">
+	<div class="card-body"> <!--NOME-->
+		<h4 class="card-title nomeprodotto" th:text="${prodotto.nomeProdotto}"></h4> 
               <!--<p th:text="${prodotto.sconto}"></p> -->
-             
-<h5  th:utext="${prodotto.sottocategoria.nomeSottocategoria}"></h5> 
+              <!--SOTTOCATEGORIA-->
+		<h5 class="sottocategoria "th:utext="${prodotto.sottocategoria.nomeSottocategoria}"></h5> 
 
-<div style="display: flex; flex-wrap: nowrap; flex-direction: column; align-items: center;">
-    
-    <div style="display: flex; flex-direction: row; margin-bottom: 10px;">
-        <h5 style="margin-right:5px ; margin-bottom: 0px;">  Marca:</h5>
-        <div th:text="${prodotto.marca.nomeMarca}"></div>
-    </div>
-    <div style="display: flex; flex-direction: row;">
-        <h5 style="margin-right: 5px;">   Condizioni:</h5>
-        <div th:text="${prodotto.condizione}"></div>
-    </div>
-   <div style="display: flex; flex-direction: row;">
-	    <h5 style="margin-right:5px;">Disponibilità:</h5>
-	    <div th:text="${prodotto.disponibilita}"></div>
-	   
-</div>
+		<div style="display: flex; flex-wrap: nowrap; flex-direction: column; align-items: center;">
+			<!--MARCA-->
+			<div  style="display: flex; flex-direction: row; ">
+				<h5 class="marca" style="margin-right:5px;">  Marca:</h5>
+				<div th:text="${prodotto.marca.nomeMarca}"></div>
+			</div>
+			<!--CONDIZIONI-->
+			<div style="display: flex; flex-direction: row;">
+				<h5 class="condizioni" style="margin-right: 5px;">   Condizioni:</h5>
+					<div th:text="${prodotto.condizione}"></div>
+			</div>
+			<!--DISPONIBILITà-->
+			<div  style="display: flex; flex-direction: row;">
+				<h5 class="disponibilita" style="margin-right:5px;">Disponibilità:</h5>
+				<div th:text="${prodotto.disponibilita}"></div>
+			</div>
+			<!--DESCRIZIONE-->
+			<p class="descrizione mt-3" th:utext="${#strings.replace(prodotto.descrizione, '\n', '<br>')}"></p> 
+	</div> 
+</div>   
 
-
-                
-                <p th:utext="${#strings.replace(prodotto.descrizione, '\n', '<br>')}"></p> 
-            </div> 
-            </div>   
-            <div class="card-footer">
+<div class="card-footer">
     <hr class="hr" />
     <div class="card-title lead" th:if="${prodotto != null}">
         <th:block th:if="${prodotto.sconto != 0}">
