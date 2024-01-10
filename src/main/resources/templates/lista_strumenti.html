@@ -207,6 +207,7 @@
     <!-- Contenuto principale -->
     <div class="container mt-4">
         <!-- Form di ricerca -->
+        <div class="container rounded">
         <form th:action="@{/form/cerca}" method="get" class="mb-4">
             <div class="row">
                 <div class="col-md-4">
@@ -228,19 +229,26 @@
             <!-- Opzioni della sottocategoria verranno aggiunte dinamicamente -->
         </select>
     </div>
-                <div class="col-md-2">
-				<div class="form-check">
-					<input type="radio" name="condizione" th:value="nuovo" class="form-check-input">
-					<label class="form-check-label" th:text="Nuovo"></label>
-				</div>
-				<div class="form-check">
-					<input type="radio" name="condizione" th:value="usato" class="form-check-input">
-					<label class="form-check-label" th:text="Usato"></label>
-				</div>
+   			<div class="container radiobutton mb-3 mt-3">
+				   <div class="row">
+					   <div class="col-md-4"> </div>
+                <div class="col-md-2 mt-3">
+					<div class="form-check">
+						<input type="radio" name="condizione" th:value="nuovo" class="form-check-input">
+						<label class="form-check-label" th:text="Nuovo"></label>
+					</div>
+					<div class="form-check">
+						<input type="radio" name="condizione" th:value="usato" class="form-check-input">
+						<label class="form-check-label" th:text="Usato"></label>
+					</div>
                 </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-primary btn-block btn-dark">Cerca</button>
+                <div class="col-md-2 mt-3">
+                    <button type="submit" class="btn btn-primary btn-block btn-dark button btn-large">Cerca</button>
                 </div>
+                </div>
+                <div class="col-md-4"> </div>
+             </div> 
+            </div>
             </div>
         </form>
 
@@ -266,7 +274,7 @@
                     <a th:href="@{/dettaglio(id=${p.idProdotto})}"><button class="btn btn-outline-secondary mr-2 button ">Dettagli</button></a>
                 </div>
             </div>
-        </div>
+          </div>
     </div>
 
     <!-- footer -->

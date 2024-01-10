@@ -162,6 +162,7 @@
     background-color: #FFF;
     float: left;
     border-color: white;
+    
   }
   
   
@@ -198,7 +199,7 @@
   }
   
   .description {
-    font-size: 20px;
+    font-size: 25px;
     color: #707070;
     text-align: center;
     font-weight: bold;
@@ -208,10 +209,11 @@
   
   .name {
     text-align: center;
-    border-radius: 25px;
+    border-radius: 20px;
     background-color: #413543;
     color: white;
     padding: 10px;
+    font-size: 15px;
   
   }
   
@@ -221,4 +223,18 @@
     margin-top: 5px;
   
   }
+  
+  .button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 5px;
+  color: white;
+  background-color: #413543;
+  text-align: center;
+  cursor: pointer;
+  width: 50%;
+}
+ 
+
   /* FINE PAGINA LISTA STRUMENTI */
