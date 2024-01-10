@@ -29,13 +29,12 @@ public class PrenotazioneController {
 	
 	@PostMapping
 	public String formManager(@Valid @ModelAttribute("utente") Utente utente,
-			BindingResult result) {
-		if(result.hasErrors())
-			return "contattaci";		
+			BindingResult result, Model model) {
+		if(result.hasErrors()) {
+			return "contattaci";}else{	
 		utenteService.registraPrenotazioneUtente(utente);
-		
+		model.addAttribute("appointmentReceived", true);
 		return "redirect:/prenotazione";
-		
-		
+			}		
 	}
 }
