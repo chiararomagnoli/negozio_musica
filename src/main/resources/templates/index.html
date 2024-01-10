@@ -232,11 +232,11 @@
                     <!-- descrizione ?? -->
                     <!-- <div class="title" th:text="${prodotto.descrizione}"></div> -->
                     <div class="disponibile"  th:text="'Disponibilità: ' + ${prodotto.disponibilita}"></div>
-                    <div th:if="${prodotto.sconto ne 0}" class="prezzo">
-                  		<del th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></del>
+                    <div th:if="${prodotto.sconto ne 0}" >
+                  		<del class="sconto" th:text="'€' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></del>
                   <!-- prezzo barrato -->
-                  	<div
-                    th:text="${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')} + '€'">
+                  	<div class="prezzo"
+                    th:text="'€' + ${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')}">
                   	</div> <!-- prezzo aggiornato -->
                   	<!-- SCONTO - DA INSERIRE NELL'ANGOLO?
                     <span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span>
