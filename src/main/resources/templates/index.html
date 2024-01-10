@@ -232,7 +232,7 @@
                     <!-- descrizione ?? -->
                     <!-- <div class="title" th:text="${prodotto.descrizione}"></div> -->
                     <div class="disponibile"  th:text="'Disponibilità: ' + ${prodotto.disponibilita}"></div>
-                    <div th:if="${prodotto.sconto ne 0}" style="background-color: blueviolet;">
+                    <div th:if="${prodotto.sconto ne 0}" >
                   		<del class="sconto" th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></del>
                   <!-- prezzo barrato -->
                   	<div class="prezzo"
@@ -245,9 +245,9 @@
                   	<div class="prezzo" th:unless="${prodotto.sconto ne 0}"
                   th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}">
                 </div>
-                <a th:href="@{/dettaglio(id=${prodotto.idProdotto})}">
+                <div class="prezzo"><a th:href="@{/dettaglio(id=${prodotto.idProdotto})}">
                   <button class="btn btn-outline-secondary mr-2 button">Scopri</button>
-                </a>
+                </a></div>
                   </div>
                 </div>
               </div>
@@ -293,13 +293,13 @@
                </div>
                <div class="prezzo" th:unless="${prodotto.sconto ne 0}"
                   th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}" ></div>
-                <a th:href="@{/dettaglio(id=${prodotto.idProdotto})}">
-                  <button class="btn btn-outline-secondary mr-2 button">Scopri</button>
-                </a>
+                <div class="prezzo"><a th:href="@{/dettaglio(id=${prodotto.idProdotto})}">
+                  <button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
+                </a></div>
                     </div>
                   </div>
                 </div>
-              </div>   
+                
         </div>
     </div><!-- chiude row nuovi -->
 
@@ -335,13 +335,15 @@
                         
                         <div th:unless="${prodotto.sconto ne 0}"
                   th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}" class="prezzo"></div>
-							<a th:href="@{/dettaglio(id=${prodotto.idProdotto})}">
-							<button class="btn btn-outline-secondary mr-2 button">Scopri</button></div>
-							</a>
+							<div class="prezzo"><a th:href="@{/dettaglio(id=${prodotto.idProdotto})}">
+							<button class="btn btn-outline-secondary mr-2 button">Scopri</button>
+							</a></div>
                     </div>
                   </div>
                  </div>
                </div>
+              </div>
+    </div>
               
     </div> <!-- chiude row usato -->
   </div> <!-- chiude il container -->

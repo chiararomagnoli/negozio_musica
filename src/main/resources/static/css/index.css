@@ -386,33 +386,33 @@ footer {
   font-size: 13px;
   color:#797979;
   font-family:sans-serif;
-  margin: 0px;
+  margin-bottom: 8px;
 }
 
 .homepage .card .prezzo {
   font-family: 'RocknRoll One', sans-serif;
-  font-size: 14px;
+  font-size: 17px;
   color:#413543;
-  padding: 10px auto 0 0;
-  margin-top: 10px;
-  background-color: rgb(255, 128, 128);
+  padding: 0px auto;
+  margin-top: -5px;
+  padding-left:5px;
 }
 
 .homepage .card .sconto {
-  background-color: chocolate;
-  font-size: 14px;
+  margin-top: 10px; /* sposto solo la scritta */
+  font-size: 13px;
   color:#413543;
-  padding: 10px auto 0 0;
-  margin-top: 10px;
+  padding: 20px auto 0 0;
+  margin-top: 30px;
 }
 
 .homepage .prezzo button { /* da risolvere */
-  font-size: 12px;
-  padding: 6px 5px; /* Imposta i padding del pulsante per controllare le dimensioni */
-  margin-left: auto; /* Sposta il pulsante a destra */
+  font-size: 13px;
+  padding: 9px 12px; /* padding del pulsante per controllare le dimensioni */
+  margin: auto; /* Sposta il pulsante a destra */
   position: absolute; /* Posizionamento assoluto rispetto al contenitore .card */
-  right: 20px; /* Distanza dal bordo destro */
-  bottom: 20px;
+  right: 15px; /* Distanza dal bordo destro */
+  bottom: 15px;
 }
 
 .button {
