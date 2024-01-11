@@ -1,6 +1,9 @@
 package it.corso.controller;
 
 
+import java.time.LocalTime;
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,6 +57,11 @@ public class PrenotazioneController {
 			utente.setCognome(cognome);
 			model.addAttribute("appointmentReceived", true);
 			model.addAttribute("utente", utente);
+			// Genera un orario casuale a intervalli di 30 minuti tra le 9:00 e le 17:30
+	        LocalTime orarioCasuale = generaOrarioCasuale();
+
+	        // Passa l'orario casuale al modello
+	        model.addAttribute("orarioCasuale", orarioCasuale);
 		}
 
 		
@@ -77,4 +85,15 @@ public class PrenotazioneController {
 		return "redirect:/prenotazione?nome="+utente.getNome()+"&cognome="+utente.getCognome();
 			}
 	}
+	
+	private LocalTime generaOrarioCasuale() {
+        Random random = new Random();
+
+        // Genera un numero casuale tra 0 e 18 (incluso) per rappresentare gli intervalli di 30 minuti
+        int intervalloCasuale = random.nextInt(19);
+
+        // Calcola l'orario casuale aggiungendo l'intervallo casuale a 9:00
+        LocalTime orarioInizio = LocalTime.of(9, 0);
+        return orarioInizio.plusMinutes(intervalloCasuale * 30);
+    }
 }

@@ -202,7 +202,7 @@ function clearFormFields() {
 	<!-- Ottenere la data successiva, gestendo la domenica -->
 	<!-- Aggiunge un giorno alla data odierna -->
 	<th:block th:with="today=${T(java.time.LocalDate).now()}, nextDay=${(today.getDayOfWeek() == T(java.time.DayOfWeek).SUNDAY) ? today.plusDays(1) : today.plusDays(1)}">
-	<p th:text="'Grazie, ' + ${#strings.capitalize(utente.nome)} + ' ' + ${#strings.capitalize(utente.cognome)} + '! Hai prenotato un appuntamento in negozio ' +${#temporals.format(nextDay, 'EEEE')}+' '+ ${#temporals.format(nextDay, 'dd-MM-yyyy')} +' alle ore.'"></p>
+	<p th:text="'Grazie, ' + ${#strings.capitalize(utente.nome)} + ' ' + ${#strings.capitalize(utente.cognome)} + '! Hai prenotato un appuntamento in negozio ' +${#temporals.format(nextDay, 'EEEE')}+' '+ ${#temporals.format(nextDay, 'dd-MM-yyyy')} +' alle ore '+${#temporals.format(orarioCasuale, 'HH:mm')}"></p>
 	<p th:text="'Ti apettiamo in  Via Roma 34, Pompei. Per disdire o per spostare la tua prenotazione, chiama in negozio.'"> </p>
 </div>
         
