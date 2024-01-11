@@ -16,8 +16,13 @@ Tutti gli articoli sono generati dinamicamente dal database ed è presente un fo
 
 ## Autori
 [Simona Conte](https://github.com/nbodysimulation)
+
 [Khadija Essaid](https://github.com/Khadigan)
+
 [Giulia La Rosa](https://github.com/giulia-larosa)
+
 [Chiara Romagnoli](https://github.com/chiararomagnoli)
+
 [Flavia Serino](https://github.com/Fla-Ser)
+
 [Eugenia Simeone](https://github.com/eugeggi)
