@@ -222,7 +222,7 @@
             
         <div class="col-md-12 slider-container">
 
-            <div class="owl-carousel owl-theme">
+            <div class="owl-carousel owl-theme owl-loaded owl-drag">
               <div class="item homepage" th:each="prodotto : ${prodottiScontati}"> <!-- controllare se il forEach va messo qui o sopra -->
                 <div class="card dimensione">
                   <img th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" alt="immagine prodotto"> <!-- controllare se in alt bisogna usare il timeleafh -->
@@ -268,7 +268,7 @@
             <h2>NUOVI ARRIVI</h2></div>
             <hr class="divisore">
         <div class="col-md-12 slider-container">
-            <div class="owl-carousel owl-theme">
+            <div class="owl-carousel owl-theme owl-loaded owl-drag">
               <div class="homepage item" th:each="prodotto : ${prodotti}"
             th:if="${prodotto.idProdotto gt #lists.size(prodotti) - 5}"> <!-- controllare se il forEach va qui o sopra -->
                 <div class="card dimensione">
@@ -311,7 +311,7 @@
             <h2>MERCATINO DELL'USATO</h2></div>
             <hr class="divisore">
               <div class="col-md-12 slider-container">
-            <div class="owl-carousel owl-theme">
+            <div class="owl-carousel owl-theme owl-loaded owl-drag">
                   <div class="item homepage" th:each="prodotto : ${prodottiUsati}">
                     <div class="card dimensione">
                       <img th:src="@{'images/'+${prodotto.idProdotto}+'.png'}" alt="prodotto" />
