@@ -144,9 +144,9 @@ footer {
 }
 
 .piede_item {
-  margin-bottom: 20px;
+
   align-items: left;
-  padding: 30px 60px ; /* modificare i 100 px per la distanza della lista */
+  padding: 30px 60px ; /* modificare per la distanza della lista */
 }
 
 .piede_item h5, .social-icons h5 {
