@@ -34,18 +34,43 @@
       });
  
  //Svuota i campi del form al ricarimento della pagina
-  window.onload = function() {
+  // Stato iniziale del form
+var initialFormState = {
+    nome: '',
+    cognome: '',
+    telefono: '',
+    email: ''
+    // Aggiungi altri campi del form secondo necessità
+};
+
+window.onload = function() {
+    // Carica lo stato iniziale quando la pagina viene caricata
+    loadFormState(initialFormState);
+};
+
+function loadFormState(state) {
     // Ottieni tutti gli elementi di input del form
     var inputElements = document.getElementsByTagName('input');
 
-    // Svuota i campi di input
+    // Imposta i valori dei campi di input secondo lo stato fornito
     for (var i = 0; i < inputElements.length; i++) {
-      if (inputElements[i].type !== 'submit' && inputElements[i].type !== 'reset') {
-        inputElements[i].value = '';
-      }
+        if (inputElements[i].type !== 'submit' && inputElements[i].type !== 'reset') {
+            inputElements[i].value = state[inputElements[i].name] || '';
+        }
     }
-  };
+}
+
+function clearFormFields() {
+    // Svuota i campi del form allo stato iniziale
+    loadFormState(initialFormState);
+
+    // Impedisci il ripristino predefinito del browser dopo il reset
+    return false;
+}
+
 </script>
+
+
 
 </head>
 
@@ -61,7 +86,7 @@
         <div class="col-md-4 mx-auto">
           <!-- Pulsanti -->
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <button class="btn btn-outline-secondary mr-2">Accedi</button>
+            <!--<button class="btn btn-outline-secondary mr-2">Accedi</button>-->
             <a th:href="@{/form}"><button class="btn btn-outline-secondary mr-2">Ricerca</button></a>
             <!-- <button class="btn btn-outline-secondary">Carrello</button> -->
           </div>
@@ -150,7 +175,7 @@
   <div class="container text-center mt-5 mb-5">
     <div class="row">
         <div class="col-5">
-			<form id="form" name="modulo" method="post" th:action="@{/prenotazione}" th:object="${utente}">
+			<form id="form" name="modulo" method="post" th:action="@{/prenotazione}" th:object="${utente}" onreset="return clearFormFields()">
 				<legend>Inserisci i tuoi dati</legend>
 				Nome <input type="text" name="nome" class="" size="15" th:field="*{nome}" required>
 				<p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
@@ -165,7 +190,7 @@
             	<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
         <br>
         		<input type="hidden" name="id" th:value="${id}">
-        		<input type="reset" name="button" value="Resetta campi">
+        		<input type="reset" name="button" value="Resetta campi" onclick="clearFormFields()">
             	<input type="submit" name="button" value="Prenota">
             	
 			</form>
@@ -174,7 +199,11 @@
     </div>
     
 <div th:if="${appointmentReceived}">
-	<p th:text="'Grazie, ' + ${utente.nome} + ' ' + ${utente.cognome} + '! Hai un appuntamento in negozio il ' + ${#dates.format(#dates.createNow(), 'dd-MM-yyyy')}"></p>
+	<!-- Ottenere la data successiva, gestendo la domenica -->
+	<!-- Aggiunge un giorno alla data odierna -->
+	<th:block th:with="today=${T(java.time.LocalDate).now()}, nextDay=${(today.getDayOfWeek() == T(java.time.DayOfWeek).SUNDAY) ? today.plusDays(1) : today.plusDays(1)}">
+	<p th:text="'Grazie, ' + ${#strings.capitalize(utente.nome)} + ' ' + ${#strings.capitalize(utente.cognome)} + '! Hai prenotato un appuntamento in negozio ' +${#temporals.format(nextDay, 'EEEE')}+' '+ ${#temporals.format(nextDay, 'dd-MM-yyyy')} +' alle ore.'"></p>
+	<p th:text="'Ti apettiamo in  Via Roma 34, Pompei. Per disdire o per spostare la tua prenotazione, chiama in negozio.'"> </p>
 </div>
         
   
