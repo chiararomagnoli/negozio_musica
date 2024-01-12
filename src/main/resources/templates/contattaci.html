@@ -64,11 +64,14 @@ function clearFormFields() {
     // Svuota i campi del form allo stato iniziale
     loadFormState(initialFormState);
 
-    // Impedisce il ripristino predefinito del browser dopo il reset
+    // Impedisci il ripristino predefinito del browser dopo il reset
     return false;
 }
 
 </script>
+
+
+
 </head>
 
 <body>
@@ -171,7 +174,7 @@ function clearFormFields() {
 
   <div class="container text-center mt-5 mb-5">
     <div class="row">
-		    <!--CARD UNICA-->
+		<!--CARD UNICA-->
             <div class="card swiper-slide col-5">
                 <div class="image-content">
                     <span class="overlay"></span>
@@ -192,12 +195,12 @@ function clearFormFields() {
                 </div>
             </div>
         <div class="col-5">
-			<form id="form" name="modulo" method="post" th:action="@{/prenotazione}" th:object="${utente}" onreset="return clearFormFields()">
-				<legend th:text="'Inserisci i tuoi dati per prenotare un appuntamento in negozio e per provare il prodotto '+ ${prodotto.nomeProdotto}"></legend>
-				Nome <input type="text" name="nome" class="" size="15" th:field="*{nome}" minlength="3" required>
+			<form id="form" name="modulo" method="post" th:action="@{/prenotazione(id=${prodotto.idProdotto})}" th:object="${utente}" onreset="return clearFormFields()">
+				<legend>Inserisci i tuoi dati</legend>
+				Nome <input type="text" name="nome" class="" size="15" th:field="*{nome}" required>
 				<p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
         <br>
-            	Cognome <input type="text" name="cognome" class="" size="15" th:field="*{cognome}" minlength="3" required>
+            	Cognome <input type="text" name="cognome" class="" size="15" th:field="*{cognome}" required>
             	<p th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></p>
         <br>
             	Telefono <input type="tel" name="telefono" class="" size="15" maxlength="15" minlength="5" th:field="*{telefono}" pattern="[0-9]+" required>
@@ -206,7 +209,6 @@ function clearFormFields() {
             	Email <input type="email" name="email" class="" size="15" th:field="*{email}" required>
             	<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
         <br>
-        		<input type="hidden" name="id"  th:value="${prodotto.idProdotto}">
         		<input type="reset" name="button" value="Resetta campi" onclick="clearFormFields()">
             	<input type="submit" name="button" value="Prenota">
             	
@@ -216,10 +218,11 @@ function clearFormFields() {
     </div>
     
 <div th:if="${appointmentReceived}">
+	<!-- Ottenere la data successiva, gestendo la domenica -->
+	<!-- Aggiunge un giorno alla data odierna -->
 	<th:block th:with="today=${T(java.time.LocalDate).now()}, nextDay=${(today.getDayOfWeek() == T(java.time.DayOfWeek).SUNDAY) ? today.plusDays(1) : today.plusDays(1)}">
 	<p th:text="'Grazie, ' + ${#strings.capitalize(utente.nome)} + ' ' + ${#strings.capitalize(utente.cognome)} + '! Ti abbiamo riservato un appuntamento in negozio ' +${#temporals.format(nextDay, 'EEEE')}+' '+ ${#temporals.format(nextDay, 'dd-MM-yyyy')} +' alle ore '+${#temporals.format(orarioCasuale, 'HH:mm')}"></p>
-	<p th:text="'Ti apettiamo in  Via Roma 34, Pompei. Per disdire o per spostare la tua prenotazione, chiama in negozio o mandaci una mail.'"></p>
-	<!--<img th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}">-->
+	<p th:text="'Ti aspettiamo a Music.toString() in  Via Roma 34, Pompei. Per disdire o per spostare la tua prenotazione, chiama in negozio.'"> </p>
 </div>
         
   
@@ -245,9 +248,9 @@ function clearFormFields() {
         <h5>INFORMAZIONI</h5>
         <ul>
           <li><a th:href="@{/info}">Chi siamo</a></li>
-          <li><a th:href="@{/info}">Dove siamo</a></li>                   
-          <li><a th:href="@{/info}">Orari</a></li>
-          <li><a th:href="@{/info}">Contatti</a></li>
+          <li><a th:href="@{/info}">Dove siamo</a></li>
+          <li><a href="#">Orari</a></li>
+          <li><a href="#">Contatti</a></li>
           <li><a href="#">Marche</a></li>                   
         </ul>
       </div>
