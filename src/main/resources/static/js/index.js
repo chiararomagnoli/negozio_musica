@@ -30,7 +30,7 @@
       nextSlide();
     }
 
-    // Cambia diapositiva ogni 3 secondi (regola secondo necessità)
+    // Cambia diapositiva ogni 3 secondi 
     setInterval(autoSlide, 3000);
   });
 
