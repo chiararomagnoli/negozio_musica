@@ -1,5 +1,7 @@
 // ---- JS HOMEPAGE -----
-  document.addEventListener("DOMContentLoaded", function () {
+  
+ // scorrimento card automatico
+   document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector('.slider');
     let currentIndex = 0;
     const totalSlides = document.querySelectorAll('.card').length;

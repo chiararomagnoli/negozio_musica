@@ -313,10 +313,19 @@ footer {
     background-color: var(--base-color) !important;
 }
 
-.owl-prev i, .owl-next i { transform: scale(2.5); color: F0EB8D }
+.owl-prev i, .owl-next i { 
+	transform: scale(2.5); 
+	color: #F0EB8D 
+	}
 
-.owl-prev { left: -25px; transform-origin: center; }
-.owl-next { right: -25px; transform-origin: center; }
+.owl-prev { 
+	left: -25px; 
+	transform-origin: center; 
+	}
+.owl-next { 
+	right: -25px; 
+	transform-origin: center; 
+	}
 
   
    .owl-carousel .nav-btn{
