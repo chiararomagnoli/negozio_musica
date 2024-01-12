@@ -1,23 +1,19 @@
 /* PARTE DI HEADER E FOOTER IN COMUNE */
 
   /* logo */
-  .logo img {
-    height: 60px; 
-    margin-left: 35px;
-    margin-top: 20px;
-  }
-  
-  /* pulsanti in alto */
-  .btn-group-toggle {
-    /* padding-left: 30px; */
-    border: none;
-  }
-  
-  .btn-group-toggle .btn {
-    color: #EEEEEE;
-  }
-  
-  .btn-group {
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo img {
+  height: 60px; 
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+/* pulsanti in alto */
+.btn-group {
   padding-left: 200px;
   border: none;
 }
@@ -104,56 +100,14 @@ button.navbar-toggler {
 .navbar-nav .nav-item:hover .sottomenu1 {
   display: block;
 }
-  
-  footer {
-    padding: 30px 0;
-    background-color: #413543;
-  }
-  
-  .piede {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 0 10px 0 60px; /* modificare i 50 px per la distanza della lista */
-  }
-  
-  .piede_item {
-    margin-bottom: 20px;
-    align-items: left;
-    padding-right: 140px; /* modificare i 100 px per la distanza della lista */
-  }
-  
-  .piede_item h5, .social-icons h5 {
-    color: #F0EB8D;
-    font-family: 'RocknRoll One', sans-serif;
-    font-size: 14px;
-  }
-  
-  .piede_item ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .piede_item a {
-    color: #ddd;
-    text-decoration: none;
-  }
-  
-  .piede_item li {
-    font-size: 13px;
-  }
-  
-  .setup {
-  display: inline-block; 
-  margin: 15px;
-  padding: 5px 50px;
-  color:#413543;
-  font-size: 20px;
-}
 
-.setup .setup-icons {
-	width: 30px;
-	margin-right: 15px;
+/* BANNER */
+.fascia-top {
+  font-family: 'RocknRoll One', sans-serif;
+  background-color: #ddd;
+  width: 100%;
+  margin-bottom: -10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.11)
 }
 
 .fascia-bot {
@@ -163,66 +117,99 @@ button.navbar-toggler {
   margin-bottom: -10px;
   box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.11)
 }
-  
-  .social-icons {
-    display: flex;
-    margin-bottom:20px;
-  }
-  
-  .social-icons a {
-    font-size: 20px;
-    color: #ddd;
-  }
-  
-  .social-icons img {
-    padding-right: 10px;
-    width: 35px;
-    height: auto;
-  }
-  
-    /* FINE PARTE DI HEADER E FOOTER */
 
+.setup {
+  display: inline-block; 
+  margin: 15px 0;
+  padding: 5px 50px;
+  color:#413543;
+  font-size: 20px;
+}
+
+  .setup-icons{
+	  width: 20px;
+	  height: auto;
+  }
+.setup .setup-icons {
+	width: 30px;
+	margin-right: 15px;
+}
+
+/* footer */
+footer {
+  padding: 0px 0;
+  background-color: #413543;
+}
+
+.piede {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 10px 0 60px; /* modificare i 50 px per la distanza della lista */
+}
+
+.piede_item {
+  align-items: left;
+  padding: 30px 60px ; /* modificare per la distanza della lista */
+}
+
+.piede_item h5, .social-icons h5 {
+  color: #F0EB8D;
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 14px;
+}
+
+.piede_item ul {
+  list-style: none;
+  padding: 0;
+  width:200px;
+}
+
+.piede_item a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.piede_item li {
+  font-size: 13px;
+}
+
+.social-icons {
+  display: flex;
+  margin-bottom:20px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  color: #ddd;
+}
+
+.social-icons img {
+  padding-right: 10px;
+  width: 35px;
+  height: auto;
+}
 
     /* PAGINA LISTA STRUMENTI */
     body{
-        background: #EEEEEE;  
+        background: #EEEEEE;
+        font-family: sans-serif;  
     }
 
-
-#titolo {
-    color: #F0EB8D;
-    padding-top: 60px;
-    text-align: center;
-    background-color: rgba(33, 37, 41, 255);
-    position: relative;
-    font-size: 50px;
-    font-family: RocknRoll One;
-  
-  
-  }
-  
-  
-  .btn-block {
-    background-color: rgba(33, 37, 41, 255);
-    border-color: rgba(33, 37, 41, 255);
-    color: #EEEEEE
-  }
-  
-  
  .button {
   border: none;
   outline: 0;
   display: inline-block;
-  padding: 8px;
+  padding: 5px;
   color: white;
   background-color: #413543;
   text-align: center;
   cursor: pointer;
-  width: 40%;
 }
 
 .button:hover {
   background-color: #8F43EE;
+  color: white;
 }
   
   
@@ -292,18 +279,7 @@ button.navbar-toggler {
     margin-top: 5px;
   
   }
-  
-  .button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 5px;
-  color: white;
-  background-color: #413543;
-  text-align: center;
-  cursor: pointer;
-  width: 50%;
-}
+
  
 
   /* FINE PAGINA LISTA STRUMENTI */
