@@ -86,35 +86,35 @@
           <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'chitarre'}">
             <li th:each="sottocategoria : ${sottocategorieChitarre}">
               <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
-                th:href="'#'+${sottocategoria.idSottocategoria}"></a>
+                th:href="@{'/form/cerca?marca=&categoria=1&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
             </li>
           </ul>
 
           <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'tastiere'}">
             <li th:each="sottocategoria : ${sottocategorieTastiere}">
               <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
-                th:href="'#'+${sottocategoria.idSottocategoria}"></a>
+                th:href="@{'/form/cerca?marca=&categoria=2&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
             </li>
           </ul>
 
           <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'archi'}">
             <li th:each="sottocategoria : ${sottocategorieArchi}">
               <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
-                th:href="'#'+${sottocategoria.idSottocategoria}"></a>
+                th:href="@{'/form/cerca?marca=&categoria=3&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
             </li>
           </ul>
 
           <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'percussioni'}">
             <li th:each="sottocategoria : ${sottocategoriePercussioni}">
               <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
-                th:href="'#'+${sottocategoria.idSottocategoria}"></a>
+                th:href="@{'/form/cerca?marca=&categoria=4&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
             </li>
           </ul>
 
           <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'fiati'}">
             <li th:each="sottocategoria : ${sottocategorieFiati}">
               <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
-                th:href="'#'+${sottocategoria.idSottocategoria}"></a>
+                th:href="@{'/form/cerca?marca=&categoria=5&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
             </li>
           </ul>
         </li>
@@ -122,15 +122,15 @@
         <!-- fine parte dinamica | continua il menu -->
         
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/}">Usato</a>
+          <a class="nav-link" th:href="@{/form/cerca?condizione=usato}">Usato</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/}">Novità</a>
+          <a class="nav-link" th:href="@{/form/cerca?condizione=nuovo}">Novità</a>
         </li>
       </ul>
     </div>
   </nav>
-
+        
 <!-- fascia superiore grigia -->
   <div class="container-fluid">
     <div class="row justify-content-center align-items-center">
