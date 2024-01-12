@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    
     <!-- file css -->
     <link rel="stylesheet" th:href="@{/css/lista.css}" />
     
@@ -181,9 +182,10 @@
   </script>
 </head>
 
-<body>
-   <!-- Logo e pulsanti -->
+<body class="d-flex flex-column min-vh-100">
+  <!-- Logo e pulsanti -->
   <div class="container-fluid bg-dark p-2 mx-auto">
+    <div class="container mx-auto">
       <div class="row align-items-center">
         <div class="col-md-8 logo">
           <a th:href="@{/}"><img th:src="@{/images/logo.png}" alt="Logo"></a>
@@ -191,16 +193,16 @@
         <div class="col-md-4 mx-auto">
           <!-- Pulsanti -->
           <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <!-- <button class="btn btn-outline-secondary mr-2">Accedi</button> -->
-            <a th:href="@{/form}"><button class="btn btn-outline-secondary">Ricerca</button></a>
-            
+            <!--<button class="btn btn-outline-secondary mr-2">Accedi</button>
+            <button class="btn btn-outline-secondary mr-2">Registrati</button>-->
           </div>
+            <a th:href="@{/form}"><button class="btn btn-outline-secondary">Ricerca</button></a>
         </div>
       </div>
     </div>
+  </div>
 
-
- <!-- Navbar -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark container-fluid">
     <!-- Pulsante per mobile -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -266,7 +268,7 @@
       </ul>
     </div>
   </nav>
-    
+        
 <!-- fascia superiore grigia -->
   <div class="container-fluid">
     <div class="row justify-content-center align-items-center">

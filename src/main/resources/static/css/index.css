@@ -229,6 +229,7 @@ footer {
 
   #demo .carousel-caption {
     background-color: rgba(29, 29, 29, 0.4);
+    margin-bottom: 15px;
   }
 
     /* Statica */
@@ -315,7 +316,7 @@ footer {
 
 .owl-prev i, .owl-next i { 
 	transform: scale(2.5); 
-	color: #F0EB8D 
+	color: #8F43EE; 
 	}
 
 .owl-prev { 
@@ -489,7 +490,7 @@ footer {
 .prev, .next {
   transform: translateY(-50%);
   background-color: #413543;
-  color: white;
+  color:#8F43EE;
   border: none;
   padding: 1px 10px;
   cursor: pointer;
