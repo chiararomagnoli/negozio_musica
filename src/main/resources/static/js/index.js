@@ -1,5 +1,4 @@
 // ---- JS HOMEPAGE -----
-
   document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector('.slider');
     let currentIndex = 0;
@@ -61,6 +60,8 @@
 
 // ---- FINE HOMEPAGE -----
 
+// -- LISTA STRUMENTI -----
+	// -- sottocategorie --
 
 
 

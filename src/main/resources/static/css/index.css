@@ -120,17 +120,22 @@ button.navbar-toggler {
 
 .setup {
   display: inline-block; 
-  margin: 15px;
+  margin: 15px 0;
   padding: 5px 50px;
   color:#413543;
   font-size: 20px;
 }
 
+  .setup-icons{
+	  width: 20px;
+	  height: auto;
+  }
 .setup .setup-icons {
 	width: 30px;
 	margin-right: 15px;
 }
 
+/* footer */
 footer {
   padding: 0px 0;
   background-color: #413543;
@@ -184,17 +189,6 @@ footer {
   width: 35px;
   height: auto;
 }
-
-/* banner */
-
-  .setup {
-    margin: 5px 0;
-  }
-  
-  .setup-icons{
-	  width: 20px;
-	  height: auto;
-  }
 
   /* FINE PARTE DI HEADER E FOOTER */
   
