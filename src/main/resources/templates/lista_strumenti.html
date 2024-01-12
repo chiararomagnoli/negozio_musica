@@ -323,6 +323,7 @@
     </div>
 
  <!-- footer -->
+<!-- footer -->
   <!-- banner -->
   <div class="container-fluid footer">
       <div class="row justify-content-center align-items-center">
@@ -338,13 +339,13 @@
     </div>
   </div>
   <!-- vero e proprio footer -->
-  <footer class="container-fluid mt-2 d-flex justify-content-center text-white">
+   <footer class="container-fluid mt-2 d-flex text-white justify-content-center">
     <div class="row piede mx-auto">
       <div class="col-md-3 piede_item">
         <h5>INFORMAZIONI</h5>
         <ul>
           <li><a th:href="@{/info}">Chi siamo</a></li>
-          <li><a href="#">Dove siamo</a></li>                   
+          <li><a th:href="@{/info}">Dove siamo</a></li>
           <li><a href="#">Orari</a></li>
           <li><a href="#">Contatti</a></li>
           <li><a href="#">Marche</a></li>                   
@@ -354,9 +355,9 @@
         <h5>NAVIGAZIONE</h5>
         <ul>
           <li><a th:href="@{/}">Home Page</a></li>
-          <li><a href="#">Ricerca</a></li>
-          <li><a href="#">Novità</a></li>
-          <li><a href="#">Mercatino dell'usato</a></li>
+          <li><a th:href="@{/form/cerca}">Ricerca</a></li>
+          <li><a th:href="@{/form/cerca?condizione=nuovo}">Novità</a></li>
+          <li><a th:href="@{/form/cerca?condizione=usato}">Mercatino dell'usato</a></li>
           <li><a href="#">Promozioni</a></li>
         </ul>
       </div>
@@ -374,10 +375,12 @@
           <h5>SOCIAL</h5>
           <div class="row">
             <div class="col-md-12 social-icons">
-            <a href="#"><img th:src="@{/images/facebook-icon.png}" alt="Facebook" /></a>
-            <a href="#"><img th:src="@{/images/instagram-icon.png}" alt="Instagram" /></a>
-            <a href="#"><img th:src="@{/images/youtube-icon.png}" alt="YouTube" /></a>
-            <a href="#"><img th:src="@{/images/tiktok-icon.png}" alt="TikTok" /></a>
+				
+			<a href="#"><img th:src="@{/images/facebook-icon.png}"  alt="Facebook"  height="100px"></a>
+            <a href="#"><img th:src="@{/images/instagram-icon.png}" alt="Instagram" height="100px" /></a>
+            <a href="#"><img th:src="@{/images/youtube-icon.png}" alt="Youtube" height="100px" /></a>
+            <a href="#"><img th:src="@{/images/tiktok-icon.png}" alt="Tik-Tok" height="100px" /></a>
+            
             </div>
           </div>
       </div>
