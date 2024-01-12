@@ -207,14 +207,29 @@ function clearFormFields() {
 </div>
         
   
-  <!-- footer -->
-  <footer class="container-fluid mt-2 d-flex text-white">
+ <!-- footer -->
+  <!-- banner -->
+  <div class="container-fluid footer">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 hidden-sm fascia-bot text-center">
+          <div class="setup">
+            <img class="setup-icons" th:src="@{/images/icon-setup.png}" alt="setup">SETUP GRATUITO</div>
+          <div class="setup">
+            <img class="setup-icons" th:src="@{/images/icon-prenota2.png}" alt="consulenza">PRENOTA UNA CONSULENZA</div>
+          <div class="setup">
+            <img class="setup-icons" th:src="@{/images/icon-esperienza.png}" alt="esperienza">24 ANNI DI ESPERIENZA</div>
+        </div>
+      </div>
+    </div>
+ 	</div>
+  <!-- vero e proprio footer -->
+   <footer class="container-fluid mt-2 d-flex text-white">
     <div class="row piede mx-auto">
       <div class="col-md-3 piede_item">
         <h5>INFORMAZIONI</h5>
         <ul>
-          <li><a href="#">Chi siamo</a></li>
-          <li><a href="#">Dove siamo</a></li>                   
+          <li><a th:href="@{/info}">Chi siamo</a></li>
+          <li><a th:href="@{/info}">Dove siamo</a></li>
           <li><a href="#">Orari</a></li>
           <li><a href="#">Contatti</a></li>
           <li><a href="#">Marche</a></li>                   
