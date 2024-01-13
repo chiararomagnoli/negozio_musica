@@ -14,13 +14,15 @@
 
 /* pulsanti in alto */
 .btn-group {
-  padding-left: 200px;
+  padding: 5px;
+  color: white;
   border: none;
+  margin-left: 130px;
 }
 
-.btn {
+.btn, .btn-group a {
   color: #EEEEEE;
-
+  font-size: 15px;
 }
 
 .navbar { 
