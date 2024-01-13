@@ -608,6 +608,7 @@ footer {
   /* ----- LISTA ---- */
 .column {
 	width:25%;
+	height: 420px;
 }
 
 .slider-container .column .card img {
@@ -682,13 +683,13 @@ form {
 form {
 	display: flex;
   flex-wrap: wrap;
-  align-content: center;*/
+  align-content: center;}*/
   
   form  { display: table;      }
 p     { display: table-row;  }
 label { display: table-cell; }
 input { display: table-cell; }
-}
+
 
   
 
