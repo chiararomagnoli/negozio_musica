@@ -194,9 +194,9 @@ function clearFormFields() {
                     <a th:href="@{/dettaglio(id=${prodotto.idProdotto})}"><button class="btn btn-outline-secondary mr-2 button ">Dettagli</button></a>
                 </div>
             </div>
-        <div class="col-5">
-			<form id="form" name="modulo" method="post" th:action="@{/prenotazione(id=${prodotto.idProdotto})}" th:object="${utente}" onreset="return clearFormFields()">
-				<legend>Inserisci i tuoi dati</legend>
+        <div class="col-5"> <!-- th:action="@{/prenotazione(id=${prodotto.idProdotto})}"  -->
+			<form id="form" name="modulo" method="post"  th:object="${utente}" onreset="return clearFormFields()">
+				<legend>Inserisci i tuoi dati e prenota un appuntamento per provare i nostri strumenti</legend>
 				Nome <input type="text" name="nome" class="" size="15" th:field="*{nome}" required>
 				<p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
         <br>
@@ -222,7 +222,7 @@ function clearFormFields() {
 	<!-- Aggiunge un giorno alla data odierna -->
 	<th:block th:with="today=${T(java.time.LocalDate).now()}, nextDay=${(today.getDayOfWeek() == T(java.time.DayOfWeek).SUNDAY) ? today.plusDays(1) : today.plusDays(1)}">
 	<p th:text="'Grazie, ' + ${#strings.capitalize(utente.nome)} + ' ' + ${#strings.capitalize(utente.cognome)} + '! Ti abbiamo riservato un appuntamento in negozio ' +${#temporals.format(nextDay, 'EEEE')}+' '+ ${#temporals.format(nextDay, 'dd-MM-yyyy')} +' alle ore '+${#temporals.format(orarioCasuale, 'HH:mm')}"></p>
-	<p th:text="'Ti aspettiamo a Music.toString() in  Via Roma 34, Pompei. Per disdire o per spostare la tua prenotazione, chiama in negozio.'"> </p>
+	<p th:text="'Ti aspettiamo da Music.toString() in  Via Roma 34, Pompei. Per disdire o per spostare la tua prenotazione, chiama in negozio.'"> </p>
 </div>
         
   
