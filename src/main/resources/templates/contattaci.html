@@ -191,7 +191,7 @@ function clearFormFields() {
                 	
                 	<!-- Se non c'è sconto, mostra solo il prezzo normale -->
                 	<p th:if="${prodotto.sconto == 0}" th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></p>
-                    <a th:href="@{/dettaglio(id=${prodotto.idProdotto})}"><button class="btn btn-outline-secondary mr-2 button ">Dettagli</button></a>
+                    <a th:href="@{/dettaglio(id=${prodotto.idProdotto})}"><button class="btn btn-outline-secondary mr-2 button ">Torna al dettaglio del prodotto</button></a>
                 </div>
             </div>
         <div class="col-7"> <!-- th:action="@{/prenotazione(id=${prodotto.idProdotto})}"  -->
@@ -201,7 +201,7 @@ function clearFormFields() {
 					<h4 id="titolo-form">Inserisci i tuoi dati e prenota un appuntamento per provare i nostri strumenti</h4>
 					<div class="col-4">
 				
-				<form id="form" name="modulo" method="post"  th:object="${utente}" onreset="return clearFormFields()">
+				<form id="form" name="modulo" method="post"  th:object="${utente}" th:action="@{/prenotazione}" onreset="return clearFormFields()">
 				    <!--<legend>Inserisci i tuoi dati e prenota un appuntamento per provare i nostri strumenti</legend>-->
 				    
 			<div class="container rounded" style="background-color: blueviolet;">
