@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Pattern;
 
 public class Utente {
 
-	@Pattern(regexp = "[a-zA-Z\\s']{1,50}", message = "Caratteri non ammessi")
+	@Pattern(regexp = "^[a-zA-Z']+([\\s'][a-zA-Z']+){0,2}$", message = "Caratteri non ammessi")
 	private String nome;
 	
 	@Pattern(regexp = "[a-zA-Z\\s']{1,50}", message = "Caratteri non ammessi")
