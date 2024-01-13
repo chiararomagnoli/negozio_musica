@@ -147,87 +147,89 @@
         <div class="container mx-auto mt-4">
 			<div class="row">
         
-        <form th:action="@{/form/cerca}" method="get" class="col-md-10 mb-4 mx-auto">
-            <div class="row">
-                <div class="col-md-3">
-					<select id="marca" name="marca" class="form-control">
-						<option value="">-- Seleziona marca --</option>
-						<option th:each="m : ${marche}" th:value="${m.idMarca}" th:text="${m.nomeMarca}"></option>
-					</select>
-                </div>
-                <div class="col-md-3">
-					<select id="categoria" name="categoria" class="form-control" onchange="selezionaCategoria()">
-						<option value="">-- Seleziona categoria --</option>
-						<option th:each="c : ${categorie}" th:value="${c.idCategoria}"  th:text="${#strings.capitalize(c.nomeCategoria)}">
-						</option>
-					</select>
-                </div>
-                <div class="col-md-3">
-        <select id="sottocategoria" name="sottocategoria" class="form-control" disabled>
-            <option value="">-- Seleziona sottocategoria --</option>
-            <!-- Opzioni della sottocategoria verranno aggiunte dinamicamente -->
-        </select>
-    </div>
-	   	<div class="container radiobutton mb-4 col-md-2">
-	    		
-		 			<!--seconda colonna da 2 con i radio-->
-		 			<div class="row">
-		    			<div class="col-md-6 form-check">
-							<input type="radio" name="condizione" th:value="nuovo" class="form-check-input">
-							<label class="form-check-label" th:text="Nuovo"></label></div>	    		<div class="col-md-6 form-check">					
-							<input type="radio" name="condizione" th:value="usato" class="form-check-input">
-							<label class="form-check-label" th:text="Usato"></label>
-						</div>
-		 			</div>
-		 			</div>
-		 			<div class="col-md-1 cerca"> <!--terza colonna da 2 con il button-->
-						<button type="submit" class="btn btn-primary btn-dark button btn-large">Cerca</button>
+		        <form th:action="@{/form/cerca}" method="get" class="col-md-10 mb-4 mx-auto">
+		            <div class="row">
+		                <div class="col-md-3">
+							<select id="marca" name="marca" class="form-control">
+								<option value="">-- Seleziona marca --</option>
+								<option th:each="m : ${marche}" th:value="${m.idMarca}" th:text="${m.nomeMarca}"></option>
+							</select>
+		                </div>
+		                <div class="col-md-3">
+							<select id="categoria" name="categoria" class="form-control" onchange="selezionaCategoria()">
+								<option value="">-- Seleziona categoria --</option>
+								<option th:each="c : ${categorie}" th:value="${c.idCategoria}"  th:text="${#strings.capitalize(c.nomeCategoria)}">
+								</option>
+							</select>
+		                </div>
+		                <div class="col-md-3">
+		        			<select id="sottocategoria" name="sottocategoria" class="form-control" disabled>
+		            			<option value="">-- Seleziona sottocategoria --</option>
+		            				<!-- Opzioni della sottocategoria verranno aggiunte dinamicamente -->
+		        			</select>
+		    			</div>
+			   			<div class="container radiobutton mb-4 col-md-2">
+			    		
+				 			<!--seconda colonna da 2 con i radio-->
+				 			<div class="row">
+				    			<div class="col-md-6 form-check">
+									<input type="radio" name="condizione" th:value="nuovo" class="form-check-input">
+									<label class="form-check-label" th:text="Nuovo"></label>
+								</div>	    		
+								<div class="col-md-6 form-check">					
+									<input type="radio" name="condizione" th:value="usato" class="form-check-input">
+									<label class="form-check-label" th:text="Usato"></label>
+								</div>
+				 			</div><!-- chiude la row-->
+				 		</div> <!-- chiude il radio button -->
+				 			<div class="col-md-1 cerca"> <!--terza colonna da 2 con il button-->
+								<button type="submit" class="btn btn-primary btn-dark button btn-large">Cerca</button>
+							</div>
+					</div><!-- chiude la row dopo form -->
+				</form>
+			</div>
+        
+	  	</div><!-- chiude la class container rigo 147 -->
+	  
+  </div> <!-- chiude il container 145 -->
+  
+  <!-- card -->
+  <div class="container mx-auto custom-width">
+	  <hr class="divisore" />
+      <div class="col-md-12 line">
+        <h2>LISTA STRUMENTI</h2>
+      </div>
+      <hr class="divisore" />
+               
+    <div class="col-md-12 slider-container mx-auto">
+			
+		<div class="column homepage mx-auto" th:each="p : ${prodotti}">
+			<div class="card dimensione " >                  
+               <a th:href="@{/dettaglio(id=${p.idProdotto})}"><img th:src="@{'/images/'+${p.idProdotto}+'.png'}" alt="${p.nomeProdotto}"></a> 
+                <div class="container">
+	                <div class="card-title" th:text="${p.nomeProdotto}">
 					</div>
+	                <div class="disponibile">
+					</div>
+	                <div class="disponibile"  th:text="'Disponibilità: ' + ${p.disponibilita}">
+					</div>
+	                    <!-- Mostra il prezzo barrato -->
+	                    <del class="sconto" th:if="${p.sconto != 0}" th:text="'€ ' + ${#numbers.formatDecimal(p.prezzo,0,'POINT',2,'COMMA')}"></del>
+	                    <!-- Mostra il prezzo scontato sotto al prezzo barrato -->
+	                    <div class="prezzo" th:if="${p.sconto != 0}" th:text="'€ ' + ${#numbers.formatDecimal(p.prezzo*(1-p.sconto),0,'POINT',2,'COMMA')}"></div>
+	                	
+	                	<!-- Se non c'è sconto, mostra solo il prezzo normale -->
+	                	<div class="prezzo" th:if="${p.sconto == 0}" th:text="'€ ' + ${#numbers.formatDecimal(p.prezzo,0,'POINT',2,'COMMA')}"></div>
+	                	<div class="prezzo">
+	                    <a th:href="@{/dettaglio(id=${p.idProdotto})}"><button class="btn btn-outline-secondary mr-2 button ">Dettagli</button></a>
+	                	</div>
+            	</div>
 			</div>
 		</div>
-        </form>
-	  </div><!-- chiude la colonna 12 del form -->
-	  
-	  </div>
-	  </div>
-	  <!-- card -->
-	  <div class="container mx-auto custom-width">
-		  <hr class="divisore" />
-        <div class="col-md-12 line">
-            <h2>LISTA STRUMENTI</h2></div>
-        <hr class="divisore" />
-               
-        <div class="col-md-12 slider-container mx-auto">
-			
-				<div class="column homepage" th:each="p : ${prodotti}">
-				<div class="card dimensione" >                  
-                   <a th:href="@{/dettaglio(id=${p.idProdotto})}"><img th:src="@{'/images/'+${p.idProdotto}+'.png'}" alt="${p.nomeProdotto}"></a> 
-                <div class="container">
-                <div class="card-title" th:text="${p.nomeProdotto}"></div>
-                <div class="disponibile">
-				</div>
-                <div class="disponibile"  th:text="'Disponibilità: ' + ${p.disponibilita}"></div>
-                    <!-- Mostra il prezzo barrato -->
-                    <del class="sconto" th:if="${p.sconto != 0}" th:text="'€ ' + ${#numbers.formatDecimal(p.prezzo,0,'POINT',2,'COMMA')}"></del>
-                    <!-- Mostra il prezzo scontato sotto al prezzo barrato -->
-                    <div class="prezzo" th:if="${p.sconto != 0}" th:text="'€ ' + ${#numbers.formatDecimal(p.prezzo*(1-p.sconto),0,'POINT',2,'COMMA')}"></div>
-                	
-                	<!-- Se non c'è sconto, mostra solo il prezzo normale -->
-                	<div class="prezzo" th:if="${p.sconto == 0}" th:text="'€ ' + ${#numbers.formatDecimal(p.prezzo,0,'POINT',2,'COMMA')}"></div>
-                	<div class="prezzo">
-                    <a th:href="@{/dettaglio(id=${p.idProdotto})}"><button class="btn btn-outline-secondary mr-2 button ">Dettagli</button></a>
-                </div>
-            </div>
-			</div>
-			</div>
-			</div>
-			</div>
-        </div><!-- chiude il slider container -->
-	  </div> <!-- chiude la row container-->
-	  
-  </div><!-- chiude container -->
+	</div>
+  </div> <!-- chiude il container custom 197 -->
   
-  <!-- footer -->
+<!-- footer -->
   <!-- banner -->
   <div class="container-fluid footer">
       <div class="row justify-content-center align-items-center">
@@ -295,30 +297,6 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  
-  <script>
-    $(document).ready(function(){
-      $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        autoplay: true, //attivazione dell'autoplay
-        autoplayTimeout: 3000, // tempo di attesa tra uno scorrimento e l'altro (in millisecondi)
-        responsive: {
-          0: {
-            items: 1
-          },
-          600: {
-            items: 2
-          },
-          1000: {
-            items: 4
-          }
-        }
-      });
-    });
 
-  </script>
 </body>
 </html>
