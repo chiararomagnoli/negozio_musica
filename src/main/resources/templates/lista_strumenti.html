@@ -204,7 +204,7 @@
     <div class="col-md-12 slider-container mx-auto">
 			
 		<div class="column homepage mx-auto" th:each="p : ${prodotti}">
-			<div class="card dimensione " >                  
+			<div class="card dimensione" >                  
                <a th:href="@{/dettaglio(id=${p.idProdotto})}"><img th:src="@{'/images/'+${p.idProdotto}+'.png'}" alt="${p.nomeProdotto}"></a> 
                 <div class="container">
 	                <div class="card-title" th:text="${p.nomeProdotto}">
