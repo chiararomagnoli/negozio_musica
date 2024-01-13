@@ -641,7 +641,23 @@ footer {
 		
 	}
 
+/* CONTATTACI / PRENOTA */
 
+#titolo-form {
+	font-family: 'RocknRoll One';
+	font-size: 18px;
+}
+/*
+form {
+	display: flex;
+  flex-wrap: wrap;
+  align-content: center;*/
+  
+  form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell; }
+input { display: table-cell; }
+}
 
   
 
