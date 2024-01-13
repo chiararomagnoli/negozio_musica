@@ -364,7 +364,6 @@ footer {
   float: left;
   margin-bottom: 16px;
   padding: 0 8px;
-  width:25%;
 }
 
 /* Display the homepages below each other instead of side by side on small screens */
@@ -379,8 +378,6 @@ footer {
   margin-top: 12px; /* mi serve per non tagliare la card con lo zoom*/
   border:none;
   border-radius: 0;
-	
-	display: inline-flex;
 }
 
 .homepage .card img {
@@ -609,9 +606,14 @@ footer {
   /* ----- FINE HOMEPAGE ----- */
   
   /* ----- LISTA ---- */
-/*  .column {
+.column {
 	width:25%;
-}*/
+}
+
+.slider-container .column .card img {
+	margin-left: 30px;
+}
+
 
 /* form */
 
