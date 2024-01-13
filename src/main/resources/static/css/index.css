@@ -341,9 +341,7 @@ footer {
   .owl-carousel .owl-next.disabled{
     pointer-events: none;
     opacity: 0.2;
-  }
-  
-
+  }  
 
 /* contenitore card */
 .slider-container {
@@ -606,6 +604,34 @@ footer {
 }
 
   /* ----- FINE HOMEPAGE ----- */
+  
+  /* ----- LISTA ---- */
+  .column {
+	width:25%;
+}
+
+/* form */
+
+form {
+	font-family: sans-serif;
+	padding: 20px 0 20px 0;
+}
+
+.form-check  {
+	font-family: sans-serif;
+	padding-top: 8px;
+}
+
+.cerca button {
+	font-family: 'RocknRoll One', sans-serif;
+	padding: 8px 20px;
+	font-size: 14px;
+}
+
+.custom-width {
+	margin-top:-30px;
+}
+  /* ----- FINE LSITA ----*/
 
 	/*CSS DEL DETTAGLIO*/
 

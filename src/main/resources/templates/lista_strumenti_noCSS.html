@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <!-- fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    
+    <!-- file css -->
+    <link rel="stylesheet" th:href="@{/css/lista.css}" />
+    
+    <title>Music.toString() | Lista Strumenti</title>
+    
+	<link rel="shortcut icon" type="image/png" th:href="@{/images/icona-browser.png}" /> <!-- icona browser -->
+	
+<!-- script file js -->
+ <script th:src="@{/js/index.js}"></script>
+ 
+ <!-- JS per scroll navbar top -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+          var navbar = $(".navbar");
+  
+          $(window).scroll(function () {
+              if ($(this).scrollTop() > 50) {
+                  navbar.addClass("fixed-top");
+              } else {
+                  navbar.removeClass("fixed-top");
+              }
+          });
+      });
+  </script>
+ 
+    <!-- Script jquery Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!--
+		<script>
+        function selezionaCategoria() {
+            const categoriaSelect = document.getElementById('categoria');
+            const sottocategoriaSelect = document.getElementById('sottocategoria');
+
+            // Ottieni il valore selezionato nella select della categoria
+            const selectedCategoria = categoriaSelect.value;
+
+            // Abilita la select delle sottocategorie
+            sottocategoriaSelect.disabled = false;
+
+            // Rimuovi tutte le opzioni attuali nella select delle sottocategorie
+            sottocategoriaSelect.innerHTML = '';
+
+            // Aggiungi un'opzione vuota nella select delle sottocategorie
+            const emptyOption = document.createElement('option');
+            emptyOption.value = '';
+            emptyOption.text = '-- Seleziona una sottocategoria --';
+            sottocategoriaSelect.appendChild(emptyOption);
+
+            // Simuliamo l'aggiunta di opzioni in base alla categoria selezionata
+            // In una situazione reale, dovresti ottenere le opzioni dal server o da qualche altra fonte di dati
+            if (selectedCategoria == 1) {
+                // Aggiungi opzioni per Categoria 1
+                addOptionsForCategoria1();
+            } else if (selectedCategoria == 2) {
+                // Aggiungi opzioni per Categoria 2
+                addOptionsForCategoria2();
+            }else if (selectedCategoria == 3) {
+                // Aggiungi opzioni per Categoria 2
+                addOptionsForCategoria3();
+            }else if (selectedCategoria == 4) {
+                // Aggiungi opzioni per Categoria 2
+                addOptionsForCategoria4();
+            }else if (selectedCategoria == 5) {
+                // Aggiungi opzioni per Categoria 2
+                addOptionsForCategoria5();
+            }
+            // Aggiungi altre clausole 'else if' secondo le tue esigenze
+        }
+
+        function addOptionsForCategoria1() {
+            const sottocategoriaSelect = document.getElementById('sottocategoria');
+
+            // Simuliamo l'aggiunta di opzioni per Categoria 1
+            const option1 = document.createElement('option');
+            option1.value = 1;
+            option1.text = 'Chitarre classiche';
+            sottocategoriaSelect.appendChild(option1);
+
+            const option2 = document.createElement('option');
+            option2.value = 2;
+            option2.text = 'Chitarre acustiche';
+            sottocategoriaSelect.appendChild(option2);
+
+            const option3 = document.createElement('option');
+            option3.value = 3;
+            option3.text = 'Chitarre elettriche';
+            sottocategoriaSelect.appendChild(option3);
+        }
+
+        function addOptionsForCategoria2() {
+            const sottocategoriaSelect = document.getElementById('sottocategoria');
+
+            // Simuliamo l'aggiunta di opzioni per Categoria 2
+            const option4 = document.createElement('option');
+            option4.value = 4;
+            option4.text = 'Pianoforti';
+            sottocategoriaSelect.appendChild(option4);
+
+            const option5 = document.createElement('option');
+            option5.value = 5;
+            option5.text = 'Tastiere elettriche';
+            sottocategoriaSelect.appendChild(option5);
+        }
+        function addOptionsForCategoria3() {
+            const sottocategoriaSelect = document.getElementById('sottocategoria');
+
+            // Simuliamo l'aggiunta di opzioni per Categoria 3
+            const option6 = document.createElement('option');
+            option6.value = 6;
+            option6.text = 'Violini';
+            sottocategoriaSelect.appendChild(option6);
+
+            const option7 = document.createElement('option');
+            option7.value = 7;
+            option7.text = 'Violoncelli';
+            sottocategoriaSelect.appendChild(option7);
+        }
+        function addOptionsForCategoria4() {
+            const sottocategoriaSelect = document.getElementById('sottocategoria');
+
+            // Simuliamo l'aggiunta di opzioni per Categoria 4
+            const option8 = document.createElement('option');
+            option8.value = 8;
+            option8.text = 'Batterie acustiche';
+            sottocategoriaSelect.appendChild(option8);
+
+            const option9 = document.createElement('option');
+            option9.value = 9;
+            option9.text = 'Batterie elettriche';
+            sottocategoriaSelect.appendChild(option9);
+        }
+        function addOptionsForCategoria5() {
+            const sottocategoriaSelect = document.getElementById('sottocategoria');
+
+            const option10 = document.createElement('option');
+            option10.value = 10;
+            option10.text = 'Sassofoni';
+            sottocategoriaSelect.appendChild(option10); 
+
+            const option11 = document.createElement('option');
+            option11.value = 11;
+            option11.text = 'Trombe';
+            sottocategoriaSelect.appendChild(option11);
+
+            const option12 = document.createElement('option');
+            option12.value = 12;
+            option12.text = 'Clarinetti';
+            sottocategoriaSelect.appendChild(option12);
+        }
+    </script>-->
+    
+        <!-- JS per scroll navbar top -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+          var navbar = $(".navbar");
+  
+          $(window).scroll(function () {
+              if ($(this).scrollTop() > 50) {
+                  navbar.addClass("fixed-top");
+              } else {
+                  navbar.removeClass("fixed-top");
+              }
+          });
+      });
+  </script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <!-- Logo e pulsanti -->
+  <div class="container-fluid bg-dark p-2 mx-auto">
+    <div class="container mx-auto">
+      <div class="row align-items-center">
+        <div class="col-md-8 logo">
+          <a th:href="@{/}"><img th:src="@{/images/logo.png}" alt="Logo"></a>
+        </div>
+        <div class="col-md-4 mx-auto">
+          <!-- Pulsanti -->
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <!--<button class="btn btn-outline-secondary mr-2">Accedi</button>
+            <button class="btn btn-outline-secondary mr-2">Registrati</button>-->
+          </div>
+            <a th:href="@{/form}"><button class="btn btn-outline-secondary">Ricerca</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark container-fluid">
+    <!-- Pulsante per mobile -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Elementi della navbar -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" th:href="@{/}">Home</a>
+        </li>
+        
+        <!-- parte dinamica -->
+        <li class="nav-item" th:each="categoria : ${categorie}">
+          <a class="nav-link" th:text="${#strings.capitalize(categoria.nomeCategoria)}"
+            th:href="@{'/form/cerca?marca=&categoria='+${categoria.idCategoria}}"></a>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'chitarre'}">
+            <li th:each="sottocategoria : ${sottocategorieChitarre}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="@{'/form/cerca?marca=&categoria=1&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
+            </li>
+          </ul>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'tastiere'}">
+            <li th:each="sottocategoria : ${sottocategorieTastiere}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="@{'/form/cerca?marca=&categoria=2&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
+            </li>
+          </ul>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'archi'}">
+            <li th:each="sottocategoria : ${sottocategorieArchi}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="@{'/form/cerca?marca=&categoria=3&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
+            </li>
+          </ul>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'percussioni'}">
+            <li th:each="sottocategoria : ${sottocategoriePercussioni}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="@{'/form/cerca?marca=&categoria=4&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
+            </li>
+          </ul>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'fiati'}">
+            <li th:each="sottocategoria : ${sottocategorieFiati}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="@{'/form/cerca?marca=&categoria=5&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
+            </li>
+          </ul>
+        </li>
+        
+        <!-- fine parte dinamica | continua il menu -->
+        
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/form/cerca?condizione=usato}">Usato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/form/cerca?condizione=nuovo}">Novità</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+        
+<!-- fascia superiore grigia -->
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 hidden-sm fascia-top text-center">
+        <span class="setup"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Contenuto principale -->
+    <div class="container mt-4 mx-auto">
+        <!-- Form di ricerca -->
+        <div class="container rounded">
+        <form th:action="@{/form/cerca}" method="get" class="mb-4">
+            <div class="row">
+                <div class="col-md-4">
+					<select id="marca" name="marca" class="form-control">
+						<option value="">-- Seleziona una marca --</option>
+						<option th:each="m : ${marche}" th:value="${m.idMarca}" th:text="${m.nomeMarca}"></option>
+					</select>
+                </div>
+                <div class="col-md-4">
+					<select id="categoria" name="categoria" class="form-control" onchange="selezionaCategoria()">
+						<option value="">-- Seleziona una categoria --</option>
+						<option th:each="c : ${categorie}" th:value="${c.idCategoria}"  th:text="${#strings.capitalize(c.nomeCategoria)}">
+						</option>
+					</select>
+                </div>
+                <div class="col-md-4">
+        <select id="sottocategoria" name="sottocategoria" class="form-control" disabled>
+            <option value="">-- Seleziona una sottocategoria --</option>
+            <!-- Opzioni della sottocategoria verranno aggiunte dinamicamente -->
+        </select>
+    </div>
+	   	<div class="container radiobutton mb-3 mt-3">
+	    	<div class="row">
+	    		<div class="col-md-4"> </div> <!--prima colonna da 4 vuota-->
+	    		
+		 			<div class="col-md-2 mt-3">	<!--seconda colonna da 2 con i radio-->
+		    			<div class="form-check">
+							<input type="radio" name="condizione" th:value="nuovo" class="form-check-input">
+							<label class="form-check-label" th:text="Nuovo"></label>
+		    			</div>
+						<div class="form-check">
+							<input type="radio" name="condizione" th:value="usato" class="form-check-input">
+							<label class="form-check-label" th:text="Usato"></label>
+						</div>
+		 			</div>
+		 			<div class="col-md-2 mt-3"> <!--terza colonna da 2 con il button-->
+						<button type="submit" class="btn btn-primary btn-block btn-dark button btn-large">Cerca</button>
+					</div>
+				</div>
+				
+			<div class="col-md-4"> </div><!--quarta colonna da 4 vuota-->
+			</div> 
+			</div>
+		</div>
+        </form>
+
+        <!--CARD UNICA-->
+        <div class="row">
+            <div th:each="p : ${prodotti}" class="card swiper-slide">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                   <a th:href="@{/dettaglio(id=${p.idProdotto})}"><img th:src="@{'/images/'+${p.idProdotto}+'.png'}" alt="${p.nomeProdotto}" class="card-img card-img ml-4"> 
+                    </a> 
+                    
+                </div>
+                <div class="text-center">
+                    <h2 th:text="${p.nomeProdotto}" class="name"></h2>
+
+                    <!-- Mostra il prezzo barrato -->
+                    <del th:if="${p.sconto != 0}" th:text="'€ ' + ${#numbers.formatDecimal(p.prezzo,0,'POINT',2,'COMMA')}"></del>
+                    <!-- Mostra il prezzo scontato sotto al prezzo barrato -->
+                    <p th:if="${p.sconto != 0}" th:text="'€ ' + ${#numbers.formatDecimal(p.prezzo*(1-p.sconto),0,'POINT',2,'COMMA')}"></p>
+                	
+                	<!-- Se non c'è sconto, mostra solo il prezzo normale -->
+                	<p th:if="${p.sconto == 0}" th:text="'€ ' + ${#numbers.formatDecimal(p.prezzo,0,'POINT',2,'COMMA')}"></p>
+                    <a th:href="@{/dettaglio(id=${p.idProdotto})}"><button class="btn btn-outline-secondary mr-2 button ">Dettagli</button></a>
+                </div>
+            </div>
+          </div>
+    </div>
+
+ <!-- footer -->
+<!-- footer -->
+  <!-- banner -->
+  <div class="container-fluid footer">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 hidden-sm fascia-bot text-center">
+          <div class="setup">
+            <img class="setup-icons" th:src="@{/images/icon-setup.png}" alt="setup">SETUP GRATUITO</div>
+          <div class="setup">
+            <img class="setup-icons" th:src="@{/images/icon-prenota2.png}" alt="consulenza">PRENOTA UNA CONSULENZA</div>
+          <div class="setup">
+            <img class="setup-icons" th:src="@{/images/icon-esperienza.png}" alt="esperienza">24 ANNI DI ESPERIENZA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- vero e proprio footer -->
+   <footer class="container-fluid mt-2 d-flex text-white justify-content-center">
+    <div class="row piede mx-auto">
+      <div class="col-md-3 piede_item">
+        <h5>INFORMAZIONI</h5>
+        <ul>
+          <li><a th:href="@{/info}">Chi siamo</a></li>
+          <li><a th:href="@{/info}">Dove siamo</a></li>
+          <li><a href="#">Orari</a></li>
+          <li><a href="#">Contatti</a></li>
+          <li><a href="#">Marche</a></li>                   
+        </ul>
+      </div>
+      <div class="col-md-3 piede_item">
+        <h5>NAVIGAZIONE</h5>
+        <ul>
+          <li><a th:href="@{/}">Home Page</a></li>
+          <li><a th:href="@{/form/cerca}">Ricerca</a></li>
+          <li><a th:href="@{/form/cerca?condizione=nuovo}">Novità</a></li>
+          <li><a th:href="@{/form/cerca?condizione=usato}">Mercatino dell'usato</a></li>
+          <li><a href="#">Promozioni</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 piede_item">
+        <h5>ACQUISTI</h5>
+        <ul>
+          <li><a href="#">Resi</a></li>
+          <li><a href="#">Rimborsi</a></li>
+          <li><a href="#">Assistenza</a></li>
+          <li><a href="#">Spedizioni</a></li>
+          <li><a href="#">Account</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 piede_item">
+          <h5>SOCIAL</h5>
+          <div class="row">
+            <div class="col-md-12 social-icons">
+				
+			<a href="#"><img th:src="@{/images/facebook-icon.png}"  alt="Facebook"  height="100px"></a>
+            <a href="#"><img th:src="@{/images/instagram-icon.png}" alt="Instagram" height="100px" /></a>
+            <a href="#"><img th:src="@{/images/youtube-icon.png}" alt="Youtube" height="100px" /></a>
+            <a href="#"><img th:src="@{/images/tiktok-icon.png}" alt="Tik-Tok" height="100px" /></a>
+            
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
