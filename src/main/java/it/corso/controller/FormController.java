@@ -80,6 +80,15 @@ public class FormController {
 	    model.addAttribute("sottocategorie", sottocategorie);
 	    List<Marca> marche = marcaService.getMarche();
 	    model.addAttribute("marche", marche);
+	    
+	    //model utili per la navbar
+	  	model.addAttribute("sottocategorie", sottocategoriaService.getSottocategoria());
+	  	model.addAttribute("categorie", categoriaService.getCategorie());
+	    model.addAttribute("sottocategorieChitarre", sottocategoriaService.getSottocategoriaByIdCategoria(1));
+	    model.addAttribute("sottocategorieTastiere", sottocategoriaService.getSottocategoriaByIdCategoria(2));
+	    model.addAttribute("sottocategorieArchi", sottocategoriaService.getSottocategoriaByIdCategoria(3));
+	    model.addAttribute("sottocategoriePercussioni", sottocategoriaService.getSottocategoriaByIdCategoria(4));
+	    model.addAttribute("sottocategorieFiati", sottocategoriaService.getSottocategoriaByIdCategoria(5));
         return "lista_strumenti";
 	}
 	
