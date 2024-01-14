@@ -758,10 +758,11 @@ form {
 	margin-top:0px;
 }
 .prenota button { /* da risolvere */
-  font-size: 18px;
-  padding: 14px 18px; /* padding del pulsante per controllare le dimensioni */
+  font-size: 16px;
+  padding: 12px 18px; /* padding del pulsante per controllare le dimensioni */
   position: relative;
 left: 80%;
+bottom: 10px;
 margin:0px auto 10px auto;
 }
 
@@ -805,7 +806,7 @@ margin:0px auto 10px auto;
 
 .prenota .card-footer {
 	margin-top: 0;
-	height: 80px;
+	height: 100%;
 }
 
 .prenota .card-footer .prezzo {
