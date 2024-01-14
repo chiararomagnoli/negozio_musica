@@ -770,8 +770,8 @@ margin:0px auto 10px auto;
 	/* card */
 .prenota .card-img {
   width:60%;
-  margin: 0;
-  padding: 0px 0px 20px 0px;
+  margin: 0 0 30px 60px;
+  padding: 80px 0px 1px 0px;
   background-color: #ffffff;
 }
 
@@ -826,20 +826,51 @@ font-family: 'RocknRoll One', sans-serif;
   width:50%;
 }
 	/* form */
-#titolo-form {
-	font-family: 'RocknRoll One';
-	font-size: 18px;
-}
-/*
-form {
-	display: flex;
+#form {	
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: auto 0px auto 30px;
+display: flex;
   flex-wrap: wrap;
-  align-content: center;}*/
-  
-  form  { display: table;      }
+  align-content: center;
+  font-family: sans-serif;
+}
+
+legend {
+  background-color:rgb(241, 238, 249);
+  font-family: 'RocknRoll One';
+  color:#413543;
+  margin-right: 0px;
+  padding: 10px 0px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.descrizione-form {
+	padding: 10px;
+	font-size: 18px;	
+}
+
+.campi-form {
+	border: 1px solid #413543;
+	font-family: sans-serif;
+	
+}
+
+.campi-form label{
+	width: 100%;
+	margin-right: 30px;
+}
+
+.campi-form .nome input{
+	margin-left: 0px;
+	align-items: end;
+}
+
+/*  form  { display: table;      }
 p     { display: table-row;  }
 label { display: table-cell; }
-input { display: table-cell; }
+input { display: table-cell; }*/
 
 
   
