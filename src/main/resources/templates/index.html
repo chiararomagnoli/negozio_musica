@@ -236,11 +236,15 @@
                   <!-- prezzo barrato -->
                   	<div class="prezzo"
                     th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')}">
-                  	</div> <!-- prezzo aggiornato -->
+                    
+                  	</div><div class="discount-badge" id="discountBadge" style="color:#8f43ee;font-family:'RocknRoll One', sans-serif;position: absolute;
+  top: 0;
+  right: 0; padding:5px 10px;">OFFERTA!<br/></div> <!-- prezzo aggiornato -->
                   	<!-- SCONTO - DA INSERIRE NELL'ANGOLO?
                     <span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span>
-                    -->
+                    -->              
                     </div>
+                         
                   	<div class="prezzo" th:unless="${prodotto.sconto ne 0}"
                   th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}">
                 </div>
@@ -284,12 +288,14 @@
                   <!-- prezzo barrato -->
                   <div class="prezzo"
                     th:text="'€ '+ ${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')}"></div>
+                    <div class="discount-badge" id="discountBadge" style="color:#8f43ee;font-family:'RocknRoll One', sans-serif;position: absolute;
+  top: 0;
+  right: 0; padding:5px 10px;">OFFERTA!<br/></div>
                   <!-- prezzo aggiornato -->
 
                   <!-- SCONTO - DA INSERIRE NELL'ANGOLO?
                     <span th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></span>
-                    -->
-               </div>
+                    --></div>
                <div class="prezzo" th:unless="${prodotto.sconto ne 0}"
                   th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}" ></div>
                 <div class="prezzo"><a th:href="@{/dettaglio(id=${prodotto.idProdotto})}">
@@ -324,7 +330,9 @@
 							<del th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + " class="prezzo"></del>
                   <!-- prezzo barrato -->
                   <div class="prezzo"
-                    th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')}"></div>
+                    th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')}"></div><div class="discount-badge" id="discountBadge" style="color:#8f43ee;font-family:'RocknRoll One', sans-serif;position: absolute;
+  top: 0;
+  right: 0; padding:5px 10px;">OFFERTA!<br/></div>
                   <!-- prezzo aggiornato -->
 
                   <!-- SCONTO - DA INSERIRE NELL'ANGOLO?

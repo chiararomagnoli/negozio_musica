@@ -135,7 +135,7 @@
 <!--DIV CON IMMAGINE-->
 <div class="container mx-auto">
   <div class="container mt-5 mb-5">
-    <div class="card dettaglio col-md-9 mx-auto">	
+    <div class="card dettaglio col-md-10 mx-auto">	
 		<div class="row">
         <div class="col-md-4 mx-auto">
         <img class="card-img img-fluid" th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" >  
@@ -175,22 +175,25 @@
 
     <div class="prezzo" th:if="${prodotto != null}">
         <th:block th:if="${prodotto.sconto != 0}">
-            <del class="sconto" th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></del> 
-            <div class="prezzo" th:text="${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')} + '€'"></div>  <!-- prezzo aggiornato -->
-            <div class="scontoP" th:text="'(' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'">
+           <del class="sconto" th:text="'€ '+ ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} "></del> 
+            <div class="prezzo" th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')}"></div>  <!-- prezzo aggiornato -->
+         <div class="scontoP" th:text="'(-' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></div>   
         </th:block>
         <th:block th:unless="${prodotto.sconto != 0}">
-            <div th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></div></div>
+            <div th:text="'€ '+  ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} "></div>
         </th:block>
     
-    <a th:href="@{/prenotazione(id=${prodotto.idProdotto})}"><button class="btn btn-lg mt-3 button mx-auto">Prenota</button></a></div>
+    <div class="prenota"><a th:href="@{/prenotazione(id=${prodotto.idProdotto})}"><button class="btn btn-lg mt-3 button centered-button">Prenota</button></a></div>
 </div>
             
         </div>
       
     </div>
   </div>
- </div>
+
+    </div>
+  </div>
+</div>
   
   <!-- footer -->
   <!-- banner -->

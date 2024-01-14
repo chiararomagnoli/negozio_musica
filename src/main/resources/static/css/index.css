@@ -577,10 +577,22 @@ footer {
   }
 
   .homepage .card img {
+	  margin-top:30px;
     width: 100%;
   }
+  
+  .homepage .card .container .offerta  .discount-badge{
+  position: absolute;
+  top: 0;
+  right: 0;
+  color:#8F43EE;
+  padding: 15px;
+  border-radius: 50%;
+  display: none;
+}
 
   .dimensione:hover {
+	  
     -ms-transform: scale(1,1);
     -webkit-transform: scale(1,1);
     -moz-transform: scale(1,1);
@@ -648,9 +660,8 @@ form {
 	
 .card-img {
   width:100%;
-  margin: 10px auto;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  margin: 90px auto;
+  padding: 30px 0px 20px 0px;
   background-color: #ffffff;
 }
 
@@ -706,9 +717,9 @@ form {
 	}
 	
 	.card-footer {
-		margin-top:10px;
+		margin-top:20px;
 		border-top: 2px #413543 dotted;
-
+		margin-bottom:0;
 	}
 		
 .card-footer .prezzo {
@@ -731,18 +742,23 @@ form {
 	/*background-color: #f1eea8;*/
 	color:#8F43EE;
 	padding: 5px;
-	border-radius: 25%;
-	font-size: 16px;	
+	font-size: 16px;
+	text-align:center;
+	position: relative;
+	right:200px;
+	bottom: 65px;	
 }
 
-.card-footer .prezzo butto
-n { /* da risolvere */
-  font-size: 18px;
-  padding: 9px 12px; /* padding del pulsante per controllare le dimensioni */
-  margin: auto; /* Sposta il pulsante a destra */
-  position: absolute; /* Posizionamento assoluto rispetto al contenitore .card */
-  right: 32px; /* Distanza dal bordo destro */
-  bottom: 30px;
+.prenota {
+	height: 5px;
+	margin-top:0px;
+}
+.prenota button { /* da risolvere */
+  font-size: 25px;
+  padding: 14px 18px; /* padding del pulsante per controllare le dimensioni */
+  position: relative;
+top: -100px;
+left: 75%;
 }
 
 /* CONTATTACI / PRENOTA */
