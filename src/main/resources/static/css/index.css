@@ -485,6 +485,9 @@ footer {
 .bottoni {
   margin-top:10px;
   text-align: center;
+  padding: 8px 20px;
+  font-size: 16px;
+  font-family: 'RocknRoll One';
 }
 
 .prev, .next {
@@ -642,13 +645,33 @@ form {
   /* ----- FINE LSITA ----*/
 
 	/*CSS DEL DETTAGLIO*/
+	
+.card-img {
+  width:100%;
+  margin: 10px auto;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  background-color: #ffffff;
+}
 
+.dettaglio {
+		padding:30px;
+	}
 	.nomeprodotto {
-		font-size: 20px;
+		color: #413543;
+		font-size: 30px;
 		font-family: 'RocknRoll One';
+	}
+	
+		
+	.card-body {
+		background-color: #ffffff;
+		padding:0px;
+		margin:0px;
 	}
 
 	.sottocategoria {
+		color:#797979;
 		font-size: 18px;
 		font-family: 'RocknRoll One';
 	}

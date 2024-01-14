@@ -134,17 +134,17 @@
 
 <!--DIV CON IMMAGINE-->
 <div class="container mx-auto">
-  <div class="container text-center mt-5 mb-5">
-    <div class="row">
-        <div class="col-5">
-       
-        <img class="card-img-top" th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" >  
+  <div class="container mt-5 mb-5">
+    <div class="card dettaglio col-md-10 mx-auto">	
+		<div class="row">
+        <div class="col-md-4 mx-auto">
+        <img class="card-img img-fluid" th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" >  
         </div>
         
         <!--INIZIO NOME E DESCRIZIONE PRODOTTO-->
-<div class="col-7">
+<div class="col-md-8 mx-auto">
 	<div class="card-body"> <!--NOME-->
-		<h4 class="card-title nomeprodotto" th:text="${prodotto.nomeProdotto}"></h4> 
+		<h4 class="card-title nomeprodotto mx-auto" th:text="${prodotto.nomeProdotto}"></h4> 
               <!--<p th:text="${prodotto.sconto}"></p> -->
               <!--SOTTOCATEGORIA-->
 		<h5 class="sottocategoria "th:utext="${prodotto.sottocategoria.nomeSottocategoria}"></h5> 
@@ -182,7 +182,7 @@
             <span th:text="${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} + '€'"></span>
         </th:block>
     </div>
-    <a th:href="@{/prenotazione(id=${prodotto.idProdotto})}"><button class="btn btn-lg mt-3 button">Prenota</button></a>
+    <a th:href="@{/prenotazione(id=${prodotto.idProdotto})}"><button class="btn btn-lg mt-3 button bottoni">Prenota</button></a>
 </div>
             
         </div>
