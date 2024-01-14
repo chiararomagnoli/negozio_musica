@@ -659,10 +659,9 @@ form {
 	}
 	.nomeprodotto {
 		color: #413543;
-		font-size: 30px;
+		font-size: 20px;
 		font-family: 'RocknRoll One';
 	}
-	
 		
 	.card-body {
 		background-color: #ffffff;
@@ -671,9 +670,16 @@ form {
 	}
 
 	.sottocategoria {
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+		border-bottom: 2px #797979 dotted;
 		color:#797979;
 		font-size: 18px;
 		font-family: 'RocknRoll One';
+	}
+	
+	testo_marca{
+
 	}
 	
 	.marca {
@@ -689,14 +695,55 @@ form {
 	.disponibilita {
 		font-family: 'RocknRoll One';
 		font-size: 15px;
+		margin-bottom: 20px;
 	}
 	
 	.descrizione {
 		font-family: sans-serif;
 		font-size: 15px;
 		text-align: justify;
-		
+		margin-bottom: 15px;
 	}
+	
+	.card-footer {
+		margin-top:10px;
+		border-top: 2px #413543 dotted;
+
+	}
+		
+.card-footer .prezzo {
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 22px;
+  color:#413543;
+  padding: 0px auto;
+  padding-left:5px;
+}
+
+ .card-footer .sconto {
+  margin-top: 10px; /* sposto solo la scritta */
+  font-size: 15px;
+  color:#413543;
+  padding: 20px auto 0 0;
+  margin-top: 20px;
+}
+
+.card-footer .scontoP {
+	/*background-color: #f1eea8;*/
+	color:#8F43EE;
+	padding: 5px;
+	border-radius: 25%;
+	font-size: 16px;	
+}
+
+.card-footer .prezzo butto
+n { /* da risolvere */
+  font-size: 18px;
+  padding: 9px 12px; /* padding del pulsante per controllare le dimensioni */
+  margin: auto; /* Sposta il pulsante a destra */
+  position: absolute; /* Posizionamento assoluto rispetto al contenitore .card */
+  right: 32px; /* Distanza dal bordo destro */
+  bottom: 30px;
+}
 
 /* CONTATTACI / PRENOTA */
 
