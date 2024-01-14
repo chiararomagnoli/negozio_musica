@@ -169,7 +169,7 @@
 			<div class="descrizione">
 			<p class="descrizione" th:utext="${#strings.replace(prodotto.descrizione, '\n', '<br>')}"></p> </div>
 	</div> 
-</div>   
+   
 
 <div class="card-footer">
 
@@ -180,12 +180,13 @@
          <div class="scontoP" th:text="'(-' + ${#numbers.formatDecimal((prodotto.sconto*100),0,'POINT',0,'COMMA')} + '%)'"></div>   
         </th:block>
         <th:block th:unless="${prodotto.sconto != 0}">
-            <div th:text="'€ '+  ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} "></div>
+            <div th:text="'€ '+  ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} ">
         </th:block>
     
-    <div class="prenota"><a th:href="@{/prenotazione(id=${prodotto.idProdotto})}"><button class="btn btn-lg mt-3 button centered-button">Prenota</button></a></div>
+    <div class="prenota"><a th:href="@{/prenotazione(id=${prodotto.idProdotto})}"><button class="btn button">Prenota</button></a>
 </div>
-            
+    </div>
+</div></div>
         </div>
       
     </div>
