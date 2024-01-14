@@ -213,29 +213,53 @@ function clearFormFields() {
     </div>
   </div>
 
-  <div class="container text-center mt-5 mb-5">
-    <div class="row">
+<!-- container per card + form -->
+<div class="container mx-auto">
+  <div class="container mt-5 mb-5">
+    <div class="card dettaglio col-md-10 mx-auto">
 		<!--CARD UNICA-->
-            <div class="card col-5">
-                <div class="image-content">
-                    <span class="overlay"></span>
-                   <img th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" alt="${prodotto.nomeProdotto}" class="card-img ml-4"> 
-                                        
-                </div>
-                <div class="text-center">
-                    <h2 th:text="${prodotto.nomeProdotto}" class="name"></h2>
+		<div class="row">
+			<!-- card -->
+            <div class="col-md-4 mx-auto">
+                <div class="prenota card mx-auto">
+                   <img th:src="@{'/images/'+${prodotto.idProdotto}+'.png'}" alt="${prodotto.nomeProdotto}" class="card-img img-fluid">                                         
 
+                <div class="card-body">
+                    <h5 th:text="${prodotto.nomeProdotto}" class="card-title"></h5>
+                    <h6 class="sottocategoria "th:utext="${prodotto.sottocategoria.nomeSottocategoria}"></h6>
+                    <!--MARCA-->
+			<div style="display: flex; flex-direction: row; ">
+				<div class="marca">  Marca:</div>
+				<div  th:text="${prodotto.marca.nomeMarca}"></div>
+			</div>
+			<!--CONDIZIONI-->
+			<div style="display: flex; flex-direction: row;">
+				<div class="condizioni">   Condizioni:</div>
+					<div th:text="${prodotto.condizione}"></div>
+			</div>
+			<!--DISPONIBILITà-->
+			<div  style="display: flex; flex-direction: row;">
+				<div class="disponibilita">Disponibilità:</div>
+				<div th:text="${prodotto.disponibilita}"></div>
+			</div>
+
+<div class="card-footer">
                     <!-- Mostra il prezzo barrato -->
-                    <del th:if="${prodotto.sconto != 0}" th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></del>
-                    <!-- Mostra il prezzo scontato sotto al prezzo barrato -->
-                    <p th:if="${prodotto.sconto != 0}" th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo*(1-prodotto.sconto),0,'POINT',2,'COMMA')}"></p>
-                	
-                	<!-- Se non c'è sconto, mostra solo il prezzo normale -->
-                	<p th:if="${prodotto.sconto == 0}" th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')}"></p>
-                    <a th:href="@{/dettaglio(id=${prodotto.idProdotto})}"><button class="btn btn-outline-secondary mr-2 button ">Torna al dettaglio del prodotto</button></a>
-                </div>
-            </div>
-        <div class="col-5"> <!-- th:action="@{/prenotazione(id=${prodotto.idProdotto})}"  -->
+ <div class="prezzo" th:if="${prodotto != null}">
+        <th:block th:if="${prodotto.sconto != 0}">
+           <del class="sconto" th:text="'€ '+ ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} "></del> 
+            <div class="prezzo" th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')}"></div>  <!-- prezzo aggiornato -->  
+        </th:block>
+        <th:block th:unless="${prodotto.sconto != 0}">
+            <div th:text="'€ '+  ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} ">
+        </th:block>
+    </div>
+</div>
+</div></div>
+        </div>
+      
+            
+        <div class="col-md-8 mx-auto"> <!-- th:action="@{/prenotazione(id=${prodotto.idProdotto})}"  -->
 			<form id="form" name="modulo" method="post"  th:object="${utente}" onreset="return clearFormFields()" onsubmit="return validate()">
 				<legend>Inserisci i tuoi dati e prenota un appuntamento per provare i nostri strumenti</legend>
 				Nome <input type="text" name="nome" class="" size="15" th:field="*{nome}" required>
@@ -256,6 +280,8 @@ function clearFormFields() {
 </form>
             	
 			</form>
+			<div class="prenota"><a th:href="@{/prenotazione(id=${prodotto.idProdotto})}"><button class="btn button">Prenota</button></a>
+</div>
 </div>
 	</div>
        
