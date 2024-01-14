@@ -258,66 +258,69 @@ function clearFormFields() {
 </div></div>
         </div>
       
-            
-        <div class="col-md-8 mx-auto"> <!-- th:action="@{/prenotazione(id=${prodotto.idProdotto})}"  -->
+        <!-- contenitore form-->    
+        <div class="col-md-8 mx-auto bordo-form"> <!-- th:action="@{/prenotazione(id=${prodotto.idProdotto})}"  -->
 			<form id="form mx-auto"  name="modulo" method="post"  th:object="${utente}" onreset="return clearFormFields()" onsubmit="return validate()">
-				<fieldset>
+				<fieldset class="mx-auto">
 				<legend class="mx-auto">Prenotazione</legend>
-				<div class="row mb-3 descrizione-form mx-auto">Inserisci i tuoi dati e prenota un appuntamento per provare i nostri strumenti!<br>
-					<br>
-				<div class="row mb-3 campi-form">
-
-				<label for="inputEmail3" class="col-sm-2 col-form-label">Nome:</label> 
-				<div class="col-sm-10">
-				<input type="text" name="nome" class="" size="15" th:field="*{nome}" required>
-				<p id="nomeError" style="color: red;"></p> <!--Scusate frontendiste, è solo per la prova-->
+				
+				<div class="row mb-2 descrizione-form mx-auto">Inserisci i tuoi dati e prenota un appuntamento per provare i nostri strumenti!<br></div>
+				
+	<div class="row mb-3 mx-auto campi-form">
+		<label for="inputEmail3" class="col-sm-2 col-form-label">Nome:</label> 
+		<div class="col-sm-10">
+			<input type="text" name="nome" class="input-cornice" size="20" th:field="*{nome}" required>
+			<p id="nomeError" style="color: red;"></p> <!--Scusate frontendiste, è solo per la prova-->
         </div>
-				</div>
-				<div class="row mb-3 campi-form">
+
 <label for="inputEmail3" class="col-sm-2 col-form-label">Cognome:</label>				
 <div class="col-sm-10 nome">
-					<input type="text" name="cognome" class="" size="15" th:field="*{cognome}" required>
+					<input type="text" name="cognome" class="input-cornice" size="15" th:field="*{cognome}" required>
             	<p id="cognomeError" style="color: red;"></p>
-            	</div>
-				</div>
-        <div class="row mb-3 campi-form">
+</div>
+
 <label for="inputEmail3" class="col-sm-2 col-form-label">Telefono: </label>
             	<div class="col-sm-10 nome">
-            	<input type="tel" name="telefono" class="" size="15" maxlength="15" minlength="5" th:field="*{telefono}" pattern="[0-9]+" required>
+            	<input type="tel" name="telefono" class="input-cornice" size="15" maxlength="15" minlength="5" th:field="*{telefono}" pattern="[0-9]+" required>
             	<p id="telefonoError" style="color: red;"></p>
             	</div>
-        </div>
-      <div class="row mb-3">  
+            	
 <label for="inputEmail3" class="col-sm-2 col-form-label">Email: </label>
-<div class="col-sm-1 nome0">
-<input type="email" name="email" size="15" th:field="*{email}" required>
-            	<p id="emailError" style="color: red;"></p> </div>
-      </div>
-        </div>
+<div class="col-sm-10 nome">
+<input type="email" name="email" class="input-cornice" size="15" th:field="*{email}" required>
+            	<p id="emailError" style="color: red;"></p> 
+            	</div>
+            </div><!-- chiude campi form-->
         
         	<!--<p th:each="error : ${#fields.errors('*')}" th:text="${error}"></p>-->
-        		<input type="reset" name="button" value="Resetta campi" onclick="clearFormFields()" class="button">
-            	<input type="submit" value="Prenota"  class="button"></input>
-            	</fieldset>
-</form></div></div></div>
-            	
+        	<div class="torna btn-group mx-auto">
+        		<input type="reset" name="button" value="Resetta campi" onclick="clearFormFields()" class="button btn">
+            	<input type="submit" value="Prenota"  class="button btn"></input>
+        	</div><!-- chiude div button-->  
+          </fieldset>
+</form>
+</div><!-- chiude contenitore form-->            	
+	
+			<div class="indietro-dettagli"><a th:href="@{/prenotazione(id=${prodotto.idProdotto})}"><button class="btn button">Torna indietro</button></a>
 			</div>
-			<div class="prenota"><a th:href="@{/prenotazione(id=${prodotto.idProdotto})}"><button class="btn button">Prenota</button></a>
-</div>
-</div>
-	</div>
-       
-       </div>
-    </div>
-    
+
+ 
 <div th:if="${appointmentReceived}">
 	<!-- Ottenere la data successiva, gestendo la domenica -->
 	<!-- Aggiunge un giorno alla data odierna -->
 	<th:block th:with="today=${T(java.time.LocalDate).now()}, nextDay=${(today.getDayOfWeek() == T(java.time.DayOfWeek).SUNDAY) ? today.plusDays(1) : today.plusDays(1)}">
 	<p th:text="'Grazie, ' + ${#strings.capitalize(utente.nome)} + ' ' + ${#strings.capitalize(utente.cognome)} + '! Ti abbiamo riservato un appuntamento in negozio ' +${#temporals.format(nextDay, 'EEEE')}+' '+ ${#temporals.format(nextDay, 'dd-MM-yyyy')} +' alle ore '+${#temporals.format(orarioCasuale, 'HH:mm')}"></p>
 	<p th:text="'Ti aspettiamo da Music.toString() in  Via Roma 34, Pompei. Per disdire o per spostare la tua prenotazione, chiama in negozio.'"> </p>
+	</th:block>
 </div>
-        
+</div>
+</div>
+ </div><!-- chiude row card -->
+</div>
+</div>
+</div>
+</div>
+
   
  <!-- footer -->
   <!-- banner -->
@@ -332,7 +335,8 @@ function clearFormFields() {
             <img class="setup-icons" th:src="@{/images/icon-esperienza.png}" alt="esperienza">24 ANNI DI ESPERIENZA</div>
         </div>
       </div>
-
+    </div>
+  </div>
   <!-- vero e proprio footer -->
    <footer class="container-fluid mt-2 d-flex text-white">
     <div class="row piede mx-auto">
@@ -381,5 +385,35 @@ function clearFormFields() {
       </div>
     </div>
   </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  
+  <script>
+    $(document).ready(function(){
+      $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        autoplay: true, //attivazione dell'autoplay
+        autoplayTimeout: 3000, // tempo di attesa tra uno scorrimento e l'altro (in millisecondi)
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 2
+          },
+          1000: {
+            items: 4
+          }
+        }
+      });
+    });
+
+  </script>
 </body>
 </html>

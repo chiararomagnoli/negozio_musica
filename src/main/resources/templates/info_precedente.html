@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/info.css}" />
+  <title>Music.toString() | Info </title>
+  <link rel="shortcut icon" type="image/png" th:href="@{/images/icona-browser.png}" />
+
+  <!-- JS per imm dinamiche -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS per scroll navbar top -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+          var navbar = $(".navbar");
+  
+          $(window).scroll(function () {
+              if ($(this).scrollTop() > 50) {
+                  navbar.addClass("fixed-top");
+              } else {
+                  navbar.removeClass("fixed-top");
+              }
+          });
+      });
+  </script>
+
+</head>
+
+<body style="background-color: #EEEEEE">
+  <!-- Logo e pulsanti -->
+  <div class="container-fluid bg-dark p-2 mx-auto">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-8 logo">
+          <img th:src="@{/images/logo.png}" alt="Logo">
+        </div>
+        <div class="col-md-4 mx-auto">
+          <!-- Pulsanti -->
+          <div class="btn-group">
+            <a th:href="@{/info}"><button class="btn btn-outline-secondary mr-2">Chi Siamo</button></a>
+            <a th:href="@{/form}"><button class="btn btn-outline-secondary">Ricerca</button></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark container-fluid">
+    <!-- Pulsante per mobile -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Elementi della navbar -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" th:href="@{/}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Chitarre</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tastiere</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Archi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Percussioni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Fiati</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Usato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Novità</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" style="background-color: #EEEEEE">
+    <div class="col-md-12 line">
+      <h1 class="text-center mt-3">Music.toString() - Strumenti Musicali</h1>
+    </div>
+  <blockquote class="blockquote text-center">
+    <p class="mb-2"><em>“Dove le parole non arrivano... la musica parla.”</em></p>
+    <footer class="blockquote-footer" style="background-color: #EEEEEE">Ludwig van Beethoven</footer>
+    <hr class="divisore" />
+  <p class="text-body-secondary"><em>La storia di Music.toString() inizia con una visione condivisa da un gruppo di appassionati che desideravano creare un luogo dove l'amore per la musica potesse essere condivisa con la comunità. Fondato nel cuore della città, il nostro negozio ha aperto le sue porte con l'obiettivo di offrire un rifugio per musicisti di tutte le età e livelli di esperienza. La nostra storia è intrecciata con le storie di coloro che hanno scelto Music.toString() per iniziare il loro viaggio musicale. Oggi, continuiamo a prosperare come una destinazione di fiducia, con la stessa dedizione e passione che ci hanno ispirato fin dall'inizio. Unisciti a noi in questo viaggio, dove troverai professionalità, cura del dettaglio e soddisfazione del cliente.</em></p>
+  </div>
+  <!--DOVE SIAMO-->
+  <div class="container mt-5 mb-5" id="localita">
+
+    <div class="card container-fluid text-center" style="border-color: blueviolet;">
+      <div class="card-body">
+        <h4 class="card-title">Dove siamo?</h4>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Scopri come raggiungerci in negozio:</h6>
+        <p class="card-text"><strong>Indirizzo:</strong> Via Roma 34, Pompei - 80045 (NA)</p>
+        <p class="card-text"><strong>Orari:</strong> Lun. / Ven. dalle 9 alle 18</p>
+        <button class="btn btn-outline-secondary mr-2 button">Contattaci</button> 
+        <button class="btn btn-outline-secondary mr-2 button">Maps</button> 
+        <button class="btn btn-outline-secondary mr-2 button">Prenota</button> 
+        
+        <hr class="hr"/>
+        
+
+        <div class="d-flex justify-content-center">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20333.89270458266!2d14.500258494503322!3d40.74769918905438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sit!2sit!4v1704469784764!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <!--STAFF-->
+  <div class="col-md-12 line">
+    <h3 class="text-center">Il nostro Staff</h3>
+  </div>
+    <blockquote class="blockquote text-center">
+    <p class="mb-2"><em>“Non è un elevato grado di intelligenza, e nemmeno l'immaginazione, e nemmeno le due cose assieme che creano un genio.<br/>
+      Amore, amore, amore, quella è l'anima del genio.”</em></p>
+    <footer class="blockquote-footer" style="background-color: #EEEEEE">Wolfgang Amadeus Mozart</footer>
+    <hr class="divisore" />
+  </blockquote>
+  <div class="container mt-5 mb-5">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card mb-3" style="max-width: 540px; border-color: blueviolet;">
+                <div class="row g-0">
+                  <div class="col-md-4 mt-3">
+                    <img th:src="@{/images/simona.jpeg}" class="img-fluid rounded-circle" alt="Simona">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Simona Conte</h5>
+                      <p class="card-text mt-2">Back End</p>
+                      <p class="card-text descrizione"><em>Astrofisica e appassionata di informatica, ha guidato il team di Back End durante lo sviluppo del sito.</em></p>
+                      <p class="card-text"><small class="text-body-secondary">Junior Java Developer</small></p>
+                    </div>
+                    <hr class="hr" />
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3" style="max-width: 540px; border-color: blueviolet;">
+                <div class="row g-0">
+                  <div class="col-md-4 mt-3">
+                    <img th:src="@{/images/giulia.jpeg}" class="img-fluid rounded-circle" alt="Giulia">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Giulia La Rosa</h5>
+                      <p class="card-text mt-2">Front End</p>
+                      <p class="card-text descrizione"><em>Ha guidato il team di Front End durante la pianificazione del sito. Il suo lavoro ha riguardato la progettazione e lo sviluppo di grafica e Homepage.</em></p>
+                      <p class="card-text"><small class="text-body-secondary">Junior Java Developer</small></p>
+                    </div>
+                    <hr class="hr" />
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3" style="max-width: 540px; border-color: blueviolet;">
+                <div class="row g-0">
+                  <div class="col-md-4 mt-3">
+                    <img th:src="@{/images/chiara.jpeg}" class="img-fluid rounded-circle" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Chiara Romagnoli</h5>
+                      <p class="card-text mt-2">Back End</p>
+                      <p class="card-text descrizione"><em>Ha messo in gioco le sue competenze per la progettazione del database e i collegamenti tra Front e Back End.</em></p>
+                      <p class="card-text"><small class="text-body-secondary">Junior Java Developer</small></p>
+                    </div>
+                    <hr class="hr" />
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3" style="max-width: 540px; border-color: blueviolet;">
+                <div class="row g-0">
+                  <div class="col-md-4 mt-3">
+                    <img th:src="@{/images/eugenia.jpeg}" class="img-fluid rounded-circle" alt="Eugenia">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Eugenia Simeone</h5>
+                      <p class="card-text mt-2">Front End</p>
+                      <p class="card-text descrizione"><em>Neolaureata in lingue con l'interesse per l'informatica, ha curato la grafica delle pagine di dettaglio e di presentazione dello staff. </em></p>
+                      <p class="card-text"><small class="text-body-secondary">Junior Java Developer</small></p>
+                    </div>
+                    <hr class="hr" />
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3" style="max-width: 540px; border-color: blueviolet;">
+                <div class="row g-0">
+                  <div class="col-md-4 mt-3">
+                    <img th:src="@{/images/flavia.jpeg}" class="img-fluid rounded-circle" alt="Flavia">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Flavia Serino</h5>
+                      <p class="card-text mt-2">Back End</p>
+                      <p class="card-text descrizione"><em>Il suo lavoro ha riguardato tutte le fasi di lavoro con il Back End, dal database al funzionamento delle pagine del sito, collaborando con il team di Front End per il collegamento tra Front e Back.</em></p>
+                      <p class="card-text"><small class="text-body-secondary">Junior Java Developer</small></p>
+                    </div>
+                    <hr class="hr" />
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col">
+            <div class="card mb-3" style="max-width: 540px; border-color: blueviolet;">
+                <div class="row g-0">
+                  <div class="col-md-4 mt-3">
+                    <img th:src="@{/images/khadija.jpeg}" class="img-fluid rounded-circle" alt="Khadija">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Khadija Essaid</h5>
+                      <p class="card-text mt-2">Front End</p>
+                      <p class="card-text descrizione"><em>Giovane sviluppatrice appena entratata nel mondo informatico, ha lavorato con il team di Front End,  progettando le pagine del sito, e ha sviluppato la pagina di elenco dei prodotti. </em></p>
+                      <p class="card-text"><small class="text-body-secondary">Junior Java Developer</small></p>
+                    </div>
+                    <hr class="hr" />
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+        <!--  -->
+    </div>
+
+    
+    </div>
+
+    <!-- footer -->
+    <!-- footer -->
+  <!-- banner -->
+  <div class="container-fluid footer">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 hidden-sm fascia-bot text-center">
+          <div class="setup">
+            <img class="setup-icons" th:src="@{/images/icon-setup.png}" alt="setup">SETUP GRATUITO</div>
+          <div class="setup">
+            <img class="setup-icons" th:src="@{/images/icon-prenota2.png}" alt="consulenza">PRENOTA UNA CONSULENZA</div>
+          <div class="setup">
+            <img class="setup-icons" th:src="@{/images/icon-esperienza.png}" alt="esperienza">24 ANNI DI ESPERIENZA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- vero e proprio footer -->
+   <footer class="container-fluid mt-2 d-flex text-white">
+    <div class="row piede mx-auto">
+      <div class="col-md-3 piede_item">
+        <h5>INFORMAZIONI</h5>
+        <ul>
+          <li><a th:href="@{/info}">Chi siamo</a></li>
+          <li><a th:href="@{/info}">Dove siamo</a></li>
+          <li><a href="#">Orari</a></li>
+          <li><a href="#">Contatti</a></li>
+          <li><a href="#">Marche</a></li>                   
+        </ul>
+      </div>
+      <div class="col-md-3 piede_item">
+        <h5>NAVIGAZIONE</h5>
+        <ul>
+          <li><a th:href="@{/}">Home Page</a></li>
+          <li><a th:href="@{/form/cerca}">Ricerca</a></li>
+          <li><a th:href="@{/form/cerca?condizione=nuovo}">Novità</a></li>
+          <li><a th:href="@{/form/cerca?condizione=usato}">Mercatino dell'usato</a></li>
+          <li><a href="#">Promozioni</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 piede_item">
+        <h5>ACQUISTI</h5>
+        <ul>
+          <li><a href="#">Resi</a></li>
+          <li><a href="#">Rimborsi</a></li>
+          <li><a href="#">Assistenza</a></li>
+          <li><a href="#">Spedizioni</a></li>
+          <li><a href="#">Account</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 piede_item">
+          <h5>SOCIAL</h5>
+          <div class="row">
+            <div class="col-md-12 social-icons">
+				
+			<a href="#"><img th:src="@{/images/facebook-icon.png}"  alt="Facebook"  height="100px"></a>
+            <a href="#"><img th:src="@{/images/instagram-icon.png}" alt="Instagram" height="100px" /></a>
+            <a href="#"><img th:src="@{/images/youtube-icon.png}" alt="Youtube" height="100px" /></a>
+            <a href="#"><img th:src="@{/images/tiktok-icon.png}" alt="Tik-Tok" height="100px" /></a>
+            
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
