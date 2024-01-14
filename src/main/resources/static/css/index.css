@@ -895,6 +895,13 @@ legend {
 	left:110px;
 }
 
+.appuntamento {
+	background-color: #f1eea8;
+	font-family: 'RocknRoll One', sans-serif;
+	width: 75%;
+	padding: 20px 3px 10px 20px;
+}
+
 /* --- FINE PRENOTA --- */
 
 
