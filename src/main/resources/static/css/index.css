@@ -202,6 +202,8 @@ footer {
   a {
     text-decoration: none;
   }
+  
+  /* ---- HOMEPAGE ---- */
 
   /* SEZIONE IMMAGINI */
   .immagini {
@@ -261,7 +263,7 @@ footer {
     width:84%;
   }
 
-  /* ----- SEZIONE ------ */
+  /*  SEZIONI */
 
   /* titolo sezione testo*/
 .line {
@@ -366,14 +368,6 @@ footer {
   float: left;
   margin-bottom: 16px;
   padding: 0 8px;
-}
-
-/* Display the homepages below each other instead of side by side on small screens */
-@media screen and (max-width: 650px) {
-  .homepage {
-    width: 100%;
-    display: block;
-  }
 }
 
 .homepage .card { 
@@ -501,6 +495,14 @@ footer {
 }
 
 /* RESPONSIVE DESIGN */
+/* Display the homepages below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+  .homepage {
+    width: 100%;
+    display: block;
+  }
+}
+
 @media (max-width: 768px) {
   .fascia-top,
   .fascia-bot {
@@ -619,6 +621,8 @@ footer {
     padding-left: 0px;
   }
 }
+
+/* Fine Responsive */
 
   /* ----- FINE HOMEPAGE ----- */
   
