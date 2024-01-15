@@ -33,7 +33,7 @@
           });
       });
     
-    //VALIDAZIONE
+    //VALIDAZIONE E-MAIL
 	function validate() {
     var emailInput = document.getElementById('email');
     var emailError = document.getElementById('emailError');
@@ -44,8 +44,8 @@
 
     // Espressioni regolari per verificare il formato dell'email, del nome e del cognome
     var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
-	var nomeRegex = /^[a-zA-Z]{3,}([ '][a-zA-Z]{3,}){0,2}$/;
-    var cognomeRegex = /[a-zA-Z ']{3,50}/;
+    var nomeRegex = /^[a-zA-Z']+([\\s'][a-zA-Z']+){0,2}$/;
+    var cognomeRegex = /[a-zA-Z\\s']{1,50}/;
 
     // Validazione dell'email
     if (!emailRegex.test(emailInput.value)) {
@@ -251,8 +251,8 @@ function clearFormFields() {
             <div class="prezzo" th:text="'€ ' + ${#numbers.formatDecimal(prodotto.prezzo - (prodotto.prezzo * prodotto.sconto), 0, 'POINT', 2, 'COMMA')}"></div>  <!-- prezzo aggiornato -->  
         </th:block>
         <th:block th:unless="${prodotto.sconto != 0}">
-            <div th:text="'€ '+  ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} ">
-        </th:block>
+            <div class="prezzo" th:text="'€ '+  ${#numbers.formatDecimal(prodotto.prezzo,0,'POINT',2,'COMMA')} "></div>
+        </th:block> 
     </div>
 </div>
 </div></div>
