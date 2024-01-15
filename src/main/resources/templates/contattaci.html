@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" th:href="@{/css/index.css}" />
   <title>Music.toString() | Prenotazione</title>
   <link rel="shortcut icon" type="image/png" th:href="@{/images/icona-browser.png}" /> <!-- icona browser -->
     <!-- script file -->
@@ -33,7 +33,7 @@
           });
       });
     
-    //VALIDAZIONE E-MAIL
+    //VALIDAZIONE
 	function validate() {
     var emailInput = document.getElementById('email');
     var emailError = document.getElementById('emailError');
@@ -44,8 +44,8 @@
 
     // Espressioni regolari per verificare il formato dell'email, del nome e del cognome
     var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
-    var nomeRegex = /^[a-zA-Z']+([\\s'][a-zA-Z']+){0,2}$/;
-    var cognomeRegex = /[a-zA-Z\\s']{1,50}/;
+	var nomeRegex = /^[a-zA-Z]{3,}([ '][a-zA-Z]{3,}){0,2}$/;
+    var cognomeRegex = /[a-zA-Z ']{3,50}/;
 
     // Validazione dell'email
     if (!emailRegex.test(emailInput.value)) {
