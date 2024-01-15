@@ -497,6 +497,27 @@ footer {
 /* RESPONSIVE DESIGN */
 /* Display the homepages below each other instead of side by side on small screens */
 @media screen and (max-width: 650px) {
+  .logo,
+  .btn-group {										/*modifica per il logo centrato da qui a .homepage esclusa*/
+    text-align: center;
+  }
+
+  .logo img,
+  .btn-group  {
+    display: block;
+    margin: 0 auto;
+  }
+  
+    /* Aggiungi margini automatici per mantenere l'allineamento centrale */
+  .container-fluid.bg-dark,
+  .container.mx-auto,
+  .row.align-items-center,
+  .col-md-8.logo,
+  .col-md-4.mx-auto {
+    margin-right: auto;
+    margin-left: auto;
+  }
+	
   .homepage {
     width: 100%;
     display: block;
