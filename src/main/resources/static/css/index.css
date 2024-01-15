@@ -929,6 +929,47 @@ legend {
 
 /* --- FINE PRENOTA --- */
 
+/* --- INFO ---*/
+.store  {
+	font-family: 'RocknRoll One', sans-serif;
+	color: #413543;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.citazione-uno blockquote,
+.citazione-uno .blockquote blockquote  {
+	font-family: 'RocknRoll One', sans-serif;
+	font-size: 18px;
+}
+
+.storia { /* rivedere font */
+	display:flex;
+	background-color: #ffffff;
+	padding: 20px 20px 5px 20px;
+	border-top: 2px solid rgb(192, 192, 192);
+	border-bottom: 2px solid rgb(192, 192, 192);
+	color:rgb(249, 249, 249);
+	font-family: 'RocknRoll One', sans-serif;
+	font-weight:normal;
+	font-size: 15px;
+	text-align: justify;
+}
+
+.dove-siamo {
+	border: none;
+	border-radius: 0;
+}
+
+.dove-siamo .card-body {
+	margin: 30px;
+}
+
+.dove-siamo .card-body .card-title {
+	font-family: 'RocknRoll One', sans-serif;
+	padding: 15px;
+}
+
 
   
 
