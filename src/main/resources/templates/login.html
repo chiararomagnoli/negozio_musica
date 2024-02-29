@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+    
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css" />
+  <title>Music.toString() | Prenotazione</title>
+  <link rel="shortcut icon" type="image/png" th:href="@{/images/icona-browser.png}" /> <!-- icona browser -->
+    <!-- script file -->
+  <script th:src="@{/js/index.js}"></script>
+  
+   <script>
+      $(document).ready(function () {
+          var navbar = $(".navbar");
+  
+          $(window).scroll(function () {
+              if ($(this).scrollTop() > 50) {
+                  navbar.addClass("fixed-top");
+              } else {
+                  navbar.removeClass("fixed-top");
+              }
+          });
+      });
+    
+    //VALIDAZIONE E-MAIL
+	function validate() {
+    var emailInput = document.getElementById('email');
+    var emailError = document.getElementById('emailError');
+    var nomeInput = document.getElementById('nome');
+    var nomeError = document.getElementById('nomeError');
+    var cognomeInput = document.getElementById('cognome');
+    var cognomeError = document.getElementById('cognomeError');
+
+    // Espressioni regolari per verificare il formato dell'email, del nome e del cognome
+    var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$/;
+    var nomeRegex = /^[a-zA-Z']+([\\s'][a-zA-Z']+){0,2}$/;
+    var cognomeRegex = /[a-zA-Z\\s']{1,50}/;
+
+    // Validazione dell'email
+    if (!emailRegex.test(emailInput.value)) {
+        emailError.innerHTML = 'Formato email non valido';
+    } else {
+        emailError.innerHTML = '';
+    }
+
+    // Validazione del nome
+    if (!nomeRegex.test(nomeInput.value)) {
+        nomeError.innerHTML = 'Formato nome non valido';
+    } else {
+        nomeError.innerHTML = '';
+    }
+
+    // Validazione del cognome
+    if (!cognomeRegex.test(cognomeInput.value)) {
+        cognomeError.innerHTML = 'Formato cognome non valido';
+    } else {
+        cognomeError.innerHTML = '';
+    }
+
+    // Restituisci true solo se tutte le verifiche sono passate
+    return emailError.innerHTML === '' && nomeError.innerHTML === '' && cognomeError.innerHTML === '';
+}
+
+ 
+ //Svuota i campi del form al ricarimento della pagina
+  // Stato iniziale del form
+var initialFormState = {
+    nome: '',
+    cognome: '',
+    telefono: '',
+    email: ''
+    // Aggiungi altri campi del form secondo necessità
+};
+
+window.onload = function() {
+    // Carica lo stato iniziale quando la pagina viene caricata
+    loadFormState(initialFormState);
+};
+
+function loadFormState(state) {
+    // Ottieni tutti gli elementi di input del form
+    var inputElements = document.getElementsByTagName('input');
+
+    // Imposta i valori dei campi di input secondo lo stato fornito
+    for (var i = 0; i < inputElements.length; i++) {
+        if (inputElements[i].type !== 'submit' && inputElements[i].type !== 'reset') {
+            inputElements[i].value = state[inputElements[i].name] || '';
+        }
+    }
+}
+
+function clearFormFields() {
+    // Svuota i campi del form allo stato iniziale
+    loadFormState(initialFormState);
+
+    // Impedisci il ripristino predefinito del browser dopo il reset
+    return false;
+}
+
+</script>
+
+
+
+</head>
+
+<body>
+<!-- Logo e pulsanti -->
+  <div class="container-fluid bg-dark p-2 mx-auto">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-8 logo">
+          <a th:href="@{/}"><img th:src="@{/images/logo.png}" alt="Logo"></a>
+         
+        </div>
+        <div class="col-md-4 mx-auto">
+          <!-- Pulsanti -->
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <a th:href="@{/info}"><button class="btn btn-outline-secondary mr-2">Chi Siamo</button></a>
+            <a th:href="@{/form}"><button class="btn btn-outline-secondary mr-2">Ricerca</button></a>
+          </div>
+            <!--<a th:href="@{/form}"><button class="btn btn-outline-secondary">Ricerca</button></a>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark container-fluid">
+    <!-- Pulsante per mobile -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Elementi della navbar -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" th:href="@{/}">Home</a>
+        </li>
+        
+        <!-- parte dinamica -->
+        <li class="nav-item" th:each="categoria : ${categorie}">
+          <a class="nav-link" th:text="${#strings.capitalize(categoria.nomeCategoria)}"
+            th:href="@{'/form/cerca?marca=&categoria='+${categoria.idCategoria}}"></a>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'chitarre'}">
+            <li th:each="sottocategoria : ${sottocategorieChitarre}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="@{'/form/cerca?marca=&categoria=1&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
+            </li>
+          </ul>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'tastiere'}">
+            <li th:each="sottocategoria : ${sottocategorieTastiere}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="@{'/form/cerca?marca=&categoria=2&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
+            </li>
+          </ul>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'archi'}">
+            <li th:each="sottocategoria : ${sottocategorieArchi}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="@{'/form/cerca?marca=&categoria=3&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
+            </li>
+          </ul>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'percussioni'}">
+            <li th:each="sottocategoria : ${sottocategoriePercussioni}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="@{'/form/cerca?marca=&categoria=4&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
+            </li>
+          </ul>
+
+          <ul class="sottomenu1" th:if="${categoria.nomeCategoria == 'fiati'}">
+            <li th:each="sottocategoria : ${sottocategorieFiati}">
+              <a th:text="${#strings.capitalize(sottocategoria.nomeSottocategoria)}"
+                th:href="@{'/form/cerca?marca=&categoria=5&sottocategoria='+${sottocategoria.idSottocategoria}}"></a>
+            </li>
+          </ul>
+        </li>
+        
+        <!-- fine parte dinamica | continua il menu -->
+        
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/form/cerca?condizione=usato}">Usato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/form/cerca?condizione=nuovo}">Novità</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<!-- fascia superiore grigia -->
+  <div class="container-fluid justify-content-center">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 hidden-sm fascia-top text-center">
+        <span class="setup"></span>
+      </div>
+    </div>
+  </div>
+
+<!-- login card -->
+<div class="container mx-auto">
+	<h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Name" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>
+		Created with <i class="fa fa-heart"></i> by
+		<a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+		- Read how I created this and how you can join the challenge
+		<a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+	</p>
+</footer>
+	
+	
+	
+	
+ <!-- footer -->
+  <!-- banner -->
+  <div class="container-fluid footer">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 hidden-sm fascia-bot text-center">
+          <div class="setup">
+            <img class="setup-icons" th:src="@{/images/icon-setup.png}" alt="setup">SETUP GRATUITO</div>
+          <div class="setup">
+            <img class="setup-icons" th:src="@{/images/icon-prenota2.png}" alt="consulenza">PRENOTA UNA CONSULENZA</div>
+          <div class="setup">
+            <img class="setup-icons" th:src="@{/images/icon-esperienza.png}" alt="esperienza">24 ANNI DI ESPERIENZA</div>
+        </div>
+      </div>
+
+  <!-- vero e proprio footer -->
+   <footer class="container-fluid mt-2 d-flex text-white">
+    <div class="row piede mx-auto">
+      <div class="col-md-3 piede_item">
+        <h5>INFORMAZIONI</h5>
+        <ul>
+          <li><a th:href="@{/info}">Chi siamo</a></li>
+          <li><a th:href="@{/info}">Dove siamo</a></li>
+          <li><a href="#">Orari</a></li>
+          <li><a href="#">Contatti</a></li>
+          <li><a href="#">Marche</a></li>                   
+        </ul>
+      </div>
+      <div class="col-md-3 piede_item">
+        <h5>NAVIGAZIONE</h5>
+        <ul>
+          <li><a th:href="@{/}">Home Page</a></li>
+          <li><a th:href="@{/form/cerca}">Ricerca</a></li>
+          <li><a th:href="@{/form/cerca?condizione=nuovo}">Novità</a></li>
+          <li><a th:href="@{/form/cerca?condizione=usato}">Mercatino dell'usato</a></li>
+          <li><a href="#">Promozioni</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 piede_item">
+        <h5>ACQUISTI</h5>
+        <ul>
+          <li><a href="#">Resi</a></li>
+          <li><a href="#">Rimborsi</a></li>
+          <li><a href="#">Assistenza</a></li>
+          <li><a href="#">Spedizioni</a></li>
+          <li><a href="#">Account</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 piede_item">
+          <h5>SOCIAL</h5>
+          <div class="row">
+            <div class="col-md-12 social-icons">
+				
+			<a href="#"><img th:src="@{/images/facebook-icon.png}"  alt="Facebook"  height="100px"></a>
+            <a href="#"><img th:src="@{/images/instagram-icon.png}" alt="Instagram" height="100px" /></a>
+            <a href="#"><img th:src="@{/images/youtube-icon.png}" alt="Youtube" height="100px" /></a>
+            <a href="#"><img th:src="@{/images/tiktok-icon.png}" alt="Tik-Tok" height="100px" /></a>
+            
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>	
+</body>
+</html>
